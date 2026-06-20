@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+<meta name="description" content="Pineapple Lord — Human Resources Officer | Final Frontier Gamers DAO"/>
+<meta property="og:title" content="Pineapple Lord | Final Frontier Gamers DAO"/>
+<meta property="og:image" content="https://finalfrontiersa.net/team_files/team-2-2.png"/>
+<title>Pineapple Lord | Final Frontier Gamers DAO</title>
+<link rel="icon" href="assets/img/favicons/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="assets/img/favicons/manifest.json"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/theme-color1.css" rel="stylesheet"/>
+<link href="assets/css/mobile.css" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue:#4fc3f7;--blue-dk:#1565c0;--gold:#c8a951;--gold-lt:#f0d080;--dark:#050814;--silver:rgba(255,255,255,.55);}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:rgba(255,255,255,.88);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+.sf{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.sf-star{position:absolute;background:#c8e6ff;border-radius:50%;opacity:0;animation:sfTwinkle 3s ease-in-out infinite;}
+@keyframes sfTwinkle{0%,100%{opacity:0}50%{opacity:.5}}
+/* NAV */
+.o-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(5,8,20,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(79,195,247,.08);padding:10px 0;}
+/* HERO */
+.o-hero{position:relative;min-height:90vh;display:flex;align-items:flex-end;overflow:hidden;z-index:1;}
+.o-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center top;filter:saturate(0.2) brightness(0.4);}
+.o-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#000 0%,rgba(5,8,20,.9) 35%,rgba(5,8,20,.5) 65%,transparent 100%),linear-gradient(160deg,rgba(21,101,192,.18) 0%,transparent 55%);}
+.o-hero-content{position:relative;z-index:2;width:100%;padding:0 0 70px;}
+.o-eyebrow{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.4em;color:rgba(79,195,247,.6);text-transform:uppercase;display:block;margin-bottom:20px;}
+.o-name{font-family:'Cinzel',serif;font-size:clamp(3rem,11vw,8rem);font-weight:900;line-height:.9;background:linear-gradient(180deg,#fff 0%,var(--blue) 60%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
+.o-title-rule{display:flex;align-items:center;gap:16px;margin:18px 0;max-width:500px;}
+.o-title-rule::before,.o-title-rule::after{content:'';flex:1;height:1px;}
+.o-title-rule::before{background:linear-gradient(90deg,transparent,rgba(79,195,247,.4));}
+.o-title-rule::after{background:linear-gradient(90deg,rgba(79,195,247,.4),transparent);}
+.o-diamond{width:7px;height:7px;background:var(--blue);transform:rotate(45deg);}
+.o-role{font-family:'Cinzel',serif;font-size:clamp(.7rem,1.4vw,.95rem);letter-spacing:.22em;color:rgba(255,255,255,.55);text-transform:uppercase;margin-bottom:20px;}
+.o-rank-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(79,195,247,.1);border:1px solid rgba(79,195,247,.25);border-radius:4px;padding:7px 20px;margin-bottom:32px;}
+.o-rank-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:oPulse 2s ease-in-out infinite;}
+@keyframes oPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.o-rank-label{font-size:.65rem;letter-spacing:.2em;color:rgba(79,195,247,.8);font-weight:700;text-transform:uppercase;}
+.o-hero-actions{display:flex;flex-wrap:wrap;gap:10px;}
+.o-btn-p{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue-dk),#0d47a1);color:#fff;padding:12px 26px;border-radius:6px;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:all .25s;border:1px solid rgba(79,195,247,.2);}
+.o-btn-p:hover{box-shadow:0 0 20px rgba(79,195,247,.3);transform:translateY(-2px);}
+.o-btn-s{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(200,169,81,.3);color:rgba(200,169,81,.7);padding:12px 26px;border-radius:6px;font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:all .25s;}
+.o-btn-s:hover{border-color:var(--gold);color:var(--gold);}
+/* BODY */
+.o-body{position:relative;z-index:1;padding:70px 0 90px;}
+.o-file-header{border:1px solid rgba(79,195,247,.1);border-radius:8px;padding:18px 26px;margin-bottom:36px;background:rgba(79,195,247,.03);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;}
+.o-file-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.22em;color:rgba(79,195,247,.45);text-transform:uppercase;}
+.o-file-label strong{color:var(--blue);}
+.o-status{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.1em;}
+.o-status-dot{width:6px;height:6px;border-radius:50%;background:#2ecc71;box-shadow:0 0 8px #2ecc71;animation:oPulse 2s ease-in-out infinite;}
+.o-card{background:linear-gradient(135deg,rgba(21,101,192,.06),rgba(10,16,40,.95));border:1px solid rgba(79,195,247,.1);border-left:3px solid rgba(79,195,247,.4);border-radius:0 12px 12px 0;padding:30px 26px;margin-bottom:22px;}
+.o-card-title{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.18em;color:var(--blue);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.o-card-title::before{content:'';display:block;width:16px;height:1px;background:var(--blue);}
+.o-card p{color:rgba(255,255,255,.7);font-size:.93rem;line-height:1.8;margin-bottom:10px;}
+.o-card ul{padding-left:0;list-style:none;}
+.o-card ul li{color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.7;padding:5px 0 5px 16px;border-bottom:1px solid rgba(255,255,255,.04);position:relative;}
+.o-card ul li::before{content:"▸";color:var(--blue);position:absolute;left:0;}
+.o-attr-bar-wrap{margin-bottom:14px;}
+.o-attr-label{display:flex;justify-content:space-between;margin-bottom:5px;}
+.o-attr-name{font-size:.76rem;color:rgba(255,255,255,.55);letter-spacing:.05em;text-transform:uppercase;}
+.o-attr-val{font-size:.76rem;color:var(--blue);font-weight:700;}
+.o-attr-track{height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden;}
+.o-attr-fill{height:100%;background:linear-gradient(90deg,var(--blue-dk),var(--blue));border-radius:1px;animation:oFill 1.8s ease forwards;}
+@keyframes oFill{from{width:0}to{width:var(--w)}}
+.o-sidebar-card{background:rgba(10,16,40,.75);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:22px;margin-bottom:14px;}
+.o-sidebar-card h5{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.o-sidebar-card p{color:rgba(255,255,255,.5);font-size:.85rem;margin-bottom:5px;}
+.o-sidebar-card strong{color:rgba(255,255,255,.78);}
+.o-game-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(21,101,192,.15);border:1px solid rgba(79,195,247,.2);border-radius:20px;padding:4px 12px;font-size:.73rem;color:rgba(255,255,255,.6);margin:3px;}
+.o-social-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);font-size:.95rem;text-decoration:none;transition:all .2s;margin-right:6px;}
+.o-social-btn:hover{border-color:var(--blue);color:var(--blue);}
+.o-footer{background:#000;border-top:1px solid rgba(79,195,247,.06);padding:22px 0;text-align:center;}
+.o-footer p{color:rgba(255,255,255,.28);font-size:.78rem;}
+.o-footer a{color:var(--gold);text-decoration:none;}
+@media(max-width:767px){.o-name{font-size:clamp(2.5rem,14vw,5rem)!important;}.o-hero{min-height:75vh;}.o-hero-content{padding:0 16px 50px;}}
+</style>
+</head>
+<body>
+<div class="sf"><div class="sf-star" style="left:99%;top:30%;width:1px;height:1px;animation-delay:0.5s;animation-duration:4.2s;"></div>
+<div class="sf-star" style="left:90%;top:39%;width:1px;height:2px;animation-delay:2.7s;animation-duration:2.6s;"></div>
+<div class="sf-star" style="left:78%;top:14%;width:1px;height:1px;animation-delay:3.9s;animation-duration:2.7s;"></div>
+<div class="sf-star" style="left:51%;top:42%;width:2px;height:1px;animation-delay:1.8s;animation-duration:4.9s;"></div>
+<div class="sf-star" style="left:61%;top:69%;width:2px;height:1px;animation-delay:0.9s;animation-duration:2.4s;"></div>
+<div class="sf-star" style="left:89%;top:41%;width:2px;height:2px;animation-delay:3.8s;animation-duration:4.7s;"></div>
+<div class="sf-star" style="left:26%;top:80%;width:2px;height:2px;animation-delay:1.7s;animation-duration:3.4s;"></div>
+<div class="sf-star" style="left:20%;top:77%;width:1px;height:2px;animation-delay:0.7s;animation-duration:3.6s;"></div>
+<div class="sf-star" style="left:68%;top:39%;width:1px;height:1px;animation-delay:2.4s;animation-duration:3.0s;"></div>
+<div class="sf-star" style="left:16%;top:55%;width:1px;height:1px;animation-delay:2.1s;animation-duration:4.9s;"></div>
+<div class="sf-star" style="left:71%;top:37%;width:1px;height:1px;animation-delay:2.2s;animation-duration:4.1s;"></div>
+<div class="sf-star" style="left:98%;top:88%;width:1px;height:2px;animation-delay:2.2s;animation-duration:2.1s;"></div>
+<div class="sf-star" style="left:43%;top:54%;width:1px;height:2px;animation-delay:0.6s;animation-duration:2.5s;"></div>
+<div class="sf-star" style="left:11%;top:60%;width:1px;height:1px;animation-delay:3.5s;animation-duration:3.6s;"></div>
+<div class="sf-star" style="left:47%;top:75%;width:2px;height:1px;animation-delay:1.0s;animation-duration:4.8s;"></div>
+<div class="sf-star" style="left:99%;top:45%;width:1px;height:1px;animation-delay:1.0s;animation-duration:2.3s;"></div>
+<div class="sf-star" style="left:0%;top:47%;width:1px;height:1px;animation-delay:2.4s;animation-duration:3.8s;"></div>
+<div class="sf-star" style="left:77%;top:85%;width:1px;height:1px;animation-delay:1.6s;animation-duration:2.4s;"></div>
+<div class="sf-star" style="left:85%;top:16%;width:1px;height:2px;animation-delay:2.6s;animation-duration:4.3s;"></div>
+<div class="sf-star" style="left:3%;top:70%;width:2px;height:2px;animation-delay:1.0s;animation-duration:2.7s;"></div>
+<div class="sf-star" style="left:67%;top:70%;width:1px;height:1px;animation-delay:1.2s;animation-duration:4.2s;"></div>
+<div class="sf-star" style="left:11%;top:44%;width:1px;height:1px;animation-delay:0.9s;animation-duration:4.0s;"></div>
+<div class="sf-star" style="left:63%;top:38%;width:1px;height:2px;animation-delay:4.0s;animation-duration:2.4s;"></div>
+<div class="sf-star" style="left:8%;top:45%;width:2px;height:1px;animation-delay:3.9s;animation-duration:4.8s;"></div>
+<div class="sf-star" style="left:45%;top:99%;width:2px;height:2px;animation-delay:3.9s;animation-duration:2.2s;"></div>
+<div class="sf-star" style="left:27%;top:92%;width:2px;height:1px;animation-delay:1.8s;animation-duration:3.9s;"></div>
+<div class="sf-star" style="left:97%;top:58%;width:1px;height:2px;animation-delay:2.9s;animation-duration:2.6s;"></div>
+<div class="sf-star" style="left:5%;top:77%;width:1px;height:1px;animation-delay:3.9s;animation-duration:3.3s;"></div></div>
+<nav class="o-nav">
+<div class="container"><div class="row align-items-center"><div class="col-5">
+<a href="index.html"><img src="assets/img/logo-2.png" alt="Final Frontier" style="height:38px;"/></a>
+</div><div class="col-7 text-end">
+<a href="team.html" class="d-none d-sm-inline" style="font-family:'Cinzel',serif;font-size:.73rem;letter-spacing:.12em;color:rgba(79,195,247,.6);text-decoration:none;text-transform:uppercase;margin-right:18px;">&#8592; Back to Team</a>
+<a href="application.html" class="d-none d-sm-inline-block" style="font-family:'Cinzel',serif;font-size:.73rem;letter-spacing:.08em;background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff;padding:8px 16px;border-radius:5px;text-decoration:none;text-transform:uppercase;">Apply</a>
+<button class="ff-hamburger d-sm-none" onclick="ffToggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></div></div></nav>
+<div class="ff-mobile-overlay" id="ffMobileNav">
+<button class="ff-mobile-close" onclick="ffToggleNav()">&#10005;</button>
+<nav class="ff-mobile-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="team.html">&#8592; Back to Team</a>
+<a href="application.html" class="ff-mobile-apply">Apply to Join</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+<style>
+.ff-hamburger{background:none;border:none;cursor:pointer;padding:6px;display:flex;flex-direction:column;gap:5px;align-items:center;}
+.ff-hamburger span{display:block;width:22px;height:2px;background:rgba(79,195,247,.8);border-radius:2px;transition:all .3s;}
+.ff-mobile-overlay{position:fixed;inset:0;background:rgba(5,8,20,.97);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.ff-mobile-overlay.open{transform:translateX(0);}
+.ff-mobile-close{position:absolute;top:20px;right:20px;background:none;border:1px solid rgba(79,195,247,.3);color:rgba(79,195,247,.7);font-size:1.2rem;width:38px;height:38px;border-radius:50%;cursor:pointer;}
+.ff-mobile-links{display:flex;flex-direction:column;align-items:center;gap:0;}
+.ff-mobile-links a{font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:rgba(255,255,255,.7);text-decoration:none;padding:16px 0;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid rgba(79,195,247,.1);width:260px;text-align:center;transition:color .2s;}
+.ff-mobile-links a:hover,.ff-mobile-links a:active{color:#4fc3f7;}
+.ff-mobile-apply{background:linear-gradient(135deg,#1565c0,#0d47a1)!important;color:#fff!important;border-radius:6px!important;border:none!important;margin-top:10px;}
+</style>
+<script>
+function ffToggleNav(){var n=document.getElementById('ffMobileNav');n.classList.toggle('open');}
+</script>
+
+<div class="o-hero">
+  <div class="o-hero-bg" style="background-image:url('team_files/team-2-2.png');"></div>
+  <div class="o-hero-overlay"></div>
+  <div class="o-hero-content">
+    <div class="container">
+      <span class="o-eyebrow">&#9671; &nbsp; Guild Officers · Final Frontier Command &nbsp; &#9671;</span>
+      <h1 class="o-name">Pineapple Lord</h1>
+      <div class="o-title-rule"><div class="o-diamond"></div></div>
+      <p class="o-role">Human Resources Officer</p>
+      <div class="o-rank-badge"><div class="o-rank-dot"></div><span class="o-rank-label">Field Officer — Personnel Division</span></div>
+      <div class="o-hero-actions">
+        <a href="https://discord.gg/d45ztjqmgV" target="_blank" class="o-social-btn"><i class="fab fa-discord"></i></a>
+        <a href="team.html" class="o-btn-s"><i class="fas fa-users"></i> All Officers</a>
+        <a href="application.html" class="o-btn-p"><i class="fas fa-rocket"></i> Join the Frontier</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="o-body">
+<div class="container">
+  <div class="o-file-header">
+    <div>
+      <div class="o-file-label">Final Frontier Command &nbsp;·&nbsp; <strong>Officer File #O05</strong></div>
+      <div class="o-file-label mt-1" style="font-size:.63rem;">Personnel Division · Cleared for Guild Review</div>
+    </div>
+    <div class="o-status"><div class="o-status-dot"></div> STATUS: ACTIVE</div>
+  </div>
+  <div class="row g-4">
+    <div class="col-lg-8">
+      
+      <div class="o-card">
+        <div class="o-card-title">Personnel File &mdash; Pineapple Lord</div>
+        <p>Metaverse and blockchain gaming affords Final Frontier with opportunities to earn while playing games and generate methods to earn rewards from contributions by employing teamwork, strategy, and ethos.</p><p>Pineapple Lord serves as Final Frontier's Human Resources Officer — the friendly face of the guild's people operations. His role ensures that every member of Final Frontier feels welcomed, valued, and supported throughout their journey in the guild.</p><p>From member onboarding and orientation to handling concerns, mediating conflicts, and ensuring cultural alignment with Final Frontier's values, Pineapple Lord manages the human side of the DAO with empathy, professionalism, and genuine care.</p>
+      </div>
+      <div class="o-card"><div class="o-card-title">Skills &amp; Expertise</div><ul><li>Talent Recruitment &amp; Onboarding</li><li>Member Relations &amp; Retention</li><li>Conflict Resolution</li><li>Culture &amp; Values Alignment</li><li>Community Wellness &amp; Engagement</li></ul></div>
+      <div class="o-card">
+        <div class="o-card-title">Performance Metrics</div>
+        <div class="o-attr-bar-wrap">
+<div class="o-attr-label"><span class="o-attr-name">Member Relations</span><span class="o-attr-val">96/100</span></div>
+<div class="o-attr-track"><div class="o-attr-fill" data-w="96" style="--w:96%"></div></div></div><div class="o-attr-bar-wrap">
+<div class="o-attr-label"><span class="o-attr-name">Talent Recruitment</span><span class="o-attr-val">88/100</span></div>
+<div class="o-attr-track"><div class="o-attr-fill" data-w="88" style="--w:88%"></div></div></div><div class="o-attr-bar-wrap">
+<div class="o-attr-label"><span class="o-attr-name">Conflict Resolution</span><span class="o-attr-val">92/100</span></div>
+<div class="o-attr-track"><div class="o-attr-fill" data-w="92" style="--w:92%"></div></div></div><div class="o-attr-bar-wrap">
+<div class="o-attr-label"><span class="o-attr-name">Culture &amp; Values</span><span class="o-attr-val">95/100</span></div>
+<div class="o-attr-track"><div class="o-attr-fill" data-w="95" style="--w:95%"></div></div></div><div class="o-attr-bar-wrap">
+<div class="o-attr-label"><span class="o-attr-name">Community Wellness</span><span class="o-attr-val">94/100</span></div>
+<div class="o-attr-track"><div class="o-attr-fill" data-w="94" style="--w:94%"></div></div></div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="o-sidebar-card">
+        <h5><i class="fas fa-id-badge"></i> Quick Intel</h5>
+        <p><strong>Designation:</strong> Human Resources Officer</p>
+        <p><strong>Rank:</strong> Guild Officer</p>
+        <p><strong>Unit:</strong> Final Frontier Gamers DAO LLC</p>
+        <p><strong>Status:</strong> <span style="color:#2ecc71;">Active</span></p>
+      </div>
+      <div class="o-sidebar-card">
+        <h5><i class="fas fa-crosshairs"></i> Active Deployments</h5>
+        <div><span class="o-game-tag"><i class="fas fa-gamepad" style="color:var(--blue);"></i> Star Atlas</span><span class="o-game-tag"><i class="fas fa-gamepad" style="color:var(--blue);"></i> Various Guild-wide Events</span></div>
+      </div>
+      <div class="o-sidebar-card" style="text-align:center;background:linear-gradient(135deg,rgba(21,101,192,.12),rgba(10,16,40,.9));border-color:rgba(79,195,247,.15);">
+        <div style="font-size:2rem;margin-bottom:10px;">&#9671;</div>
+        <h5 style="justify-content:center;">Earn Your Rank</h5>
+        <p style="margin-bottom:18px;font-size:.83rem;">Ready to serve alongside Final Frontier's finest?</p>
+        <a href="application.html" class="o-btn-p" style="width:100%;justify-content:center;"><i class="fas fa-rocket"></i> Apply Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<!-- ═══════════ GAMES PLAYED SECTION ═══════════ -->
+<section class="ff-games-section">
+<style>
+.ff-games-section{padding:60px 0 80px;background:rgba(0,0,0,.28);border-top:1px solid rgba(255,255,255,.06);}
+.ff-games-eyebrow{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.4em;color:rgba(79,195,247,.4);text-transform:uppercase;margin-bottom:6px;display:block;}
+.ff-games-h{font-family:'Cinzel',serif;font-size:1.3rem;color:#4fc3f7;letter-spacing:.1em;margin:0 0 36px;}
+.ff-games-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+.ff-game-card{width:190px;background:rgba(4,6,18,.95);border:1px solid var(--gc);border-radius:14px;overflow:hidden;box-shadow:0 0 22px color-mix(in srgb,var(--gc) 14%,transparent);transition:transform .25s,box-shadow .25s;cursor:default;flex-shrink:0;}
+.ff-game-card:hover{transform:translateY(-7px);box-shadow:0 10px 36px color-mix(in srgb,var(--gc) 38%,transparent);}
+.ff-gc-img-wrap{width:100%;height:105px;overflow:hidden;background:rgba(10,10,20,1);}
+.ff-gc-img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .35s;display:block;}
+.ff-game-card:hover .ff-gc-img{transform:scale(1.07);}
+.ff-gc-info{padding:11px 12px 13px;text-align:center;}
+.ff-gc-name{font-family:'Cinzel',serif;font-size:.7rem;color:#fff;letter-spacing:.04em;font-weight:700;line-height:1.35;margin-bottom:4px;}
+.ff-gc-genre{font-size:.59rem;color:rgba(255,255,255,.38);letter-spacing:.14em;text-transform:uppercase;}
+@media(max-width:576px){.ff-game-card{width:155px;}.ff-gc-img-wrap{height:88px;}}
+</style>
+<div class="container">
+  <div style="text-align:center;">
+    <span class="ff-games-eyebrow">◈ Combat Roster ◈</span>
+    <h3 class="ff-games-h">⚔ Games Played ⚔</h3>
+  </div>
+  <div class="ff-games-grid">
+      <div class="ff-game-card" style="--gc:#c8a951;">
+        <div class="ff-gc-img-wrap">
+          <img class="ff-gc-img" src="team_files/games/star_atlas.jpg" alt="Star Atlas" loading="lazy"
+               onerror="this.parentElement.style.background='rgba(20,20,40,1)';this.style.display='none'">
+        </div>
+        <div class="ff-gc-info">
+          <div class="ff-gc-name">Star Atlas</div>
+          <div class="ff-gc-genre">Blockchain MMO</div>
+        </div>
+      </div>
+      <div class="ff-game-card" style="--gc:#7ac74f;">
+        <div class="ff-gc-img-wrap">
+          <img class="ff-gc-img" src="team_files/games/minecraft.jpg" alt="Minecraft" loading="lazy"
+               onerror="this.parentElement.style.background='rgba(20,20,40,1)';this.style.display='none'">
+        </div>
+        <div class="ff-gc-info">
+          <div class="ff-gc-name">Minecraft</div>
+          <div class="ff-gc-genre">Sandbox</div>
+        </div>
+      </div>
+      <div class="ff-game-card" style="--gc:#cc1f2e;">
+        <div class="ff-gc-img-wrap">
+          <img class="ff-gc-img" src="team_files/games/among_us.jpg" alt="Among Us" loading="lazy"
+               onerror="this.parentElement.style.background='rgba(20,20,40,1)';this.style.display='none'">
+        </div>
+        <div class="ff-gc-info">
+          <div class="ff-gc-name">Among Us</div>
+          <div class="ff-gc-genre">Social Deduction</div>
+        </div>
+      </div>
+      <div class="ff-game-card" style="--gc:#1a7a3a;">
+        <div class="ff-gc-img-wrap">
+          <img class="ff-gc-img" src="team_files/games/gta5.jpg" alt="GTA V" loading="lazy"
+               onerror="this.parentElement.style.background='rgba(20,20,40,1)';this.style.display='none'">
+        </div>
+        <div class="ff-gc-info">
+          <div class="ff-gc-name">GTA V</div>
+          <div class="ff-gc-genre">Open World</div>
+        </div>
+      </div>
+  </div>
+</div>
+</section>
+
+<footer class="o-footer"><div class="container"><p>&copy; 2021 Final Frontier Gamers DAO LLC &nbsp;|&nbsp; <a href="team.html">Meet the Team</a> &nbsp;|&nbsp; <a href="index.html">Home</a></p></div></footer>
+<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+const bars=document.querySelectorAll('.o-attr-fill');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';}});},{threshold:.3});
+bars.forEach(b=>{b.style.width='0';io.observe(b);});
+</script>
+</body>
+</html>

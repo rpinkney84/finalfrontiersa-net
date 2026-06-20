@@ -1,0 +1,10 @@
+FINALFRONTIERSA.COM REPAIRED STATIC SITE
+
+Upload the CONTENTS of this folder into:
+/home/ardo1984/finalfrontiersa.com
+
+Important:
+1. Delete or rename any old WordPress files first, especially index.php, wp-admin, wp-content, and wp-includes if they exist.
+2. Keep this root index.html in the domain root.
+3. The .htaccess file forces DreamHost to load index.html first.
+4. This package removes Wayback toolbar/scripts, archive.org rewrites, and .js.download filenames.

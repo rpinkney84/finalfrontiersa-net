@@ -1,0 +1,381 @@
+/* ══════════════════════════════════════════════════════════
+   FINAL FRONTIER — GLOBAL MOBILE RESPONSIVENESS
+   Applies on top of existing style.css / theme-color1.css
+   ══════════════════════════════════════════════════════════ */
+
+/* ── BASE RESETS ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video, iframe, embed {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── NAVIGATION IMPROVEMENTS ── */
+.main-menu ul li a {
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+/* Mobile menu toggle — always visible on small screens */
+.vs-menu-toggle {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+}
+
+/* ── HEADER ── */
+.header-wrapper .container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ── HERO SECTION ── */
+.vs-hero-wrapper .ls-slide {
+  min-height: 300px;
+}
+
+/* ── FOOTER ── */
+.footer-widget-wrapper {
+  padding: 40px 0 20px;
+}
+
+/* ── GENERIC CONTAINER ── */
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ── TABLES → scrollable on mobile ── */
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* ═══════════════════════════════════════
+   LARGE TABLET (≤1200px)
+   ═══════════════════════════════════════ */
+@media (max-width: 1200px) {
+  .container { max-width: 100%; }
+  .header-logo2 { padding: 8px; }
+}
+
+/* ═══════════════════════════════════════
+   TABLET (≤991px)
+   ═══════════════════════════════════════ */
+@media (max-width: 991px) {
+  /* Typography scale-down */
+  h1, .h1 { font-size: clamp(1.8rem, 5vw, 2.8rem) !important; }
+  h2, .h2 { font-size: clamp(1.4rem, 4vw, 2.2rem) !important; }
+  h3, .h3 { font-size: clamp(1.2rem, 3vw, 1.8rem) !important; }
+  h4, .h4 { font-size: clamp(1rem, 2.5vw, 1.4rem) !important; }
+
+  /* Header */
+  .sticky-header-wrap .container { padding: 0 16px; }
+  .menu-area .container { padding: 0 16px; }
+
+  /* Sections */
+  .space-top { padding-top: 48px !important; }
+  .newsletter-pb { padding-bottom: 40px !important; }
+  section { padding-top: 48px; padding-bottom: 48px; }
+
+  /* Team grid */
+  .vs-team-wrapper .row { gap: 0; }
+  .vs-team { margin-bottom: 24px; }
+
+  /* Hero */
+  .vs-hero-carousel .ls-l { font-size: clamp(12px, 3vw, 28px) !important; }
+
+  /* Sidebox */
+  .vs-sidebox { margin-bottom: 24px; }
+
+  /* Footer widget */
+  .footer-widget { margin-bottom: 32px; }
+  .footer-widget-wrapper .col-md-6,
+  .footer-widget-wrapper .col-lg-3 { width: 50%; }
+
+  /* TradingView */
+  .tradingview-widget-container { overflow-x: auto; }
+
+  /* Blog carousel */
+  .multibg-color-cat .vs-blog { padding: 8px; }
+
+  /* Twitter embed columns */
+  .vs-blog.col-xl-3 { width: 50%; float: left; }
+}
+
+/* ═══════════════════════════════════════
+   MOBILE (≤768px)
+   ═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Typography */
+  h1, .h1 { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; line-height: 1.2 !important; }
+  h2, .h2 { font-size: clamp(1.25rem, 5vw, 1.75rem) !important; }
+  h3, .h3 { font-size: clamp(1.1rem, 4vw, 1.4rem) !important; }
+  p { font-size: 0.95rem; line-height: 1.6; }
+
+  /* Container */
+  .container { padding-left: 16px; padding-right: 16px; }
+
+  /* Header */
+  .header-wrapper .logo img { max-height: 40px; }
+  .sticky-header-wrap { padding: 8px 0; }
+
+  /* Navigation */
+  .main-menu.d-none.d-lg-block { display: none !important; }
+  .vs-menu-toggle { display: inline-block !important; }
+
+  /* Hero slider */
+  .vs-hero-wrapper { min-height: 280px; }
+  .vs-hero-carousel { height: 280px !important; }
+  .ls-l.ls-hide-phone { display: none !important; }
+
+  /* CoinMarketCap marquee */
+  #coinmarketcap-widget-marquee { font-size: 0.75rem; overflow: hidden; }
+
+  /* Twitter feed columns */
+  .vs-blog.col-xl-3 { width: 100% !important; float: none !important; }
+  .vs-blog .blog-image { overflow: hidden; }
+  .twitter-timeline { width: 100% !important; max-width: 100% !important; }
+
+  /* TradingView */
+  .tradingview-widget-container iframe,
+  .tradingview-widget-container [id^="tradingview_"] {
+    width: 100% !important;
+    min-height: 400px;
+  }
+
+  /* News iframes */
+  iframe[src*="cryptopanic"],
+  iframe[src*="widgets"] {
+    width: 100% !important;
+    min-height: 400px;
+  }
+
+  /* Brand carousel */
+  .vs-carousel .col-xl-2 { min-width: 33.33%; }
+
+  /* Sidebox */
+  .vs-sidebox { padding: 20px 16px; }
+  .links-stretch { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .links-stretch li { width: auto; }
+
+  /* Footer */
+  .footer-copyright .row { flex-direction: column; align-items: center; text-align: center; }
+  .footer-menu ul { flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .footer-menu ul li { display: inline-block; }
+  .footer-widget-wrapper .col-md-6 { width: 100%; }
+
+  /* Team page breadcumb */
+  .breadcumb-wrapper { min-height: 200px; padding-top: 100px !important; padding-bottom: 30px !important; }
+  .breadcumb-bg-title { font-size: 2rem !important; }
+
+  /* Team cards */
+  .vs-team { padding: 20px 16px; text-align: center; }
+  .vs-team .team-img img { max-width: 140px; }
+
+  /* Pagination */
+  .pagination-wrapper ul { flex-wrap: wrap; justify-content: center; gap: 4px; }
+
+  /* Mega menu */
+  .mega-menu { position: static !important; width: 100% !important; }
+
+  /* Buttons */
+  .vs-btn { padding: 10px 20px; font-size: 0.9rem; }
+
+  /* Apply page */
+  .breadcumb-layout1 { min-height: 180px; padding-top: 80px !important; }
+
+  /* Elfsight */
+  .elfsight-app-ac5df354-8f2e-449a-a811-fc8f85f818ca { max-width: 100%; overflow-x: auto; }
+
+  /* TradingView full width fix */
+  .tradingview-widget-container > div { width: 100% !important; }
+
+  /* Popular news section */
+  .vs-popular-news .tradingview-widget-container { width: 100%; overflow: hidden; }
+
+  /* CoinMarketCap widget */
+  coinmarketcap-widget-marquee { font-size: 11px; }
+}
+
+/* ═══════════════════════════════════════
+   SMALL MOBILE (≤480px)
+   ═══════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* Typography */
+  h1, .h1 { font-size: 1.5rem !important; }
+  h2, .h2 { font-size: 1.25rem !important; }
+
+  /* Container */
+  .container { padding-left: 12px; padding-right: 12px; }
+
+  /* Header logo */
+  .logo img, .header-logo2 img { max-height: 36px; }
+
+  /* Hero */
+  .vs-hero-carousel { height: 240px !important; }
+
+  /* Brand logos smaller */
+  .vs-carousel .col-xl-2 { min-width: 50%; }
+
+  /* Navigation buttons */
+  .vs-menu-toggle { padding: 6px 10px; font-size: 1rem; }
+
+  /* Footer links */
+  .footer-menu ul li a { font-size: 0.8rem; }
+
+  /* Contact info */
+  .contact-info { font-size: 0.85rem; }
+
+  /* Icon buttons */
+  .icon-btn1, .icon-btn3 { width: 36px; height: 36px; font-size: 0.9rem; }
+
+  /* Team grid — single column */
+  .vs-team-wrapper .col-xl-3,
+  .vs-team-wrapper .col-lg-4,
+  .vs-team-wrapper .col-sm-6 { width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
+
+  /* Breadcrumb */
+  .breadcumb-bg-title { font-size: 1.6rem !important; }
+
+  /* Apply page iframe */
+  iframe[height="2000px"] { height: 1600px !important; }
+
+  /* Whitepaper tables */
+  table td, table th { font-size: 0.8rem; padding: 8px; }
+
+  /* Scroll to top */
+  .scrollToTop { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 0.9rem; }
+
+  /* Message from Ardo */
+  .vs-popular-news p[width] { width: 100% !important; font-size: 0.9rem; padding: 0 8px; }
+}
+
+/* ═══════════════════════════════════════
+   VERY SMALL (≤360px)
+   ═══════════════════════════════════════ */
+@media (max-width: 360px) {
+  h1, .h1 { font-size: 1.3rem !important; }
+  .container { padding-left: 10px; padding-right: 10px; }
+  .sticky-header-wrap { padding: 6px 0; }
+}
+
+/* ── LANDSCAPE MOBILE FIX ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .vs-hero-carousel { height: 200px !important; }
+  .breadcumb-wrapper { min-height: 150px; padding-top: 60px !important; }
+}
+
+/* ── PRINT ── */
+@media print {
+  .sticky-header-wrap,
+  .vs-menu-wrapper,
+  .sidemenu-wrapper,
+  .scrollToTop,
+  .vs-cursor, .vs-cursor2 { display: none !important; }
+  body { background: #fff; color: #000; }
+  a { color: #000; text-decoration: underline; }
+}
+
+/* ── ACCESSIBILITY ── */
+:focus-visible {
+  outline: 2px solid #4fc3f7;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── SMOOTH TRANSITIONS ── */
+.vs-team, .icon-btn1, .vs-btn, a {
+  transition-property: background-color, color, border-color, transform, box-shadow, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* ══════════════════════════════════════════════════════════
+   REBUILT PAGES — MOBILE OVERRIDES
+   ══════════════════════════════════════════════════════════ */
+
+/* ── FRONT magazine banner ── */
+@media (max-width: 767px) {
+  .front-banner { padding: 60px 0 40px; }
+  .front-banner-title { font-size: clamp(3.5rem, 18vw, 6rem) !important; }
+  .front-deco-col { display: none !important; }
+  .front-scan-line { display: none; }
+}
+
+/* ── METAPOWER banner ── */
+@media (max-width: 767px) {
+  .mp-banner { padding: 60px 0 40px; }
+  .mp-banner-title { font-size: clamp(2.8rem, 14vw, 5rem) !important; }
+  .mp-orb-wrap { display: none !important; }
+  .mp-banner-tags { gap: 6px; }
+  .mp-banner-tag { font-size: .65rem; padding: 4px 10px; }
+}
+
+/* ── Team profile pages ── */
+@media (max-width: 767px) {
+  .profile-hero { padding: 40px 0 32px; }
+  .profile-avatar { width: 120px; height: 120px; }
+  .profile-name { font-size: clamp(1.6rem, 8vw, 2.8rem) !important; }
+  .profile-body { padding: 32px 0 48px; }
+}
+
+/* ── Contact page form ── */
+@media (max-width: 767px) {
+  .contact-form-wrap { padding: 28px 20px; }
+  .ff-submit-btn { font-size: .82rem; padding: 14px 24px; }
+  .sidebar-info { margin-top: 8px; }
+}
+
+/* ── Contests page ── */
+@media (max-width: 767px) {
+  .contests-hero { padding: 60px 0 40px; }
+  .contest-card { padding: 24px 20px; }
+  .cta-section { padding: 40px 20px; }
+  .cta-btn { display: flex; justify-content: center; width: 100%; margin-bottom: 12px; }
+}
+
+/* ── Policy / Privacy pages ── */
+@media (max-width: 767px) {
+  .policy-hero { padding: 50px 0 36px; }
+  .policy-content { padding: 32px 16px 48px; }
+  .policy-section h2 { font-size: 1rem; }
+}
+
+/* ── About page pills ── */
+@media (max-width: 480px) {
+  .about-pill { font-size: .72rem; padding: 6px 12px; }
+  .about-stat { padding: 16px 8px; }
+}
+
+/* ── Nav — force hamburger on small tablets ── */
+@media (max-width: 991px) {
+  .main-menu { display: none !important; }
+  .vs-menu-toggle { display: inline-block !important; }
+}
+
+/* ── Sticky header logo sizing on mobile ── */
+@media (max-width: 480px) {
+  .sticky-header-wrap .logo img { height: 32px !important; }
+}
+
+/* ── Ensure hero sections don't overflow on iOS ── */
+@media (max-width: 767px) {
+  .vs-hero-wrapper, .hero-slide, .ls-slide { overflow: hidden; }
+  .ls-slide .ls-l { max-width: 95vw !important; }
+}
+
+/* ── Ensure scrollToTop button doesn't overlap mobile nav ── */
+@media (max-width: 767px) {
+  .scrollToTop { bottom: 20px; right: 16px; width: 40px; height: 40px; font-size: 1rem; }
+}

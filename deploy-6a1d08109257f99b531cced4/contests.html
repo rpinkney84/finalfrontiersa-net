@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta name="description" content="Final Frontier Gamers DAO — Contests, Tournaments, and Giveaways. Compete for prizes in blockchain gaming events."/>
+<meta name="keywords" content="Final Frontier, contests, tournaments, giveaways, blockchain gaming, Star Atlas, prizes"/>
+<meta name="author" content="FinalFrontierSA"/>
+<meta name="robots" content="INDEX,FOLLOW"/>
+<title>Contests &amp; Giveaways | Final Frontier Gamers DAO</title>
+<link rel="icon" href="assets/img/favicons/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="assets/img/favicons/manifest.json"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/theme-color1.css" rel="stylesheet"/>
+<link href="assets/css/mobile.css" rel="stylesheet"/>
+<style>
+  :root { --ff-gold:#c8a951; --ff-gold-lt:#f0d080; --ff-blue:#4fc3f7; --ff-purple:#9b59b6; --ff-dark:#050814; --ff-silver:rgba(255,255,255,0.55); }
+  body { background:var(--ff-dark); color:rgba(255,255,255,0.85); font-family:'DM Sans',sans-serif; }
+
+  .contests-hero { background:linear-gradient(135deg,#050814 0%,#0d1a3a 60%,#180830 100%); padding:90px 0 70px; position:relative; overflow:hidden; border-bottom:1px solid rgba(200,169,81,0.12); }
+  .contests-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 70% at 50% 0%,rgba(106,61,232,0.1) 0%,transparent 70%); }
+  .contests-hero .container { position:relative; z-index:1; text-align:center; }
+  .contests-eyebrow { display:inline-block; font-family:'Cinzel',serif; font-size:.75rem; letter-spacing:.25em; color:var(--ff-gold); text-transform:uppercase; margin-bottom:16px; }
+  .contests-hero h1 { font-family:'Cinzel',serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:700; background:linear-gradient(135deg,var(--ff-gold-lt),#fff,var(--ff-purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:16px; }
+  .contests-hero p { color:var(--ff-silver); max-width:600px; margin:0 auto 32px; font-size:1.05rem; line-height:1.7; }
+  .hero-badge-row { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(200,169,81,0.1); border:1px solid rgba(200,169,81,0.3); border-radius:50px; padding:8px 18px; font-size:.85rem; color:var(--ff-gold); font-weight:600; }
+
+  .contests-section { padding:70px 0; }
+  .contests-section:nth-child(even) { background:rgba(10,22,40,0.5); }
+  .section-badge { display:inline-block; font-family:'Cinzel',serif; font-size:.72rem; letter-spacing:.2em; color:var(--ff-gold); text-transform:uppercase; border:1px solid rgba(200,169,81,0.3); padding:5px 16px; border-radius:20px; margin-bottom:14px; }
+  .section-title { font-family:'Cinzel',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; color:#fff; margin-bottom:14px; }
+  .section-sub { color:var(--ff-silver); max-width:560px; margin:0 auto 40px; line-height:1.7; }
+
+  .contest-card { background:linear-gradient(135deg,rgba(200,169,81,0.05) 0%,rgba(10,22,40,0.9) 100%); border:1px solid rgba(200,169,81,0.15); border-radius:16px; padding:32px 28px; height:100%; transition:transform .25s,box-shadow .25s; }
+  .contest-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(200,169,81,0.12); }
+  .contest-icon { width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:1.6rem; }
+  .icon-gold { background:linear-gradient(135deg,#7a5010,#c8a951); color:#fff; }
+  .icon-blue { background:linear-gradient(135deg,#0a3060,#4fc3f7); color:#fff; }
+  .icon-purple { background:linear-gradient(135deg,#4a1080,#9b59b6); color:#fff; }
+  .icon-green { background:linear-gradient(135deg,#0a4020,#2ecc71); color:#fff; }
+  .icon-red { background:linear-gradient(135deg,#6a0a0a,#e74c3c); color:#fff; }
+  .contest-card h4 { font-family:'Cinzel',serif; font-size:1.1rem; color:#fff; margin-bottom:10px; }
+  .contest-card p { color:rgba(255,255,255,0.65); font-size:.92rem; line-height:1.65; margin:0; }
+  .contest-status { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 12px; border-radius:20px; margin-bottom:14px; }
+  .status-open { background:rgba(46,204,113,0.15); color:#2ecc71; border:1px solid rgba(46,204,113,0.3); }
+  .status-recurring { background:rgba(79,195,247,0.15); color:#4fc3f7; border:1px solid rgba(79,195,247,0.3); }
+  .status-seasonal { background:rgba(200,169,81,0.15); color:#c8a951; border:1px solid rgba(200,169,81,0.3); }
+
+  .rules-box { background:linear-gradient(135deg,rgba(5,8,20,0.9),rgba(10,22,40,0.9)); border:1px solid rgba(79,195,247,0.15); border-radius:16px; padding:40px 36px; }
+  .rules-box h3 { font-family:'Cinzel',serif; font-size:1.4rem; color:var(--ff-blue); margin-bottom:24px; }
+  .rules-list { list-style:none; padding:0; }
+  .rules-list li { padding:12px 0 12px 28px; position:relative; color:rgba(255,255,255,0.75); font-size:.95rem; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .rules-list li:last-child { border-bottom:none; }
+  .rules-list li::before { content:'⚔'; position:absolute; left:0; color:var(--ff-gold); }
+
+  .cta-section { background:linear-gradient(135deg,rgba(106,61,232,0.15) 0%,rgba(37,99,235,0.1) 100%); border:1px solid rgba(106,61,232,0.2); border-radius:20px; padding:60px 40px; text-align:center; margin:60px 0; }
+  .cta-section h3 { font-family:'Cinzel',serif; font-size:clamp(1.4rem,3vw,2rem); color:#fff; margin-bottom:14px; }
+  .cta-section p { color:var(--ff-silver); max-width:500px; margin:0 auto 28px; }
+  .cta-btn { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#6a3de8,#2563eb); color:#fff; padding:14px 32px; border-radius:8px; text-decoration:none; font-family:'Cinzel',serif; font-weight:700; font-size:.9rem; letter-spacing:.05em; transition:transform .2s,box-shadow .2s; }
+  .cta-btn:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(106,61,232,0.4); color:#fff; text-decoration:none; }
+
+  .ff-page-footer { background:#000; border-top:1px solid rgba(200,169,81,0.1); padding:24px 0; text-align:center; }
+  .ff-page-footer p { color:var(--ff-silver); font-size:.82rem; margin:0; }
+  .ff-page-footer a { color:var(--ff-gold); text-decoration:none; }
+</style>
+<meta property="og:title" content="Contests & Giveaways | Final Frontier Gamers DAO"/>
+<meta property="og:description" content="Enter Final Frontier DAO contests and giveaways — crypto prizes, NFTs, in-game assets, and more."/>
+<meta property="og:image" content="https://finalfrontiersa.net/assets/img/logo-2.png"/>
+<meta property="og:type" content="website"/>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="sticky-header-wrap sticky-header bg-light-dark py-1 py-sm-2 py-lg-1">
+<div class="container position-relative">
+<div class="row align-items-center">
+<div class="col-5 col-md-3">
+<div class="logo"><a href="index.html"><img alt="Final Frontier" src="assets/img/logo-2.png" style="height:42px;"/></a></div>
+</div>
+<div class="col-7 col-md-9 text-end position-static">
+<nav class="main-menu menu-sticky1 d-none d-lg-block link-inherit">
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li class="mega-menu-wrap menu-item-has-children">
+<a>Pages <i class="fas fa-chevron-down" style="font-size:.7rem;margin-left:3px;"></i></a>
+<ul class="mega-menu bg-black">
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Frontierian Whitepapers</span>
+<ul>
+<li><a class="text-white" href="org_structure-whitepaper.html">FF Organization &amp; Structure</a></li>
+<li><a class="text-white" href="economics-whitepaper.html">FF Economics</a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Exchanges/Marketplaces</span>
+<ul>
+<li><a class="text-white" href="https://crypto.com/">Crypto.com</a></li>
+<li><a class="text-white" href="https://jup.ag/" target="_blank">Jupiter</a></li>
+<li><a class="text-white" href="https://digifinex.com/" target="_blank">Digifinex</a></li>
+<li><a class="text-white" href="https://orca.so/" target="_blank">Orca</a></li>
+<li><a class="text-white" href="https://mango.markets/" target="_blank">Mango Markets</a></li>
+<li><a class="text-white" href="https://magiceden.io/" target="_blank">Magic Eden</a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Resources</span>
+<ul>
+<li><a class="text-white" href="https://solana.com/" target="_blank">Solana Main</a></li>
+<li><a class="text-white" href="https://phantom.app/" target="_blank">Phantom Wallet</a></li>
+<li><a class="text-white" href="https://solflare.com/" target="_blank">Solflare Wallet</a></li>
+<li><a class="text-white" href="https://coinmarketcap.com/" target="_blank">CoinMarketCap</a></li>
+<li><a class="text-white" href="https://coingecko.com/" target="_blank">CoinGecko</a></li>
+<li><a class="text-white" href="midnight.html" target="_blank">WoW Midnight Guide</a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Miscellaneous</span>
+<ul>
+<li><a class="text-white" href="privacy_policy.html">Privacy Policy</a></li>
+<li><a class="text-white" href="contests.html">Contests &amp; Giveaways</a></li>
+<li><a class="text-white" href="contact.html">Contact Us</a></li>
+<li><a class="text-white" href="team.html">Meet the Team</a></li>
+<li><a class="text-white" href="front-magazine.html">FRONT Magazine</a></li>
+<li><a class="text-white" href="metapower.html">Metapower</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="application.html">Apply to Join</a>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</li></ul>
+</nav>
+<button class="vs-menu-toggle text-theme border-theme d-inline-block d-lg-none"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="vs-menu-wrapper">
+<div class="vs-menu-area bg-dark">
+<button class="vs-menu-toggle"><i class="fas fa-times"></i></button>
+<div class="mobile-logo"><a href="index.html"><img alt="Final Frontier" src="assets/img/logo-2.png"/></a></div>
+<div class="vs-mobile-menu link-inherit">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="team.html">Meet the Team</a></li>
+<li><a href="application.html">Apply to Join</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="contests-hero">
+  <div class="container">
+    <div class="contests-eyebrow">Final Frontier Gamers DAO</div>
+    <h1>Contests &amp; Giveaways</h1>
+    <p>Compete, win, and prove your worth on the Frontier. From blockchain gaming tournaments to community giveaways — there's always a battle to be won.</p>
+    <div class="hero-badge-row">
+      <span class="hero-badge"><i class="fas fa-trophy"></i> Tournaments</span>
+      <span class="hero-badge"><i class="fas fa-gift"></i> Giveaways</span>
+      <span class="hero-badge"><i class="fas fa-coins"></i> Crypto Prizes</span>
+      <span class="hero-badge"><i class="fas fa-users"></i> Community Events</span>
+    </div>
+  </div>
+</div>
+
+<!-- ACTIVE CONTESTS -->
+<section class="contests-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-badge">Live &amp; Recurring</div>
+      <h2 class="section-title">Active Contests</h2>
+      <p class="section-sub">Jump in — these events are open now. Check our Discord for the latest updates and entries.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="contest-card">
+          <div class="contest-icon icon-gold"><i class="fas fa-rocket"></i></div>
+          <span class="contest-status status-recurring">Recurring</span>
+          <h4>Star Atlas SAGE Fleet Challenge</h4>
+          <p>Monthly fleet performance competition in SAGE Labs. Top pilots by resource yield earn ATLAS token prizes and exclusive guild recognition.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="contest-card">
+          <div class="contest-icon icon-blue"><i class="fas fa-dragon"></i></div>
+          <span class="contest-status status-recurring">Recurring</span>
+          <h4>WoW Midnight Raid Leaderboard</h4>
+          <p>Weekly raid clear rankings across our WoW: Midnight teams. Fastest clears, most damage, and best healing earn guild medals and in-game rewards.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="contest-card">
+          <div class="contest-icon icon-purple"><i class="fas fa-palette"></i></div>
+          <span class="contest-status status-recurring">Recurring</span>
+          <h4>Community Art Contest</h4>
+          <p>Submit your best Final Frontier fan art, memes, or digital creations. Winners get featured on our socials and earn exclusive guild NFTs.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="contest-card">
+          <div class="contest-icon icon-green"><i class="fas fa-crosshairs"></i></div>
+          <span class="contest-status status-recurring">Recurring</span>
+          <h4>VALORANT Weekly Tournament</h4>
+          <p>Intra-guild VALORANT scrimmages and ranked competitions. Best-performing squads earn cash prizes and priority slots for external tournaments.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="contest-card">
+          <div class="contest-icon icon-red"><i class="fas fa-dice"></i></div>
+          <span class="contest-status status-seasonal">Seasonal</span>
+          <h4>Discord Engagement Giveaway</h4>
+          <p>Stay active in our Discord server throughout the month. Top contributors by helpful posts, reactions, and event participation win crypto rewards.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="contest-card">
+          <div class="contest-icon icon-blue"><i class="fas fa-twitter"></i></div>
+          <span class="contest-status status-recurring">Recurring</span>
+          <h4>Twitter Retweet Giveaways</h4>
+          <p>Follow <a href="https://twitter.com/FinalFrontierSA" target="_blank" style="color:var(--ff-blue);">@FinalFrontierSA</a> and retweet pinned posts for chances to win ATLAS tokens, SOL, or exclusive NFT drops.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="contests-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-4">
+          <div class="section-badge">Participation</div>
+          <h2 class="section-title">Contest Rules &amp; Guidelines</h2>
+        </div>
+        <div class="rules-box">
+          <h3><i class="fas fa-scroll" style="margin-right:10px;"></i>General Rules</h3>
+          <ul class="rules-list">
+            <li>All participants must be members of the Final Frontier community or follow us on social media as specified per contest.</li>
+            <li>Participants must be 18 years of age or older, or have parental consent where required by local law.</li>
+            <li>One entry per person per contest unless otherwise specified. Multiple accounts to gain extra entries are prohibited.</li>
+            <li>Winners are selected fairly — by random draw for giveaways, or by verifiable performance metrics for skill competitions.</li>
+            <li>Prizes are distributed within 14 days of winner announcement. Unclaimed prizes forfeit after 30 days.</li>
+            <li>Final Frontier reserves the right to disqualify participants found cheating, using exploits, or violating community standards.</li>
+            <li>Decisions made by Final Frontier leadership regarding contest outcomes are final.</li>
+            <li>Participation constitutes agreement to these rules and to our <a href="privacy_policy.html" style="color:var(--ff-blue);">Privacy Policy</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="contests-section">
+  <div class="container">
+    <div class="cta-section">
+      <h3>Ready to Compete?</h3>
+      <p>Join our Discord to stay updated on all active contests, tournament brackets, and prize announcements. Your next win awaits.</p>
+      <a href="https://discord.gg/d45ztjqmgV" target="_blank" class="cta-btn"><i class="fab fa-discord"></i> Join the Discord</a>
+      &nbsp;
+      <a href="application.html" class="cta-btn" style="background:linear-gradient(135deg,#c8a951,#8a6920); margin-top:8px;"><i class="fas fa-rocket"></i> Apply to Guild</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ff-page-footer">
+  <div class="container">
+    <p>&copy; 2021 Final Frontier Gamers DAO LLC. All Rights Reserved. &nbsp;|&nbsp; <a href="privacy_policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+  </div>
+</footer>
+
+<a class="scrollToTop icon-btn3" href="#"><i class="fas fa-user-astronaut"></i></a>
+
+<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/vsmenu.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

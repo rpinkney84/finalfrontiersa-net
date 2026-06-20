@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="zxx">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<title>Final Frontier - Connect to Teller</title>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="assets/img/favicons/manifest.json"/>
+<meta content="Final Frontier" name="author"/>
+<meta content="Connect your financial accounts securely using Teller API." name="description"/>
+<meta content="Final Frontier, Teller, connect, financial accounts, payments" name="keywords"/>
+<meta content="INDEX,FOLLOW" name="robots"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/fontawesome.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/theme-color1.css" rel="stylesheet"/>
+<script src="https://js.teller.io/connect.js"></script>
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+<meta property="og:title" content="Connect to Teller | Final Frontier Gamers DAO"/>
+<meta property="og:description" content="Connect your bank account via Teller to enable guild treasury operations for Final Frontier Gamers DAO."/>
+<meta property="og:image" content="https://finalfrontiersa.net/assets/img/logo-2.png"/>
+<meta property="og:type" content="website"/>
+</head>
+<body>
+<div class="container">
+<h1>Connect Your Financial Account</h1>
+<button id="connect-button">Connect to Teller</button>
+<div id="result" style="margin-top: 20px;"></div>
+<h2>Initiate Payment</h2>
+<input id="payee-email" placeholder="Payee Email or Phone" required="" type="text"/>
+<input id="amount" placeholder="Amount (e.g., 10.00)" required="" type="text"/>
+<button id="pay-button">Send Payment</button>
+</div>
+<script>
+        const appId = 'app_p52005ppvtoms9os06000'; // Your App ID
+        const environment = 'development'; // Change to 'production' for live
+
+        // Function to handle the Teller Connect integration
+        document.getElementById('connect-button').onclick = function() {
+            console.log('Connect button clicked');
+            const teller = Teller.connect({ appId, environment });
+
+            teller.connect()
+                .then((data) => {
+                    document.getElementById('result').innerText = 'Connected successfully!';
+                    console.log('Connection Data:', data);
+                })
+                .catch((error) => {
+                    document.getElementById('result').innerText = 'Connection failed: ' + error.message;
+                    console.error('Connection Error:', error);
+                });
+        };
+
+        // Function to handle sending payments
+        document.getElementById('pay-button').onclick = function() {
+            const email = document.getElementById('payee-email').value;
+            const amount = document.getElementById('amount').value;
+
+            console.log('Pay button clicked', { email, amount });
+            
+            // Example account ID, retrieve from connected accounts after connection
+            const accountId = 'acc_oiin624kqjrg2mp2ea000'; 
+
+            fetch(`https://api.teller.io/accounts/${accountId}/payments`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer YOUR_ACCESS_TOKEN` // Replace with actual token
+                },
+                body: JSON.stringify({
+                    amount: amount,
+                    memo: "Payment from Final Frontier",
+                    payee: {
+                        scheme: "zelle",
+                        address: email, // Payment recipient's email or phone number
+                    }
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Payment successful:', data);
+                alert('Payment sent successfully!');
+            })
+            .catch((error) => {
+                console.error('Payment failed:', error);
+                alert('Payment failed: ' + error.message);
+            });
+        };
+    </script>
+</body>
+</html>

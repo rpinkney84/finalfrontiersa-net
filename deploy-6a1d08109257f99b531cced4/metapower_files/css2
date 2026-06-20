@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://web.archive.org/web/20220711201920im_/https://fonts.gstatic.com/s/dmsans/v11/rP2Hp2ywxg089UriOZQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://web.archive.org/web/20220711201920im_/https://fonts.gstatic.com/s/dmsans/v11/rP2Cp2ywxg089UriAWCrOB8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://web.archive.org/web/20220711201920im_/https://fonts.gstatic.com/s/dmsans/v11/rP2Cp2ywxg089UriASitOB8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://web.archive.org/web/20220711201920im_/https://fonts.gstatic.com/s/montserrat/v24/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://web.archive.org/web/20220711201920im_/https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://web.archive.org/web/20220711201920im_/https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+
+/*
+     FILE ARCHIVED ON 20:19:20 Jul 11, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:56:05 Oct 04, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.59
+  exclusion.robots: 0.039
+  exclusion.robots.policy: 0.009
+  esindex: 0.012
+  cdx.remote: 7.309
+  LoadShardBlock: 50.266 (3)
+  PetaboxLoader3.datanode: 68.999 (4)
+  load_resource: 553.496
+  PetaboxLoader3.resolve: 460.514
+*/

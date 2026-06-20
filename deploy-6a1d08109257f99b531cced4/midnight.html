@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<title>WoW: Midnight Guide | Final Frontier</title>
+<meta content="FinalFrontierSA" name="author"/>
+<meta content="Final Frontier's complete guide to World of Warcraft: Midnight — dungeons, raids, gear, class builds, and Quel'Thalas lore." name="description"/>
+<meta content="WoW Midnight, World of Warcraft Midnight, Quel'Thalas, Blood Elf, dungeons, raids, guide, Final Frontier, gaming guild" name="keywords"/>
+<meta content="INDEX,FOLLOW" name="robots"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Cinzel:wght@400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/css/fontawesome.min.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/theme-color1.css" rel="stylesheet"/>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png"/>
+<link rel="manifest" href="assets/img/favicons/manifest.json"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+  :root {
+    --mid-bg: #040610;
+    --mid-blue: #0a0f25;
+    --mid-red: #4a0a14;
+    --void-dark: #0f0020;
+    --blood-red: #8b1a1a;
+    --arcane-gold: #c8a951;
+    --arcane-gold-light: #f0d080;
+    --elf-silver: #a8c4e0;
+    --void-purple: #6b21a8;
+    --glow-blue: #4fc3f7;
+    --text: #d4e8ff;
+    --wowhead: #4fc3f7;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--mid-bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  a { color: var(--wowhead); text-decoration: none; }
+  a:hover { color: var(--arcane-gold-light); text-decoration: underline; }
+
+  /* ── HERO ── */
+  .midnight-hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg,
+        #040610 0%,
+        #0d0020 30%,
+        #1a0030 55%,
+        #040610 100%
+      );
+  }
+
+  .midnight-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 30%, rgba(107,33,168,0.45) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 30% at 20% 60%, rgba(139,26,26,0.25) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 30% at 80% 60%, rgba(79,195,247,0.12) 0%, transparent 55%);
+    z-index: 0;
+  }
+
+  /* Moon silhouette */
+  .moon-glow {
+    position: absolute;
+    top: 40px; left: 50%;
+    transform: translateX(-50%);
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,169,81,0.08) 0%, rgba(200,169,81,0.04) 40%, transparent 70%);
+    box-shadow: 0 0 60px rgba(200,169,81,0.15), 0 0 120px rgba(200,169,81,0.05);
+    z-index: 0;
+    animation: moonPulse 6s ease-in-out infinite;
+  }
+
+  @keyframes moonPulse {
+    0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.06); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 120px 20px 80px;
+  }
+
+  .expansion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--blood-red);
+    color: #c95c5c;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .expansion-label::before, .expansion-label::after {
+    content: '';
+    width: 50px; height: 1px;
+    background: linear-gradient(90deg, transparent, #c95c5c, transparent);
+  }
+
+  .hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin: 0 0 8px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--arcane-gold-light) 40%, #c95c5c 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-content .subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: rgba(168,196,224,0.8);
+    margin-bottom: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-content p {
+    font-size: 1.05rem;
+    color: var(--elf-silver);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-badge.gold {
+    background: rgba(200,169,81,0.12);
+    border: 1px solid rgba(200,169,81,0.35);
+    color: var(--arcane-gold);
+  }
+
+  .hero-badge.red {
+    background: rgba(139,26,26,0.2);
+    border: 1px solid rgba(201,92,92,0.35);
+    color: #c95c5c;
+  }
+
+  .hero-badge.blue {
+    background: rgba(79,195,247,0.1);
+    border: 1px solid rgba(79,195,247,0.3);
+    color: var(--glow-blue);
+  }
+
+  /* ── SECTIONS ── */
+  .guide-section {
+    padding: 70px 0;
+    position: relative;
+  }
+
+  .guide-section.dark {
+    background: linear-gradient(180deg, #040610 0%, #080018 100%);
+  }
+
+  .guide-section.mid {
+    background: linear-gradient(180deg, #080018 0%, #0a0f25 100%);
+  }
+
+  .guide-section.void {
+    background: linear-gradient(180deg, #0a0f25 0%, #040610 100%);
+  }
+
+  /* ── SECTION HEADER ── */
+  .sec-header {
+    margin-bottom: 48px;
+  }
+
+  .sec-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--arcane-gold);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .sec-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+  }
+
+  .sec-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .sec-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(200,169,81,0.4), transparent);
+  }
+
+  .sec-divider-gem {
+    width: 8px; height: 8px;
+    background: var(--arcane-gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .sec-desc {
+    color: var(--elf-silver);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 650px;
+  }
+
+  /* ── EXPANSION INFO CARDS ── */
+  .info-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(107,33,168,0.25);
+    border-radius: 16px;
+    padding: 28px 22px;
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .info-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(107,33,168,0.5), transparent);
+  }
+
+  .info-card:hover {
+    background: rgba(107,33,168,0.08);
+    border-color: rgba(107,33,168,0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(107,33,168,0.15);
+  }
+
+  .info-card-icon {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .icon-purple { background: linear-gradient(135deg, #4a1080, #7c3aed); color: #fff; }
+  .icon-gold   { background: linear-gradient(135deg, #92600a, #c8a951); color: #fff; }
+  .icon-red    { background: linear-gradient(135deg, #6b0a0a, #c95c5c); color: #fff; }
+  .icon-blue   { background: linear-gradient(135deg, #0a3060, #4fc3f7); color: #fff; }
+
+  .info-card h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--arcane-gold-light);
+    margin-bottom: 10px;
+  }
+
+  .info-card p {
+    font-size: 0.9rem;
+    color: var(--elf-silver);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DUNGEON TABLE ── */
+  .dungeon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .dungeon-card {
+    background: rgba(10,15,37,0.8);
+    border: 1px solid rgba(79,195,247,0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .dungeon-card:hover {
+    border-color: rgba(79,195,247,0.35);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transform: translateY(-3px);
+  }
+
+  .dungeon-header {
+    padding: 14px 18px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(90deg, rgba(79,195,247,0.08), transparent);
+    border-bottom: 1px solid rgba(79,195,247,0.08);
+  }
+
+  .dungeon-icon {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #0a3060, #1a5090);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--glow-blue);
+    flex-shrink: 0;
+  }
+
+  .dungeon-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: var(--glow-blue);
+    margin: 0 0 2px;
+  }
+
+  .dungeon-type {
+    font-size: 0.72rem;
+    color: rgba(168,196,224,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .dungeon-body {
+    padding: 14px 18px 16px;
+  }
+
+  .dungeon-body p {
+    font-size: 0.85rem;
+    color: var(--elf-silver);
+    margin: 0 0 12px;
+    line-height: 1.6;
+  }
+
+  .wowhead-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--glow-blue);
+    border: 1px solid rgba(79,195,247,0.25);
+    border-radius: 6px;
+    padding: 5px 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .wowhead-btn:hover {
+    background: rgba(79,195,247,0.1);
+    border-color: rgba(79,195,247,0.5);
+    color: var(--glow-blue);
+    text-decoration: none;
+  }
+
+  /* ── RAID CARD ── */
+  .raid-card {
+    background: linear-gradient(135deg, rgba(139,26,26,0.12), rgba(10,15,37,0.9));
+    border: 1px solid rgba(201,92,92,0.2);
+    border-radius: 18px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .raid-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(201,92,92,0.6), transparent);
+  }
+
+  .raid-card:hover {
+    border-color: rgba(201,92,92,0.4);
+    box-shadow: 0 20px 60px rgba(139,26,26,0.2);
+  }
+
+  .raid-badge {
+    display: inline-block;
+    background: rgba(139,26,26,0.3);
+    border: 1px solid rgba(201,92,92,0.4);
+    color: #c95c5c;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .raid-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .raid-card p {
+    color: var(--elf-silver);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .boss-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .boss-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--elf-silver);
+    padding: 6px 10px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    border-left: 2px solid rgba(201,92,92,0.4);
+  }
+
+  .boss-list li i { color: #c95c5c; font-size: 0.7rem; }
+
+  /* ── GEAR TABLE ── */
+  .gear-table-wrap {
+    background: rgba(10,15,37,0.8);
+    border: 1px solid rgba(200,169,81,0.15);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .gear-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .gear-table th {
+    padding: 14px 18px;
+    background: rgba(200,169,81,0.08);
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--arcane-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(200,169,81,0.15);
+    text-align: left;
+  }
+
+  .gear-table td {
+    padding: 12px 18px;
+    font-size: 0.88rem;
+    color: var(--elf-silver);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .gear-table tr:last-child td { border-bottom: none; }
+
+  .gear-table tr:hover td {
+    background: rgba(200,169,81,0.04);
+  }
+
+  .item-quality { font-weight: 700; }
+  .q-epic    { color: #a335ee; }
+  .q-rare    { color: #0070dd; }
+  .q-uncommon { color: #1eff00; }
+
+  /* ── LORE BANNER ── */
+  .lore-banner {
+    position: relative;
+    padding: 60px 0;
+    background: linear-gradient(90deg, #0f0020, #1a0b2e, #0f0020);
+    border-top: 1px solid rgba(107,33,168,0.2);
+    border-bottom: 1px solid rgba(107,33,168,0.2);
+    overflow: hidden;
+  }
+
+  .lore-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(107,33,168,0.15) 0%, transparent 70%);
+  }
+
+  blockquote.lore-quote {
+    position: relative;
+    z-index: 1;
+    background: transparent !important;
+    border: 0 !important;
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 30px;
+    line-height: 1.8;
+  }
+
+  blockquote.lore-quote::before {
+    content: '"';
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    color: var(--void-purple);
+    opacity: 0.4;
+    position: absolute;
+    top: -20px; left: 0;
+    line-height: 1;
+  }
+
+  blockquote.lore-quote cite {
+    display: block;
+    font-size: 0.82rem;
+    font-style: normal;
+    color: var(--arcane-gold);
+    margin-top: 16px;
+    letter-spacing: 0.1em;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* ── CLASS TIER TABLE ── */
+  .class-card {
+    background: rgba(10,15,37,0.7);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: all 0.25s ease;
+  }
+
+  .class-card:hover {
+    background: rgba(79,195,247,0.06);
+    border-color: rgba(79,195,247,0.2);
+    transform: translateY(-3px);
+  }
+
+  .class-icon {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    margin: 0 auto 12px;
+    background: #1a2040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+
+  .class-card h6 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    margin: 0 0 6px;
+    color: #fff;
+  }
+
+  .class-card .spec {
+    font-size: 0.78rem;
+    color: var(--elf-silver);
+    margin: 0 0 8px;
+  }
+
+  .tier-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .tier-s { background: rgba(255,165,0,0.2); color: #ffa500; border: 1px solid rgba(255,165,0,0.4); }
+  .tier-a { background: rgba(0,200,150,0.15); color: #00c896; border: 1px solid rgba(0,200,150,0.35); }
+  .tier-b { background: rgba(79,195,247,0.15); color: #4fc3f7; border: 1px solid rgba(79,195,247,0.35); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .hero-content { padding: 80px 16px 60px; }
+    .hero-content h1 { font-size: 2.4rem; }
+    .dungeon-grid { grid-template-columns: 1fr; }
+    .boss-list { grid-template-columns: 1fr; }
+    .guide-section { padding: 50px 0; }
+    .raid-card { padding: 22px 18px; }
+    .sec-title { font-size: 1.5rem; }
+    .gear-table td, .gear-table th { padding: 10px 12px; font-size: 0.8rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content h1 { font-size: 2rem; }
+    .hero-badges { flex-direction: column; align-items: center; }
+    .hero-badge { width: fit-content; }
+  }
+</style>
+<link href="assets/css/mobile.css" rel="stylesheet"/>
+<meta property="og:title" content="WoW Midnight Guide | Final Frontier Gamers DAO"/>
+<meta property="og:description" content="Complete World of Warcraft: Midnight guide from Final Frontier — BIS gear, class tiers, lore, and launch strategies."/>
+<meta property="og:image" content="https://finalfrontiersa.net/team_files/lorthemar.jpg"/>
+<meta property="og:type" content="website"/>
+</head>
+<body>
+
+<!--======================== Sticky Header ========================-->
+<div class="sticky-header-wrap sticky-header bg-light-dark py-1 py-sm-2 py-lg-1">
+<div class="container position-relative">
+<div class="row align-items-center">
+<div class="col-5 col-md-3">
+<div class="logo">
+<a href="index.html"><img alt="Final Frontier" src="assets/img/logo-2.png"/></a>
+</div>
+</div>
+<div class="col-7 col-md-9 text-end position-static">
+<nav class="main-menu menu-sticky1 d-none d-lg-block link-inherit">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li class="mega-menu-wrap menu-item-has-children">
+<a>Pages</a>
+<ul class="mega-menu bg-black">
+<li>
+<a class="text-blue">Frontierian Whitepapers</a>
+<ul>
+<li><a class="text-white" href="org_structure-whitepaper.html">FF Organization &amp; Structure</a></li>
+<li><a class="text-white" href="economics-whitepaper.html">FF Economics</a></li>
+</ul>
+</li>
+<li>
+<a class="text-blue">Exchanges/Marketplaces</a>
+<ul>
+<li><a class="text-white" href="https://crypto.com/" target="_blank">Crypto.com</a></li>
+<li><a class="text-white" href="https://jup.ag/" target="_blank">Jupiter</a></li>
+<li><a class="text-white" href="https://digifinex.com/" target="_blank">Digifinex</a></li>
+<li><a class="text-white" href="https://orca.so/" target="_blank">Orca</a></li>
+<li><a class="text-white" href="https://mango.markets/" target="_blank">Mango Markets</a></li>
+<li><a class="text-white" href="https://magiceden.io/" target="_blank">Magic Eden</a></li>
+</ul>
+</li>
+<li>
+<a class="text-blue">Resources</a>
+<ul>
+<li><a class="text-white" href="https://solana.com/" target="_blank">Solana Main</a></li>
+<li><a class="text-white" href="https://phantom.app/" target="_blank">Phantom Wallet</a></li>
+<li><a class="text-white" href="https://solflare.com/" target="_blank">Solflare Wallet</a></li>
+<li><a class="text-white" href="https://coinmarketcap.com/" target="_blank">CoinMarketCap</a></li>
+<li><a class="text-white" href="https://coingecko.com/" target="_blank">CoinGecko</a></li>
+<li><a class="text-white" href="midnight.html" target="_blank">WoW Midnight Guide</a></li>
+</ul>
+</li>
+<li>
+<a class="text-blue">Miscellaneous</a>
+<ul>
+<li><a class="text-white" href="privacy_policy.html">Privacy Policy</a></li>
+<li><a class="text-white" href="contests.html">Contests &amp; Giveaways</a></li>
+<li><a class="text-white" href="contact.html">Contact Us</a></li>
+<li><a class="text-white" href="team.html">Meet the Team</a></li>
+<li><a class="text-white" href="front-magazine.html">FRONT Magazine</a></li>
+<li><a class="text-white" href="metapower.html">Metapower</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="application.html">Apply to Join</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<button class="vs-menu-toggle text-theme border-theme d-inline-block d-lg-none"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</div>
+</div>
+
+<!--======================== Header ========================-->
+<header class="header-wrapper header-layout3 bg-black z-index-step1">
+<div class="bg-major-black bg-black header-top py-2">
+<div class="container">
+<div class="row">
+</div>
+</div>
+</div>
+
+<div class="menu-area bg-black py-3 py-lg-0">
+<div class="container position-relative">
+<div class="row align-items-center">
+<div class="col-6 col-xl-2">
+<div class="header-logo2 bg-major-black bg-black d-none d-lg-block">
+<a href="index.html"><img alt="Logo Image" src="assets/img/logo-3.png"/></a>
+</div>
+<a class="d-inline-block d-lg-none" href="index.html"><img alt="Theme Logo" src="assets/img/logo-2.png"/></a>
+</div>
+<div class="col-6 col-lg-8 col-xl-6 offset-lg-4 offset-xl-0 text-end text-xl-start">
+<nav class="main-menu menu-style2 mobile-menu-active" data-expand="992">
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li class="mega-menu-wrap menu-item-has-children">
+<a>Pages <i class="fas fa-chevron-down" style="font-size:.7rem;margin-left:3px;"></i></a>
+<ul class="mega-menu bg-black">
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Frontierian Whitepapers</span>
+<ul>
+<li><a class="text-white" href="org_structure-whitepaper.html">FF Organization &amp; Structure</a></li>
+<li><a class="text-white" href="economics-whitepaper.html">FF Economics</a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Exchanges/Marketplaces</span>
+<ul>
+<li><a class="text-white" href="https://crypto.com/">Crypto.com</a></li>
+<li><a class="text-white" href="https://jup.ag/" target="_blank">Jupiter</a></li>
+<li><a class="text-white" href="https://digifinex.com/" target="_blank">Digifinex</a></li>
+<li><a class="text-white" href="https://orca.so/" target="_blank">Orca</a></li>
+<li><a class="text-white" href="https://mango.markets/" target="_blank">Mango Markets</a></li>
+<li><a class="text-white" href="https://magiceden.io/" target="_blank">Magic Eden</a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Resources</span>
+<ul>
+<li><a class="text-white" href="https://solana.com/" target="_blank">Solana Main</a></li>
+<li><a class="text-white" href="https://phantom.app/" target="_blank">Phantom Wallet</a></li>
+<li><a class="text-white" href="https://solflare.com/" target="_blank">Solflare Wallet</a></li>
+<li><a class="text-white" href="https://coinmarketcap.com/" target="_blank">CoinMarketCap</a></li>
+<li><a class="text-white" href="https://coingecko.com/" target="_blank">CoinGecko</a></li>
+<li><a class="text-white" href="midnight.html" target="_blank">WoW Midnight Guide<span class="new-label bg-gradient2 bg-gradient2">Now Available</span></a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Miscellaneous</span>
+<ul>
+<li><a class="text-white" href="privacy_policy.html">Privacy Policy</a></li>
+<li><a class="text-white" href="contests.html">Contests &amp; Giveaways</a></li>
+<li><a class="text-white" href="contact.html">Contact Us</a></li>
+<li><a class="text-white" href="team.html">Meet the Team</a></li>
+<li><a class="text-white" href="front-magazine.html">FRONT Magazine</a></li>
+<li><a class="text-white" href="metapower.html">Metapower</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="application.html">Apply to Join</a>
+</li>
+<li>
+<a href="https://gamer.playmakerswanted.com/store/finalfrontier">Gear Shop</a>
+</li>
+</ul>
+</nav>
+<!-- <button type="button" class="vs-menu-toggle text-white d-inline-block d-lg-none">rickey <i class="far fa-bars"></i></button> -->
+</div>
+<div class="col-xl-4 align-items-stretch d-none d-xl-flex">
+<!-- <form action="#" class="header-form bg-major-black">
+                            <input type="text" class="form-control text-white" placeholder="Type Keyword">
+                            <button type="submit"><i class="far fa-search"></i></button>
+                        </form> -->
+<button class="sideMenuToggler bg-gradient2 toggler-btn2"><i class="fas fa-space-shuttle fs-2"></i></button>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<!--======================== HERO ========================-->
+<div class="midnight-hero">
+  <div class="moon-glow"></div>
+  <div class="hero-content">
+    <div class="expansion-label">World of Warcraft</div>
+    <h1>Midnight</h1>
+    <div class="subtitle">The Quel'Thalas Saga Begins</div>
+    <p>Final Frontier's complete field guide to WoW: Midnight — covering every dungeon, raid wing, weapon tier, class build, and lore thread your guild needs to conquer the Void's advance on the Blood Elves' ancient homeland.</p>
+    <div class="hero-badges">
+      <span class="hero-badge gold"><i class="fas fa-dragon"></i> Raid Guides</span>
+      <span class="hero-badge red"><i class="fas fa-skull-crossbones"></i> Dungeon Bosses</span>
+      <span class="hero-badge blue"><i class="fas fa-shield-halved"></i> Best-in-Slot Gear</span>
+      <span class="hero-badge gold"><i class="fas fa-book-open"></i> Lore &amp; Story</span>
+    </div>
+  </div>
+</div>
+
+<!--======================== EXPANSION OVERVIEW ========================-->
+<section class="guide-section dark">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-eyebrow">Expansion Overview</span>
+      <h2 class="sec-title">Welcome to Quel'Thalas</h2>
+      <div class="sec-divider"><div class="sec-divider-gem"></div></div>
+      <p class="sec-desc">WoW: Midnight returns players to the sunswept spires of Silvermoon and the surrounding wilds of Quel'Thalas — now corrupted by Void energies as the ancient dark tears through the Sunwell's light once more.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="info-card">
+          <div class="info-card-icon icon-purple"><i class="fas fa-map-location-dot"></i></div>
+          <h5>New Zones</h5>
+          <p>Silvermoon Reborn, the Ghostlands Awakened, Isle of Quel'Danas, and the Voidshattered Sunwell Plateau — 6 open-world zones with dynamic day/night mechanics.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="info-card">
+          <div class="info-card-icon icon-gold"><i class="fas fa-star"></i></div>
+          <h5>New Systems</h5>
+          <p>The Arcane Resonance system replaces borrowed power with permanent character progression. Sunwell Shards power new crafting recipes unavailable anywhere else.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="info-card">
+          <div class="info-card-icon icon-red"><i class="fas fa-users"></i></div>
+          <h5>Allied Races</h5>
+          <p>Void Elves and Blood Elves receive major story arcs and new heritage armor sets. A new allied race — the Sunfury Elves — joins the Alliance after Midnight's campaign.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="info-card">
+          <div class="info-card-icon icon-blue"><i class="fas fa-level-up-alt"></i></div>
+          <h5>Level Cap</h5>
+          <p>Level cap raised to 90. New talent rows at 85 and 90 add a final capstone ability to every specialization, dramatically changing high-end gameplay.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--======================== LORE QUOTE ========================-->
+<div class="lore-banner" style="position:relative;overflow:hidden;">
+  <img src="team_files/lorthemar.jpg" alt="Lor'themar Theron" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.28;z-index:0;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,0,32,.88) 0%,rgba(26,11,46,.65) 50%,rgba(15,0,32,.88) 100%);z-index:1;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <blockquote class="lore-quote">
+      "They think they can extinguish our light — but we are the children of the Sunwell, and we do not break. We burn."
+      <cite>— Lor'themar Theron, Regent Lord of Quel'Thalas</cite>
+    </blockquote>
+  </div>
+</div>
+
+<!--======================== DUNGEONS ========================-->
+<section class="guide-section mid">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-eyebrow">Instance Guide</span>
+      <h2 class="sec-title">Dungeons of Quel'Thalas</h2>
+      <div class="sec-divider"><div class="sec-divider-gem" style="background:#4fc3f7;"></div></div>
+      <p class="sec-desc">Eight new dungeons span the breadth of Midnight — from the corrupted streets of Silvermoon to the Void-choked ruins beneath the Sunwell. Full Wowhead links included for each encounter.</p>
+    </div>
+
+    <div class="dungeon-grid">
+
+      <div class="dungeon-card">
+        <div class="dungeon-header">
+          <div class="dungeon-icon"><i class="fas fa-city"></i></div>
+          <div>
+            <div class="dungeon-name">Silvermoon: The Shattered Spire</div>
+            <div class="dungeon-type">Mythic+ Available • 5-Player</div>
+          </div>
+        </div>
+        <div class="dungeon-body">
+          <p>The jewel of Quel'Thalas has fallen to Void corruption. Fight through the Grand Magister's sanctum to the spire summit and cleanse the Void crystal before it tears open a portal.</p>
+          <a href="https://www.wowhead.com/zone=silvermoon-city" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-external-link-alt"></i> Wowhead Guide</a>
+        </div>
+      </div>
+
+      <div class="dungeon-card">
+        <div class="dungeon-header">
+          <div class="dungeon-icon"><i class="fas fa-skull"></i></div>
+          <div>
+            <div class="dungeon-name">Ghostlands: Deatholme Reborn</div>
+            <div class="dungeon-type">Mythic+ Available • 5-Player</div>
+          </div>
+        </div>
+        <div class="dungeon-body">
+          <p>The undead fortress of Deatholme now serves a Void master. Plunge into its necrotic depths to sever the ley line powering a Void beacon threatening to blind the Sunwell forever.</p>
+          <a href="https://www.wowhead.com/zone=the-ghostlands" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-external-link-alt"></i> Wowhead Guide</a>
+        </div>
+      </div>
+
+      <div class="dungeon-card">
+        <div class="dungeon-header">
+          <div class="dungeon-icon"><i class="fas fa-water"></i></div>
+          <div>
+            <div class="dungeon-name">Sunwell: Outer Reaches</div>
+            <div class="dungeon-type">Mythic+ Available • 5-Player</div>
+          </div>
+        </div>
+        <div class="dungeon-body">
+          <p>The outer rings of the Sunwell Isle are overrun. Clear the Void-touched naaru fragments from the three sanctum wings to restore the protective aura shielding the inner sanctum.</p>
+          <a href="https://www.wowhead.com/zone=isle-of-queldonas" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-external-link-alt"></i> Wowhead Guide</a>
+        </div>
+      </div>
+
+      <div class="dungeon-card">
+        <div class="dungeon-header">
+          <div class="dungeon-icon"><i class="fas fa-tree"></i></div>
+          <div>
+            <div class="dungeon-name">Eversong: The Tainted Grove</div>
+            <div class="dungeon-type">Mythic+ Available • 5-Player</div>
+          </div>
+        </div>
+        <div class="dungeon-body">
+          <p>Once a vibrant forest, the Eversong Woods now bleeds shadow. A Void Dryad has seduced the ancient treants into corruption — only the Sunfire can burn it away.</p>
+          <a href="https://www.wowhead.com/zone=eversong-woods" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-external-link-alt"></i> Wowhead Guide</a>
+        </div>
+      </div>
+
+      <div class="dungeon-card">
+        <div class="dungeon-header">
+          <div class="dungeon-icon"><i class="fas fa-building-columns"></i></div>
+          <div>
+            <div class="dungeon-name">Arcane Sanctum of Quel'evar</div>
+            <div class="dungeon-type">Heroic Only • 5-Player</div>
+          </div>
+        </div>
+        <div class="dungeon-body">
+          <p>A hidden mage tower now serves as the Void's academy, corrupting Blood Elf arcanists into Void Weavers. Shut down the dark ley engine before its ritual completes.</p>
+          <a href="https://www.wowhead.com/guides/wow-dungeons" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-external-link-alt"></i> Wowhead Guide</a>
+        </div>
+      </div>
+
+      <div class="dungeon-card">
+        <div class="dungeon-header">
+          <div class="dungeon-icon"><i class="fas fa-moon"></i></div>
+          <div>
+            <div class="dungeon-name">The Void Between Spires</div>
+            <div class="dungeon-type">Mythic+ Available • 5-Player</div>
+          </div>
+        </div>
+        <div class="dungeon-body">
+          <p>A dungeon that exists partly in the Void itself — some corridors phase between realities. Navigate shifting geometry and defeat a Herald of the Old Gods before he ascends.</p>
+          <a href="https://www.wowhead.com/guides/wow-dungeons" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-external-link-alt"></i> Wowhead Guide</a>
+        </div>
+      </div>
+
+      <div class="dungeon-card">
+        <div class="dungeon-header">
+          <div class="dungeon-icon"><i class="fas fa-fire"></i></div>
+          <div>
+            <div class="dungeon-name">The Sunfire Vaults</div>
+            <div class="dungeon-type">Mythic+ Available • 5-Player</div>
+          </div>
+        </div>
+        <div class="dungeon-body">
+          <p>Beneath Silvermoon's royal district lie the Sunfire Vaults — treasury and armory of the ancient Highborne. Void Thieves raid its artifacts to power their dark engines. Stop them.</p>
+          <a href="https://www.wowhead.com/guides/wow-dungeons" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-external-link-alt"></i> Wowhead Guide</a>
+        </div>
+      </div>
+
+      <div class="dungeon-card">
+        <div class="dungeon-header">
+          <div class="dungeon-icon"><i class="fas fa-gem"></i></div>
+          <div>
+            <div class="dungeon-name">Naxxanar: The Void Cradle</div>
+            <div class="dungeon-type">Mythic+ Available • Season 2</div>
+          </div>
+        </div>
+        <div class="dungeon-body">
+          <p>A Nerubian-Void hybrid fortress has risen in the far north of Quel'Thalas. Its master — a Void-touched Nerubian queen — weaves a web that threatens to envelop all of northern Azeroth.</p>
+          <a href="https://www.wowhead.com/guides/wow-dungeons" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-external-link-alt"></i> Wowhead Guide</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--======================== RAIDS ========================-->
+<section class="guide-section void">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-eyebrow">Raid Content</span>
+      <h2 class="sec-title">Raids of the Midnight Tier</h2>
+      <div class="sec-divider"><div class="sec-divider-gem" style="background:#c95c5c;"></div></div>
+      <p class="sec-desc">Two massive raid instances define Midnight's endgame, culminating in a confrontation at the heart of the Sunwell itself.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-6">
+        <div class="raid-card">
+          <span class="raid-badge"><i class="fas fa-skull"></i> Tier 1 Raid &bull; 8–12 Bosses</span>
+          <h3>Citadel of the Fallen Sun</h3>
+          <p>The first major raid of Midnight. The former Sunwell Citadel has been rebuilt by Void engineers into a dark fortress of twisted arcane-Void technology. Eight bosses stand between your raid and the inner sanctum.</p>
+          <ul class="boss-list">
+            <li><i class="fas fa-circle"></i> Grand Arcanist Vel'naas</li>
+            <li><i class="fas fa-circle"></i> The Twin Void Seers</li>
+            <li><i class="fas fa-circle"></i> Arcanix the Unbound</li>
+            <li><i class="fas fa-circle"></i> Shalasyr the Shattered</li>
+            <li><i class="fas fa-circle"></i> Void Nexus Construct</li>
+            <li><i class="fas fa-circle"></i> High Inquisitor Dar'khan</li>
+            <li><i class="fas fa-circle"></i> The Void Council (3)</li>
+            <li><i class="fas fa-circle"></i> N'zalis the Unseen</li>
+          </ul>
+          <a href="https://www.wowhead.com/guides/raids" target="_blank" rel="noopener" class="wowhead-btn" style="margin-right:10px;"><i class="fas fa-external-link-alt"></i> Wowhead Boss Guides</a>
+          <a href="https://www.wowhead.com/guides/raids" target="_blank" rel="noopener" class="wowhead-btn"><i class="fas fa-gem"></i> Loot Tables</a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="raid-card" style="background: linear-gradient(135deg, rgba(107,33,168,0.15), rgba(10,15,37,0.9)); border-color: rgba(107,33,168,0.25);">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(107,33,168,0.7),transparent);"></div>
+          <span class="raid-badge" style="background:rgba(107,33,168,0.25);border-color:rgba(107,33,168,0.5);color:#a855f7;"><i class="fas fa-star"></i> Tier 2 Raid &bull; Final Tier</span>
+          <h3>The Sunwell's Last Light</h3>
+          <p>The ultimate raid of Midnight. The Void has reached the Sunwell's core. Ten bosses across three wings lead to the campaign's climax — a choice that will reshape Azeroth's magical future forever.</p>
+          <ul class="boss-list">
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> Voidbound Kael'thas</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> Anetheron Reborn</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> The Naaru Tribunal</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> Lady Liadrin (Enraged)</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> Sunwell Protector</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> Eredar Void Admiral</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> The Hollow Light</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> Xe'ra's Echo</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> The Sunwell's Ruin</li>
+            <li><i class="fas fa-circle" style="color:#a855f7;"></i> Y'shaarj's Voice (Final)</li>
+          </ul>
+          <a href="https://www.wowhead.com/guides/raids" target="_blank" rel="noopener" class="wowhead-btn" style="border-color:rgba(168,85,247,0.4);color:#a855f7; margin-right:10px;"><i class="fas fa-external-link-alt"></i> Wowhead Boss Guides</a>
+          <a href="https://www.wowhead.com/guides/raids" target="_blank" rel="noopener" class="wowhead-btn" style="border-color:rgba(168,85,247,0.4);color:#a855f7;"><i class="fas fa-gem"></i> Loot Tables</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--======================== BEST IN SLOT GEAR ========================-->
+<style>
+  /* ── BIS CLASS SELECTOR ── */
+  .bis-class-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px;}
+  .bis-cls-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;background:rgba(10,15,40,.8);border:1px solid rgba(255,255,255,.08);border-radius:8px;color:rgba(255,255,255,.55);font-size:.75rem;font-family:'Cinzel',serif;letter-spacing:.04em;cursor:pointer;transition:all .22s;outline:none;}
+  .bis-cls-btn:hover{border-color:var(--cc);color:var(--cc);background:rgba(20,25,50,.9);}
+  .bis-cls-btn.active{border-color:var(--cc);color:var(--cc);background:rgba(20,25,55,.95);box-shadow:0 0 12px color-mix(in srgb,var(--cc) 25%,transparent);}
+  .bis-cls-btn i{font-size:.85rem;}
+  .bis-panel-header{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:10px;margin-bottom:4px;border:1px solid color-mix(in srgb,var(--cc) 30%,transparent);}
+  .bis-ph-icon{width:44px;height:44px;border-radius:9px;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+  .bis-ph-name{font-family:'Cinzel',serif;font-size:1.1rem;margin:0 0 3px;}
+  .bis-ph-spec{font-size:.8rem;color:rgba(168,196,224,.6);}
+</style>
+<section class="guide-section dark" id="class-bis">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-eyebrow">Class Guides</span>
+      <h2 class="sec-title">Best-in-Slot: All Classes</h2>
+      <div class="sec-divider"><div class="sec-divider-gem"></div></div>
+      <p class="sec-desc">Complete BIS weapon, armor, and trinket recommendations for all 13 classes in Midnight Season 1. Click your class below — gear sourced from the Midnight Raid, Mythic+ dungeons, and Sunwell Shards crafting.</p>
+    </div>
+    <div class="bis-class-nav">
+      <button class="bis-cls-btn active" onclick="showBIS('warrior',this)" style="--cc:#C79C6E;">
+        <i class="fas fa-fist-raised"></i><span>Warrior</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('paladin',this)" style="--cc:#f4d03f;">
+        <i class="fas fa-sun"></i><span>Paladin</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('druid',this)" style="--cc:#ff7c0a;">
+        <i class="fas fa-leaf"></i><span>Druid</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('shaman',this)" style="--cc:#0070dd;">
+        <i class="fas fa-bolt"></i><span>Shaman</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('warlock',this)" style="--cc:#8788EE;">
+        <i class="fas fa-eye"></i><span>Warlock</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('mage',this)" style="--cc:#69CCF0;">
+        <i class="fas fa-fire-alt"></i><span>Mage</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('hunter',this)" style="--cc:#ABD473;">
+        <i class="fas fa-crosshairs"></i><span>Hunter</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('death-knight',this)" style="--cc:#C41E3A;">
+        <i class="fas fa-skull"></i><span>Death Knight</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('demon-hunter',this)" style="--cc:#A330C9;">
+        <i class="fas fa-fire"></i><span>Demon Hunter</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('monk',this)" style="--cc:#00FF98;">
+        <i class="fas fa-wind"></i><span>Monk</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('priest',this)" style="--cc:#FFFFFF;">
+        <i class="fas fa-pray"></i><span>Priest</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('rogue',this)" style="--cc:#FFF569;">
+        <i class="fas fa-user-secret"></i><span>Rogue</span>
+      </button>
+      <button class="bis-cls-btn" onclick="showBIS('evoker',this)" style="--cc:#33937F;">
+        <i class="fas fa-dragon"></i><span>Evoker</span>
+      </button>
+    </div>
+    <div id="bisPanels">
+
+      <div class="bis-panel" id="bis-warrior">
+        <div class="bis-panel-header" style="--cc:#C79C6E;background:#2a1800;">
+          <div class="bis-ph-icon"><i class="fas fa-fist-raised" style="color:#C79C6E;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#C79C6E;">Warrior</h4>
+            <span class="bis-ph-spec">Arms &bull; <span class="tier-badge tier-s" style="font-size:.65rem;">S-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Sunreaver's Warblade</span></td>
+                <td>2H Sword</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Helm of Quel'Thalas Dominion</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Breastplate of the Sunguard Elite</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Greaves of the Blood Regent</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Emblem of the Sunforged</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Sunwell Power Core</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-paladin" style="display:none">
+        <div class="bis-panel-header" style="--cc:#f4d03f;background:#1a1500;">
+          <div class="bis-ph-icon"><i class="fas fa-sun" style="color:#f4d03f;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#f4d03f;">Paladin</h4>
+            <span class="bis-ph-spec">Retribution &bull; <span class="tier-badge tier-a" style="font-size:.65rem;">A-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Sunstrider's Holy Warblade</span></td>
+                <td>2H Sword</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Crown of the Holy Regent</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Hauberk of Quel'Delar's Champion</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Legguards of the Sunwell Knight</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Medallion of Holy Sunfire</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Sunblessed Holy Sigil</span></td>
+                <td>M+ Ghostlands Keep</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-druid" style="display:none">
+        <div class="bis-panel-header" style="--cc:#ff7c0a;background:#0d1a08;">
+          <div class="bis-ph-icon"><i class="fas fa-leaf" style="color:#ff7c0a;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#ff7c0a;">Druid</h4>
+            <span class="bis-ph-spec">Balance &bull; <span class="tier-badge tier-a" style="font-size:.65rem;">A-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Staff of the Sunwell Arcdruid</span></td>
+                <td>Staff</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Starhelm of the Sunwell Warden</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Robes of Astral Quel'Thalas</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Starweave Breeches of Silvermoon</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Astral Sunwell Prism</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Void-Kissed Moonstone</span></td>
+                <td>M+ Sunfire Vaults</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-shaman" style="display:none">
+        <div class="bis-panel-header" style="--cc:#0070dd;background:#0a1020;">
+          <div class="bis-ph-icon"><i class="fas fa-bolt" style="color:#0070dd;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#0070dd;">Shaman</h4>
+            <span class="bis-ph-spec">Enhancement &bull; <span class="tier-badge tier-b" style="font-size:.65rem;">B-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Axe of the Sunreaver Shaman</span></td>
+                <td>1H Axe × 2</td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Helm of the Earthen Sunguard</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Hauberk of the Storm Regent</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Kilt of the Sunwell Shaman</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Totem of Sunfire Calling</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Emblem of the Storm Regent</span></td>
+                <td>M+ Ghostlands Keep</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-warlock" style="display:none">
+        <div class="bis-panel-header" style="--cc:#8788EE;background:#130a20;">
+          <div class="bis-ph-icon"><i class="fas fa-eye" style="color:#8788EE;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#8788EE;">Warlock</h4>
+            <span class="bis-ph-spec">Affliction &bull; <span class="tier-badge tier-a" style="font-size:.65rem;">A-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Wand of the Void Blood Elf</span></td>
+                <td>Wand</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Off-Hand</td>
+                <td><span class="item-quality q-epic">Tome of Sunwell Shadows</span></td>
+                <td>Offhand</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Cowl of the Fel Sunwell</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Robes of the Shadow Regent</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Void-Thread Trousers of Quel'Thalas</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Dark Sunwell Voidstone</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Conduit of Shadow Quel'Thalas</span></td>
+                <td>M+ Sunfire Vaults</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-mage" style="display:none">
+        <div class="bis-panel-header" style="--cc:#69CCF0;background:#0a0820;">
+          <div class="bis-ph-icon"><i class="fas fa-fire-alt" style="color:#69CCF0;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#69CCF0;">Mage</h4>
+            <span class="bis-ph-spec">Arcane &bull; <span class="tier-badge tier-s" style="font-size:.65rem;">S-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Arcane Focus of the Sunwell</span></td>
+                <td>Staff</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Cowl of the Arcane Regent</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Robes of Quel'Thalas Mastery</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Arcweave Breeches of Silvermoon</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Sunwell Arcane Prism</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Sigil of the Arcane Blood Elf</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-hunter" style="display:none">
+        <div class="bis-panel-header" style="--cc:#ABD473;background:#0d1a08;">
+          <div class="bis-ph-icon"><i class="fas fa-crosshairs" style="color:#ABD473;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#ABD473;">Hunter</h4>
+            <span class="bis-ph-spec">Marksmanship &bull; <span class="tier-badge tier-s" style="font-size:.65rem;">S-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Sunreaver Ranger's Longbow</span></td>
+                <td>Ranged Bow</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Ranger's Hood of Quel'Thalas</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Leathers of the Blood Ranger</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Pathfinder's Legguards of Silvermoon</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Ranger's Sunfire Focus Stone</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Emblem of the Ghostland Ranger</span></td>
+                <td>M+ Ghostlands Keep</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-death-knight" style="display:none">
+        <div class="bis-panel-header" style="--cc:#C41E3A;background:#180a08;">
+          <div class="bis-ph-icon"><i class="fas fa-skull" style="color:#C41E3A;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#C41E3A;">Death Knight</h4>
+            <span class="bis-ph-spec">Unholy &bull; <span class="tier-badge tier-a" style="font-size:.65rem;">A-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Runeblade of the Void Regent</span></td>
+                <td>2H Sword</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Helm of the Dark Blood Regent</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Plate Robes of the Death Regent</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Greaves of the Sunwell Necromancer</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Void Heart of Quel'Thalas</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Phylactery of Dark Sunfire</span></td>
+                <td>M+ Sunfire Vaults</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-demon-hunter" style="display:none">
+        <div class="bis-panel-header" style="--cc:#A330C9;background:#1a0820;">
+          <div class="bis-ph-icon"><i class="fas fa-fire" style="color:#A330C9;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#A330C9;">Demon Hunter</h4>
+            <span class="bis-ph-spec">Havoc &bull; <span class="tier-badge tier-a" style="font-size:.65rem;">A-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Warglaive of the Sunwell Havoc</span></td>
+                <td>Warglaive × 2</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Hood of the Havoc Regent</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Leathers of the Fel Sunwell</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Fel-Touched Legwraps of Quel'Thalas</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Fel-Sunfire Core</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Quel'Thalas Demon Stone</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-monk" style="display:none">
+        <div class="bis-panel-header" style="--cc:#00FF98;background:#0d1a14;">
+          <div class="bis-ph-icon"><i class="fas fa-wind" style="color:#00FF98;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#00FF98;">Monk</h4>
+            <span class="bis-ph-spec">Windwalker &bull; <span class="tier-badge tier-b" style="font-size:.65rem;">B-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Sunwell Master's Fist Weapon</span></td>
+                <td>Fist × 2</td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Helm of the Windwalking Regent</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Silk Mantle of Silvermoon's Art</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Chi-Woven Trousers of Quel'Thalas</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Chi Sunwell Resonance Stone</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Medallion of the Wind Regent</span></td>
+                <td>M+ Ghostlands Keep</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-priest" style="display:none">
+        <div class="bis-panel-header" style="--cc:#FFFFFF;background:#0d0a1a;">
+          <div class="bis-ph-icon"><i class="fas fa-pray" style="color:#FFFFFF;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#FFFFFF;">Priest</h4>
+            <span class="bis-ph-spec">Shadow &bull; <span class="tier-badge tier-b" style="font-size:.65rem;">B-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Void-Touched Wand of Quel'Thalas</span></td>
+                <td>Wand</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Off-Hand</td>
+                <td><span class="item-quality q-epic">Tome of Shadow Quel'Thalas</span></td>
+                <td>Offhand</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Cowl of the Shadow Regent</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Void-Kissed Robes of Silvermoon</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Shadowthread Breeches of Quel'Thalas</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Void Sunwell Prism</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Psychic Emblem of Quel'Thalas</span></td>
+                <td>M+ Sunfire Vaults</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-rogue" style="display:none">
+        <div class="bis-panel-header" style="--cc:#FFF569;background:#0d1a0a;">
+          <div class="bis-ph-icon"><i class="fas fa-user-secret" style="color:#FFF569;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#FFF569;">Rogue</h4>
+            <span class="bis-ph-spec">Subtlety &bull; <span class="tier-badge tier-a" style="font-size:.65rem;">A-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Shadowblade of the Sunwell</span></td>
+                <td>Dagger × 2</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Hood of the Shadow Regent</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Leathers of the Blood Shadow</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Shadowed Legwraps of Quel'Thalas</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Shadowstrike Sunstone</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Blade Stone of Quel'Thalas</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bis-panel" id="bis-evoker" style="display:none">
+        <div class="bis-panel-header" style="--cc:#33937F;background:#0a1a18;">
+          <div class="bis-ph-icon"><i class="fas fa-dragon" style="color:#33937F;"></i></div>
+          <div>
+            <h4 class="bis-ph-name" style="color:#33937F;">Evoker</h4>
+            <span class="bis-ph-spec">Devastation &bull; <span class="tier-badge tier-a" style="font-size:.65rem;">A-Tier</span></span>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Item</th><th>Type</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Main Weapon</td>
+                <td><span class="item-quality q-epic">Draconic Focus of the Sunwell</span></td>
+                <td>Staff</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Head</td>
+                <td><span class="item-quality q-epic">Crown of the Sunwell Evoker</span></td>
+                <td>Helm</td>
+                <td>Tier Set — Midnight</td>
+              </tr>
+              <tr>
+                <td>Chest</td>
+                <td><span class="item-quality q-epic">Ley-Threaded Robes of Silvermoon</span></td>
+                <td>Chest</td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Legs</td>
+                <td><span class="item-quality q-epic">Draconic Breeches of Quel'Thalas</span></td>
+                <td>Legs</td>
+                <td>Crafted — Sunwell Shards</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="gear-table-wrap">
+              <table class="gear-table">
+                <thead><tr><th>Slot</th><th>Trinket / Ring</th><th>Source</th></tr></thead>
+                <tbody>
+              <tr>
+                <td>Trinket 1</td>
+                <td><span class="item-quality q-epic">Ley Sunwell Crystal</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+              <tr>
+                <td>Trinket 2</td>
+                <td><span class="item-quality q-rare">Essence of Dracthyr Sunfire</span></td>
+                <td>M+ Ghostlands Keep</td>
+              </tr>
+              <tr>
+                <td>Ring (BiS)</td>
+                <td><span class="item-quality q-epic">Signet of the Sunwarden</span></td>
+                <td>M+ Silvermoon Vault</td>
+              </tr>
+              <tr>
+                <td>Neck</td>
+                <td><span class="item-quality q-epic">Pendant of Quel'Thalas Radiance</span></td>
+                <td>Heroic Midnight Raid</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size:.72rem;color:rgba(168,196,224,.45);margin-top:8px;">
+              Tier set bonus (2pc &amp; 4pc) from <strong style="color:rgba(200,169,81,.7);">Midnight Raid</strong> is required for optimal performance.
+              Full stat weights &amp; sim data: <a href="https://www.raidbots.com/" target="_blank" rel="noopener" style="color:rgba(79,195,247,.7);">Raidbots</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:24px;font-size:.78rem;color:rgba(168,196,224,.4);text-align:center;">
+      Stats are pre-release estimates. Live sim data via <a href="https://www.raidbots.com/" target="_blank" rel="noopener">Raidbots</a> 
+      &bull; Item database on <a href="https://www.wowhead.com/" target="_blank" rel="noopener">Wowhead</a>
+    </p>
+  </div>
+</section>
+
+  <script>
+  function showBIS(id,btn){
+    document.querySelectorAll('.bis-panel').forEach(p=>p.style.display='none');
+    document.querySelectorAll('.bis-cls-btn').forEach(b=>b.classList.remove('active'));
+    const el=document.getElementById('bis-'+id);
+    if(el) el.style.display='block';
+    if(btn) btn.classList.add('active');
+  }
+  </script>
+
+<!--======================== CLASS TIER LIST ========================-->
+<section class="guide-section mid">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-eyebrow">Meta Analysis</span>
+      <h2 class="sec-title">Class &amp; Spec Tier List</h2>
+      <div class="sec-divider"><div class="sec-divider-gem" style="background:#4fc3f7;"></div></div>
+      <p class="sec-desc">Current raiding meta for Midnight Season 1. Tier ratings based on guild parses and Warcraftlogs data. Updated regularly by Final Frontier officers.</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#1a1a40; color:#d2b48c;"><i class="fas fa-fist-raised"></i></div>
+          <h6>Warrior</h6>
+          <span class="spec">Arms</span>
+          <span class="tier-badge tier-s">S-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#1a0a20; color:#a330c9;"><i class="fas fa-fire"></i></div>
+          <h6>Mage</h6>
+          <span class="spec">Arcane</span>
+          <span class="tier-badge tier-s">S-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#100a00; color:#c79c38;"><i class="fas fa-paw"></i></div>
+          <h6>Druid</h6>
+          <span class="spec">Balance</span>
+          <span class="tier-badge tier-s">S-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#0a1a2a; color:#4fc3f7;"><i class="fas fa-tint"></i></div>
+          <h6>Shaman</h6>
+          <span class="spec">Enhancement</span>
+          <span class="tier-badge tier-a">A-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#0a0a1a; color:#8b5cf6;"><i class="fas fa-eye"></i></div>
+          <h6>Warlock</h6>
+          <span class="spec">Affliction</span>
+          <span class="tier-badge tier-a">A-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#001a00; color:#4caf50;"><i class="fas fa-crosshairs"></i></div>
+          <h6>Hunter</h6>
+          <span class="spec">Marksmanship</span>
+          <span class="tier-badge tier-a">A-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#1a0000; color:#c0392b;"><i class="fas fa-skull"></i></div>
+          <h6>Death Knight</h6>
+          <span class="spec">Unholy</span>
+          <span class="tier-badge tier-a">A-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#1a0a00; color:#f39c12;"><i class="fas fa-sun"></i></div>
+          <h6>Paladin</h6>
+          <span class="spec">Holy</span>
+          <span class="tier-badge tier-a">A-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#1a0010; color:#e91e8c;"><i class="fas fa-wind"></i></div>
+          <h6>Demon Hunter</h6>
+          <span class="spec">Havoc</span>
+          <span class="tier-badge tier-b">B-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#001515; color:#00bcd4;"><i class="fas fa-leaf"></i></div>
+          <h6>Druid</h6>
+          <span class="spec">Restoration</span>
+          <span class="tier-badge tier-a">A-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#0a1520; color:#26c6da;"><i class="fas fa-fist-raised"></i></div>
+          <h6>Monk</h6>
+          <span class="spec">Windwalker</span>
+          <span class="tier-badge tier-b">B-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#151500; color:#cddc39;"><i class="fas fa-pray"></i></div>
+          <h6>Priest</h6>
+          <span class="spec">Shadow</span>
+          <span class="tier-badge tier-b">B-Tier</span>
+        </div>
+      </div
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#0d1a10; color:#fff101;"><i class="fas fa-user-secret"></i></div>
+          <h6>Rogue</h6>
+          <span class="spec">Subtlety</span>
+          <span class="tier-badge tier-a">A-Tier</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="class-card">
+          <div class="class-icon" style="background:#0a1a20; color:#33937f;"><i class="fas fa-dragon"></i></div>
+          <h6>Evoker</h6>
+          <span class="spec">Devastation</span>
+          <span class="tier-badge tier-a">A-Tier</span>
+        </div>
+      </div>>
+    </div>
+
+    <p style="margin-top:24px; font-size:0.8rem; color:rgba(168,196,224,0.45); text-align:center;">For live parse data and complete tier analysis, visit <a href="https://www.warcraftlogs.com/" target="_blank" rel="noopener">Warcraft Logs</a> and <a href="https://www.icy-veins.com/wow/" target="_blank" rel="noopener">Icy Veins</a>.</p>
+  </div>
+</section>
+
+<!--======================== CTA ========================-->
+<section style="padding:60px 0; background:linear-gradient(135deg,#0f0020,#1a0b2e,#0f0020); text-align:center;">
+  <div class="container">
+    <h2 style="font-family:'Cinzel',serif; color:var(--arcane-gold); font-size:clamp(1.5rem,3vw,2.2rem); margin-bottom:14px;">Ready to Raid with Final Frontier?</h2>
+    <p style="color:var(--elf-silver); max-width:520px; margin:0 auto 28px; font-size:0.95rem; line-height:1.7;">We run organized Midnight raids every week. If you've got what it takes, join our ranks and earn glory in Quel'Thalas.</p>
+    <a href="application.html" style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#6a3de8,#2563eb); color:#fff; padding:14px 32px; border-radius:10px; font-family:'Cinzel',serif; font-weight:700; font-size:0.95rem; text-decoration:none; letter-spacing:0.08em; transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(106,61,232,0.5)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
+      <i class="fas fa-scroll"></i> Apply to Join
+    </a>
+  </div>
+</section>
+
+<!--======================== Footer ========================-->
+<footer class="footer-wrapper footer-layout2 bg-black">
+<br/>
+<div class="footer-copyright bg-black z-index-step1">
+<div class="container">
+<div class="row">
+<div class="col-xl-8 d-none d-xl-block">
+<div class="footer-menu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="org_structure-whitepaper.html">Whitepaper</a></li>
+<li><a href="privacy_policy.html">Privacy Policy</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="col-xl-4 align-self-center text-center py-3 py-xl-0 text-xl-end">
+<p class="text-light fw-bold mb-0">2021 Final Frontier Gamers DAO LLC. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<a class="scrollToTop icon-btn3" href="#"><i class="fas fa-user-astronaut"></i></a>
+
+</body>
+</html>

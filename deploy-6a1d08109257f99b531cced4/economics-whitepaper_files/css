@@ -1,0 +1,41 @@
+/*
+ * See: https://fonts.google.com/license/googlerestricted
+ */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://web.archive.org/web/20241004045120im_/https://fonts.gstatic.com/s/googlesans/v61/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIJllpyw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://web.archive.org/web/20241004045120im_/https://fonts.gstatic.com/s/googlesans/v61/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrw2IJllpyw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://web.archive.org/web/20241004045120im_/https://fonts.gstatic.com/s/googlesans/v61/4Ua_rENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzjJ5llpyw.ttf) format('truetype');
+}
+
+/*
+     FILE ARCHIVED ON 04:51:20 Oct 04, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:56:11 Oct 04, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1.274
+  exclusion.robots: 0.035
+  exclusion.robots.policy: 0.024
+  esindex: 0.016
+  cdx.remote: 41.877
+  LoadShardBlock: 171.155 (6)
+  PetaboxLoader3.datanode: 154.816 (7)
+  load_resource: 53.262
+*/

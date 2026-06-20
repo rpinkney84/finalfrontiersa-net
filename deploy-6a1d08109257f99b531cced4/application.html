@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<title>Apply to Join | Final Frontier Gamers DAO</title>
+<meta content="FinalFrontierSA" name="author"/>
+<meta content="Join Final Frontier – the premier gaming DAO on Solana. Apply for membership and become part of the guild." name="description"/>
+<meta content="Final Frontier, apply, gaming guild, DAO, WoW Midnight, Solana, join guild" name="keywords"/>
+<meta content="INDEX,FOLLOW" name="robots"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@400;600;700;900&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/css/fontawesome.min.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/theme-color1.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+  :root {
+    --midnight-deep: #050814;
+    --midnight-blue: #0a1628;
+    --void-purple: #1a0b2e;
+    --arcane-gold: #c8a951;
+    --arcane-gold-light: #f0d080;
+    --elf-silver: #a8c4e0;
+    --glow-blue: #4fc3f7;
+    --glow-purple: #9b59b6;
+    --text-light: #d4e8ff;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--midnight-deep);
+    color: var(--text-light);
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO BANNER ── */
+  .apply-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #050814 0%, #0a1040 40%, #1a0b2e 70%, #050814 100%);
+  }
+
+  .apply-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 50%, rgba(74, 20, 140, 0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(10, 60, 150, 0.3) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  /* Floating orbs */
+  .apply-hero::after {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(155,89,182,0.12) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    animation: floatOrb 8s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  @keyframes floatOrb {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(30px) scale(1.1); }
+  }
+
+  .apply-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 20px 60px;
+  }
+
+  .apply-hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--arcane-gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .apply-hero-eyebrow::before,
+  .apply-hero-eyebrow::after {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--arcane-gold), transparent);
+  }
+
+  .apply-hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--arcane-gold-light), #fff, var(--glow-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 16px;
+    line-height: 1.15;
+    text-shadow: none;
+  }
+
+  .apply-hero p {
+    font-size: 1.1rem;
+    color: var(--elf-silver);
+    max-width: 620px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,169,81,0.12);
+    border: 1px solid rgba(200,169,81,0.35);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    color: var(--arcane-gold);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0 6px;
+  }
+
+  /* ── STARS PARTICLE ── */
+  .stars-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .stars-bg span {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle var(--dur, 4s) ease-in-out var(--delay, 0s) infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: var(--op, 0.6); }
+  }
+
+  /* ── REQUIREMENT CARDS ── */
+  .requirements-section {
+    position: relative;
+    z-index: 1;
+    padding: 60px 0 40px;
+    background: linear-gradient(180deg, var(--midnight-deep) 0%, var(--midnight-blue) 100%);
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.7rem;
+    color: var(--arcane-gold);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .section-sub {
+    text-align: center;
+    color: var(--elf-silver);
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+
+  .req-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(79,195,247,0.15);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+
+  .req-card:hover {
+    background: rgba(79,195,247,0.08);
+    border-color: rgba(79,195,247,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(79,195,247,0.15);
+  }
+
+  .req-icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--glow-purple), var(--glow-blue));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 auto 16px;
+  }
+
+  .req-card h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--arcane-gold-light);
+    margin-bottom: 10px;
+  }
+
+  .req-card p {
+    font-size: 0.9rem;
+    color: var(--elf-silver);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── APPLICATION FORM ── */
+  .form-section {
+    position: relative;
+    z-index: 1;
+    padding: 60px 0 80px;
+    background: var(--void-purple);
+    overflow: hidden;
+  }
+
+  .form-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(10,60,150,0.2) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 100%, rgba(155,89,182,0.15) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  .form-wrapper {
+    position: relative;
+    z-index: 1;
+    background: rgba(5, 8, 20, 0.7);
+    border: 1px solid rgba(200, 169, 81, 0.2);
+    border-radius: 24px;
+    padding: 48px 40px;
+    backdrop-filter: blur(20px);
+    box-shadow:
+      0 0 0 1px rgba(79,195,247,0.05),
+      0 40px 80px rgba(0,0,0,0.6),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--arcane-gold), transparent);
+  }
+
+  .form-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--arcane-gold);
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .form-subtitle {
+    text-align: center;
+    color: var(--elf-silver);
+    font-size: 0.9rem;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(200,169,81,0.1);
+  }
+
+  .form-label {
+    color: var(--elf-silver);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .form-label .required-star {
+    color: #e74c3c;
+    margin-left: 3px;
+  }
+
+  .form-control-custom {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(79,195,247,0.2);
+    border-radius: 10px;
+    padding: 13px 18px;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .form-control-custom::placeholder {
+    color: rgba(168,196,224,0.4);
+  }
+
+  .form-control-custom:focus {
+    background: rgba(79,195,247,0.08);
+    border-color: var(--glow-blue);
+    box-shadow: 0 0 0 3px rgba(79,195,247,0.12);
+  }
+
+  .form-control-custom option {
+    background: #0a1628;
+    color: #fff;
+  }
+
+  textarea.form-control-custom {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(79,195,247,0.15);
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .checkbox-item:hover {
+    background: rgba(79,195,247,0.1);
+    border-color: rgba(79,195,247,0.4);
+  }
+
+  .checkbox-item input[type="checkbox"] {
+    accent-color: var(--glow-blue);
+    width: 16px; height: 16px;
+    cursor: pointer;
+  }
+
+  .checkbox-item label {
+    color: var(--elf-silver);
+    font-size: 0.88rem;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #6a3de8, #2563eb);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--arcane-gold), #e67e22);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .submit-btn:hover::before { opacity: 1; }
+
+  .submit-btn span { position: relative; z-index: 1; }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(106,61,232,0.5);
+  }
+
+  .submit-btn:active { transform: translateY(0); }
+
+  .form-disclaimer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(168,196,224,0.5);
+    margin-top: 16px;
+  }
+
+  /* ── DIVIDER ── */
+  .rune-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .rune-divider::before,
+  .rune-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,169,81,0.4), transparent);
+  }
+  .rune-divider-icon {
+    color: var(--arcane-gold);
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  /* ── STATS BANNER ── */
+  .stats-banner {
+    background: linear-gradient(90deg, #050814, #0a1628 50%, #050814);
+    border-top: 1px solid rgba(200,169,81,0.15);
+    border-bottom: 1px solid rgba(200,169,81,0.15);
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  .stat-item { padding: 0 20px; }
+  .stat-number {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--arcane-gold);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--elf-silver);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+    display: block;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(200,169,81,0.2);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* ── NAV (reuse site styles) ── */
+  a { color: inherit; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .apply-hero-content { padding: 60px 16px 40px; }
+    .form-wrapper { padding: 28px 20px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .hero-badge { font-size: 0.78rem; }
+    .form-title { font-size: 1.3rem; }
+    .apply-hero h1 { font-size: 2rem; }
+    .stat-number { font-size: 1.5rem; }
+    .stat-divider { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .checkbox-group { flex-direction: column; }
+    .checkbox-item { width: 100%; }
+    .hero-badge { display: block; margin-bottom: 8px; }
+  }
+</style>
+<link href="assets/css/mobile.css" rel="stylesheet"/>
+<style>
+.main-menu ul li.menu-item-has-children > a::after,
+.main-menu ul li.mega-menu-wrap > a::after { content: none !important; }
+</style>
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://finalfrontiersa.net/application.html"/>
+<meta property="og:title" content="Apply to Join | Final Frontier Gamers DAO"/>
+<meta property="og:description" content="Apply to join Final Frontier Gamers DAO — elite blockchain gaming guild. Prove your worth on the Frontier."/>
+<meta property="og:image" content="https://finalfrontiersa.net/assets/img/logo-2.png"/>
+<meta property="og:site_name" content="Final Frontier Gamers DAO"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@FinalFrontierSA"/>
+<meta name="twitter:title" content="Apply to Join | Final Frontier Gamers DAO"/>
+<meta name="twitter:description" content="Apply to join Final Frontier Gamers DAO — elite blockchain gaming guild. Prove your worth on the Frontier."/>
+<meta name="twitter:image" content="https://finalfrontiersa.net/assets/img/logo-2.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png"/>
+<meta name="theme-color" content="#050814"/>
+</head>
+<body>
+
+<!-- Stars background -->
+<div class="stars-bg" id="starsBg"></div>
+
+<!--======================== Sidemenu ========================-->
+<div class="sidemenu-wrapper d-none d-lg-block">
+<div class="sidemenu-content bg-light-dark">
+<button class="closeButton border-theme text-theme bg-theme-hover sideMenuCls"><i class="fas fa-times"></i></button>
+<div class="about-box">
+<a href="index.html"><img alt="Final Frontier" src="assets/img/logo-2.png"/></a>
+<p class="text-light mt-3">Metaverse and blockchain gaming affords Final Frontier with opportunities to earn while playing games and generate methods to earn rewards from contributions by employing teamwork, strategy, and ethos.</p>
+<ul class="social-links text-light">
+<li><a href="https://instagram.com/finalfrontiersa" target="_blank"><i class="fab fa-instagram"></i></a></li>
+<li><a href="https://twitter.com/FinalFrontierSA" target="_blank"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://discord.gg/d45ztjqmgV" target="_blank"><i class="fab fa-discord"></i></a></li>
+<li><a href="https://facebook.com/FinalFrontierSA" target="_blank"><i class="fab fa-facebook"></i></a></li>
+<li><a href="https://www.youtube.com/c/FinalFrontierSA" target="_blank"><i class="fab fa-youtube"></i></a></li>
+</ul>
+<div class="my-40">
+<div class="info-style1">
+<span class="icon-btn2"><i class="fas fa-envelope"></i></span>
+<p class="fs-4 lh-1 fw-medium text-white mb-0">Business Inquiries?</p>
+<p class="text-white mb-0"><a class="text-inherit" href="mailto:support@finalfrontiersa.net" target="_blank">E-Mail Us Here</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--======================== Sticky Header ========================-->
+<div class="sticky-header-wrap sticky-header bg-light-dark py-1 py-sm-2 py-lg-1">
+<div class="container position-relative">
+<div class="row align-items-center">
+<div class="col-5 col-md-3">
+<div class="logo">
+<a href="index.html"><img alt="Final Frontier" src="assets/img/logo-2.png"/></a>
+</div>
+</div>
+<div class="col-7 col-md-9 text-end position-static">
+<nav class="main-menu menu-sticky1 d-none d-lg-block link-inherit">
+<ul>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li class="mega-menu-wrap menu-item-has-children">
+<a>Pages <i class="fas fa-chevron-down" style="font-size:.7rem;margin-left:3px;"></i></a>
+<ul class="mega-menu bg-black">
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Frontierian Whitepapers</span>
+<ul>
+<li><a class="text-white" href="org_structure-whitepaper.html">FF Organization &amp; Structure</a></li>
+<li><a class="text-white" href="economics-whitepaper.html">FF Economics</a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Exchanges/Marketplaces</span>
+<ul>
+<li><a class="text-white" href="https://crypto.com/">Crypto.com</a></li>
+<li><a class="text-white" href="https://jup.ag/" target="_blank">Jupiter</a></li>
+<li><a class="text-white" href="https://digifinex.com/" target="_blank">Digifinex</a></li>
+<li><a class="text-white" href="https://orca.so/" target="_blank">Orca</a></li>
+<li><a class="text-white" href="https://mango.markets/" target="_blank">Mango Markets</a></li>
+<li><a class="text-white" href="https://magiceden.io/" target="_blank">Magic Eden</a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Resources</span>
+<ul>
+<li><a class="text-white" href="https://solana.com/" target="_blank">Solana Main</a></li>
+<li><a class="text-white" href="https://phantom.app/" target="_blank">Phantom Wallet</a></li>
+<li><a class="text-white" href="https://solflare.com/" target="_blank">Solflare Wallet</a></li>
+<li><a class="text-white" href="https://coinmarketcap.com/" target="_blank">CoinMarketCap</a></li>
+<li><a class="text-white" href="https://coingecko.com/" target="_blank">CoinGecko</a></li>
+<li><a class="text-white" href="midnight.html" target="_blank">WoW Midnight Guide</a></li>
+</ul>
+</li>
+<li>
+<span class="text-blue" style="display:block;padding:8px 20px;font-weight:700;font-size:.85rem;letter-spacing:.04em;">Miscellaneous</span>
+<ul>
+<li><a class="text-white" href="privacy_policy.html">Privacy Policy</a></li>
+<li><a class="text-white" href="contests.html">Contests &amp; Giveaways</a></li>
+<li><a class="text-white" href="contact.html">Contact Us</a></li>
+<li><a class="text-white" href="team.html">Meet the Team</a></li>
+<li><a class="text-white" href="front-magazine.html">FRONT Magazine</a></li>
+<li><a class="text-white" href="metapower.html">Metapower</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="application.html">Apply to Join</a>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</li></ul>
+</nav>
+<button class="vs-menu-toggle text-theme border-theme d-inline-block d-lg-none"><i class="fas fa-bars"></i></button>
+</div>
+<div class="col-xl-2 align-items-stretch d-none d-xl-flex ms-auto">
+<button class="sideMenuToggler bg-gradient2 toggler-btn2" style="margin-left:auto;"><i class="fas fa-space-shuttle fs-2"></i></button>
+</div>
+</div>
+</div>
+</div>
+
+<!--======================== Hero Banner ========================-->
+<div class="apply-hero">
+  <div class="apply-hero-content">
+    <div class="apply-hero-eyebrow">Final Frontier Gamers DAO</div>
+    <h1>Forge Your Legend<br/>With The Frontier</h1>
+    <p>We are more than a guild — we are a brotherhood of elite players, strategists, and blockchain innovators. Prove your worth and join our ranks.</p>
+    <div style="margin-top:20px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+      <span class="hero-badge"><i class="fas fa-dragon"></i> WoW: Midnight</span>
+      <span class="hero-badge"><i class="fas fa-coins"></i> Solana DAO</span>
+      <span class="hero-badge"><i class="fas fa-shield-halved"></i> Elite Guild</span>
+    </div>
+  </div>
+</div>
+
+<!--======================== Stats Banner ========================-->
+<div class="stats-banner">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-6 col-md-3 stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Active Members</span>
+      </div>
+      <div class="col-auto d-none d-md-block"><div class="stat-divider"></div></div>
+      <div class="col-6 col-md-3 stat-item">
+        <span class="stat-number">3+</span>
+        <span class="stat-label">Years Active</span>
+      </div>
+      <div class="col-auto d-none d-md-block"><div class="stat-divider"></div></div>
+      <div class="col-6 col-md-3 stat-item">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Raid Clears</span>
+      </div>
+      <div class="col-auto d-none d-md-block"><div class="stat-divider"></div></div>
+      <div class="col-6 col-md-3 stat-item">
+        <span class="stat-number">∞</span>
+        <span class="stat-label">Brotherhood</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--======================== Requirements ========================-->
+<section class="requirements-section">
+  <div class="container">
+    <div class="row justify-content-center mb-3">
+      <div class="col-lg-7 text-center">
+        <h2 class="section-title">What We Look For</h2>
+        <p class="section-sub">Final Frontier holds its members to a high standard. Here's what it takes to earn a place in our ranks.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="req-card">
+          <div class="req-icon"><i class="fas fa-gamepad"></i></div>
+          <h5>Dedication</h5>
+          <p>Consistent raid attendance, active participation, and a genuine passion for high-level play.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="req-card">
+          <div class="req-icon"><i class="fas fa-users"></i></div>
+          <h5>Team Spirit</h5>
+          <p>Respect for fellow members, willingness to help, and a collaborative spirit both in and out of raid.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="req-card">
+          <div class="req-icon"><i class="fas fa-chart-line"></i></div>
+          <h5>Growth Mindset</h5>
+          <p>Always looking to improve your performance, learn the meta, and adapt to new content.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="req-card">
+          <div class="req-icon"><i class="fas fa-shield-halved"></i></div>
+          <h5>Integrity</h5>
+          <p>Honesty, loyalty, and conduct that upholds the Final Frontier name — in game and in the DAO.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--======================== Application Form ========================-->
+<section class="form-section">
+  <div class="container">
+    <div class="form-wrapper">
+      <h2 class="form-title"><i class="fas fa-scroll" style="margin-right:12px; font-size:1.3rem;"></i>Membership Application</h2>
+      <p class="form-subtitle">Fill out the form below with care. Our officers review every application personally. Strong, thoughtful answers make a real difference.</p>
+
+      <form name="join-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/application-success.html">
+        <!-- Netlify hidden fields -->
+        <input type="hidden" name="form-name" value="join-application"/>
+        <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"/></label></p>
+
+        <!-- Row 1: Name & Discord -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fullName">Full Name / Handle <span class="required-star">*</span></label>
+            <input type="text" id="fullName" name="fullName" class="form-control-custom" placeholder="Your in-game name or handle" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="discordId">Discord ID <span class="required-star">*</span></label>
+            <input type="text" id="discordId" name="discordId" class="form-control-custom" placeholder="Username#0000 or new @username" required/>
+          </div>
+        </div>
+
+        <!-- Row 2: Email & Battle.net -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address <span class="required-star">*</span></label>
+            <input type="email" id="email" name="email" class="form-control-custom" placeholder="your@email.com" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="battletag">Battle.net Tag</label>
+            <input type="text" id="battletag" name="battletag" class="form-control-custom" placeholder="YourName#12345"/>
+          </div>
+        </div>
+
+        <!-- Row 3: Main Class & Server -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="mainClass">Main Class / Character <span class="required-star">*</span></label>
+            <select id="mainClass" name="mainClass" class="form-control-custom" required>
+              <option value="" disabled selected>Select your main class…</option>
+              <optgroup label="WoW: Midnight">
+                <option>Death Knight</option>
+                <option>Demon Hunter</option>
+                <option>Druid</option>
+                <option>Evoker</option>
+                <option>Hunter</option>
+                <option>Mage</option>
+                <option>Monk</option>
+                <option>Paladin</option>
+                <option>Priest</option>
+                <option>Rogue</option>
+                <option>Shaman</option>
+                <option>Warlock</option>
+                <option>Warrior</option>
+              </optgroup>
+              <optgroup label="Star Atlas / Crypto">
+                <option>Solana DeFi</option>
+                <option>NFT Trader</option>
+                <option>DAO Participant</option>
+              </optgroup>
+              <option>Other / Multiple</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="role">Preferred Role <span class="required-star">*</span></label>
+            <select id="role" name="role" class="form-control-custom" required>
+              <option value="" disabled selected>Select your role…</option>
+              <option>Tank</option>
+              <option>Healer</option>
+              <option>DPS – Melee</option>
+              <option>DPS – Ranged</option>
+              <option>Support / Utility</option>
+              <option>Crypto / DAO Operations</option>
+              <option>Flexible / Any</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Item Level / Experience -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="itemLevel">Approximate Item Level</label>
+            <input type="number" id="itemLevel" name="itemLevel" class="form-control-custom" placeholder="e.g. 650" min="1" max="999"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="yearsPlaying">Years Playing WoW / Gaming</label>
+            <input type="text" id="yearsPlaying" name="yearsPlaying" class="form-control-custom" placeholder="e.g. 10+ years"/>
+          </div>
+        </div>
+
+        <!-- Games played -->
+        <div class="form-group">
+          <label class="form-label">Games You Play <span class="required-star">*</span></label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="game-wow" name="games" value="WoW Midnight"/>
+              <label for="game-wow">WoW: Midnight</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="game-sa" name="games" value="Star Atlas"/>
+              <label for="game-sa">Star Atlas</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="game-valorant" name="games" value="Valorant"/>
+              <label for="game-valorant">Valorant</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="game-league" name="games" value="League of Legends"/>
+              <label for="game-league">League of Legends</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="game-other" name="games" value="Other"/>
+              <label for="game-other">Other</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="rune-divider"><span class="rune-divider-icon"><i class="fas fa-khanda"></i></span></div>
+
+        <!-- Why join -->
+        <div class="form-group">
+          <label class="form-label" for="whyJoin">Why Do You Want to Join Final Frontier? <span class="required-star">*</span></label>
+          <textarea id="whyJoin" name="whyJoin" class="form-control-custom" placeholder="Tell us what drives you — your goals, your raiding history, your passion for gaming and/or the Solana ecosystem…" style="min-height:140px;" required></textarea>
+        </div>
+
+        <!-- What you bring -->
+        <div class="form-group">
+          <label class="form-label" for="whatYouBring">What Can You Bring to the Guild? <span class="required-star">*</span></label>
+          <textarea id="whatYouBring" name="whatYouBring" class="form-control-custom" placeholder="Unique skills, experience, leadership, crafting expertise, crypto knowledge, content creation…" style="min-height:120px;" required></textarea>
+        </div>
+
+        <!-- Referred by -->
+        <div class="form-group">
+          <label class="form-label" for="referral">Referred by a Member?</label>
+          <input type="text" id="referral" name="referral" class="form-control-custom" placeholder="Member's name or Discord handle (if applicable)"/>
+        </div>
+
+        <!-- Availability -->
+        <div class="form-group">
+          <label class="form-label">Availability for Raids / Events <span class="required-star">*</span></label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="avail-weekday" name="availability" value="Weekday Evenings"/>
+              <label for="avail-weekday">Weekday Evenings</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="avail-weekend" name="availability" value="Weekends"/>
+              <label for="avail-weekend">Weekends</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="avail-flex" name="availability" value="Flexible"/>
+              <label for="avail-flex">Flexible / Any</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agreement -->
+        <div class="form-group" style="margin-top:32px;">
+          <div class="checkbox-item" style="border-color: rgba(200,169,81,0.3); background: rgba(200,169,81,0.05);">
+            <input type="checkbox" id="agree" name="agreement" value="agreed" required/>
+            <label for="agree" style="color: var(--arcane-gold);">I agree to uphold Final Frontier's code of conduct and understand that membership is earned, not given.</label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span><i class="fas fa-paper-plane" style="margin-right:10px;"></i>Submit Your Application</span>
+        </button>
+
+        <p class="form-disclaimer">Applications are reviewed within 3–7 business days. You will be contacted via Discord or email. Submitting an application does not guarantee membership.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!--======================== Footer ========================-->
+<footer class="footer-wrapper footer-layout2 bg-black">
+<br/>
+<div class="footer-copyright bg-black z-index-step1">
+<div class="container">
+<div class="row">
+<div class="col-xl-8 d-none d-xl-block">
+<div class="footer-menu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="org_structure-whitepaper.html">Whitepaper</a></li>
+<li><a href="privacy_policy.html">Privacy Policy</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="col-xl-4 align-self-center text-center py-3 py-xl-0 text-xl-end">
+<p class="text-light fw-bold text-bold mb-0">2021 Final Frontier Gamers DAO LLC. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<a class="scrollToTop icon-btn3" href="#"><i class="fas fa-user-astronaut"></i></a>
+
+<script>
+// Generate stars
+(function(){
+  const bg = document.getElementById('starsBg');
+  if(!bg) return;
+  const count = 120;
+  for(let i=0;i<count;i++){
+    const s = document.createElement('span');
+    s.style.left = Math.random()*100+'%';
+    s.style.top = Math.random()*100+'%';
+    s.style.setProperty('--dur', (2+Math.random()*5)+'s');
+    s.style.setProperty('--delay', (Math.random()*6)+'s');
+    s.style.setProperty('--op', (0.3+Math.random()*0.7).toFixed(2));
+    s.style.width = s.style.height = (Math.random()>0.7?3:2)+'px';
+    bg.appendChild(s);
+  }
+})();
+</script>
+<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/vsmenu.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

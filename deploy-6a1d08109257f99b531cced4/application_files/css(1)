@@ -1,0 +1,30 @@
+/*
+ * See: https://fonts.google.com/license/googlerestricted
+ */
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://web.archive.org/web/20241003182130im_/https://fonts.gstatic.com/s/productsans/v19/pxiDypQkot1TnFhsFMOfGShlEA.ttf) format('truetype');
+}
+
+/*
+     FILE ARCHIVED ON 18:21:30 Oct 03, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 06:29:21 Oct 04, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1.274
+  exclusion.robots: 0.037
+  exclusion.robots.policy: 0.023
+  esindex: 0.036
+  cdx.remote: 18.966
+  LoadShardBlock: 191.919 (6)
+  PetaboxLoader3.datanode: 215.868 (8)
+  load_resource: 405.958 (2)
+  PetaboxLoader3.resolve: 314.43 (2)
+*/
