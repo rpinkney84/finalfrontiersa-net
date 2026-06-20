@@ -58,6 +58,7 @@
 <link href="assets/css/style.css" rel="stylesheet"/>
 <!-- Theme Color CSS -->
 <link href="assets/css/theme-color1.css" rel="stylesheet"/>
+<link href="assets/css/hero-overrides.css" rel="stylesheet"/>
 
 <body>
 <!--[if lte IE 9]>
@@ -311,23 +312,29 @@
 <!--==============================
     Hero Area
     ==============================-->
-<section class="vs-hero-wrapper">
-<div class="vs-hero-carousel" data-container="1170" data-height="650" data-slidertype="fullwidth">
-<div class="ls-slide" data-ls="duration: 3000; transition2d: 5;">
-<img alt="Hero Bg Image" class="ls-bg" src="assets/img/hero/hero-img-3-3.jpg"/>
-<div class="ls-l" style="left:0; top:0; width:480px; height:100%; background:linear-gradient(90deg,rgba(5,8,20,0.82) 0%,rgba(5,8,20,0.55) 70%,transparent 100%); pointer-events:none;" data-ls="durationin:500; delayin:0;"></div>
+<section class="ff-hero" aria-label="Final Frontier hero">
+  <div class="ff-hero__background" aria-hidden="true"></div>
+  <div class="ff-hero__vignette" aria-hidden="true"></div>
+  <div class="ff-hero__hud ff-hero__hud--left" aria-hidden="true"></div>
+  <div class="ff-hero__hud ff-hero__hud--right" aria-hidden="true"></div>
 
-<span class="ls-l ls-responsive home-hero-eyebrow" data-ls="offsetxin: -80; durationin: 900; delayin: 0; easingin:easeOutQuint; transitionout: true; offsetxout: 400; durationout: 3000; fadeout: true;" data-ls-laptop="left: 100px; top: 155px;" data-ls-tablet="left: 60px; top: 130px;" data-ls-mobile="left: 50%; top: 48px; text-align: center; width: 92%;" style="left: 40px; top: 165px;">Final Frontier Gamers DAO</span>
-<h1 class="ls-l ls-responsive home-hero-title" data-ls="durationin: 1000; delayin: 150; easingin:easeOutQuint; texttransitionin: true; textfadein: true; texttypein: words_asc; textstartatin: transitioninstart; textshiftin: 300; textoffsetyin: 50; transitionout: true; offsetxout: 500; durationout: 3000; fadeout: true; skewxout: 10;" data-ls-laptop="left: 100px; top: 205px; font-size: 52px;" data-ls-tablet="left: 60px; top: 185px; font-size: 44px;" data-ls-mobile="left: 50%; top: 88px; font-size: 28px; text-align: center; width: 92%;" style="left: 40px; top: 210px; font-size: 42px;">Start Your<br/>Star Atlas Journey</h1>
-<p class="ls-l ls-responsive home-hero-desc" data-ls="minfontsize: 12px; durationin: 1000; delayin: 900; easingin:easeOutQuint; offsetyin: 50; transitionout: true; offsetxout: 300; durationout: 3000; fadeout: true; skewxout: 10;" data-ls-laptop="left: 100px; top: 340px; font-size: 17px;" data-ls-tablet="left: 60px; top: 320px; font-size: 16px;" data-ls-mobile="left: 50%; top: 175px; font-size: 14px; text-align: center; width: 88%;" style="left: 40px; top: 330px; font-size: 16px;">Professional gaming guild · Star Atlas · Solana DAO · Esports &amp; Web3</p>
-<div class="ls-l ls-center-xs ls-responsive home-hero-actions" data-ls="durationin: 1000; delayin: 1100; easingin:easeOutQuint; offsetyin: 50; transitionout: true; offsetxout: 300; durationout: 3000; fadeout: true; skewxout: 10;" data-ls-laptop="left: 100px; top: 410px;" data-ls-tablet="left: 60px; top: 395px;" data-ls-mobile="left: 50%; top: 230px; width: auto;" style="left: 40px; top: 400px;">
-<div class="ls-btn-group home-hero-btn-group">
-<a class="vs-btn bg-gradient2 style1" href="https://play.staratlas.com/" target="_blank" rel="noopener">Play Star Atlas</a>
-<a class="vs-btn outline1 home-hero-btn-secondary" href="application.html">Apply to Join</a>
-</div>
-</div>
-</div>
-</div>
+  <div class="container ff-hero__container">
+    <div class="ff-hero__content">
+      <div class="ff-hero__badge">Elite Gaming Organization</div>
+      <h1 class="ff-hero__title">One Guild.<br/>Multiple Worlds.<br/>Limitless Frontiers.</h1>
+      <p class="ff-hero__subtitle">World of Warcraft • Star Atlas • Valorant • Call of Duty</p>
+      <p class="ff-hero__copy">Final Frontier is a professional gaming guild built for esports, Web3 gaming, strategic operations, and high-performance team culture across every frontier of play.</p>
+      <div class="ff-hero__actions">
+        <a class="ff-hero__btn ff-hero__btn--primary" href="application.html">Join Final Frontier</a>
+        <a class="ff-hero__btn ff-hero__btn--secondary" href="about.html">Explore Our Divisions</a>
+      </div>
+      <div class="ff-hero__stats" aria-label="Final Frontier highlights">
+        <div><strong>35+</strong><span>Countries</span></div>
+        <div><strong>4</strong><span>Game Theaters</span></div>
+        <div><strong>24/7</strong><span>Global Ops</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 <!--==============================
     Featured Blog
@@ -763,10 +770,7 @@ document.addEventListener("DOMContentLoaded",function(){
       var fx = f.rx*W, fy = f.ry*H, tx = t.rx*W, ty = t.ry*H;
       ctx.beginPath();
       ctx.moveTo(fx,fy); ctx.lineTo(tx,ty);
-      var grad = ctx.createLinearGradient(fx,fy,tx,ty);
-      grad.addColorStop(0, 'rgba(200,169,81,0.35)');
-      grad.addColorStop(1, conn.color.replace(')',',0.25)').replace('rgb','rgba').replace('#','rgba(').replace(',0.25)','') + (conn.color.startsWith('#') ? ',0.25)':''));
-      // simpler:
+      // Static safe stroke color; avoids invalid CanvasGradient rgba conversion.
       ctx.strokeStyle = 'rgba(200,169,81,0.18)';
       ctx.lineWidth = 1;
       ctx.setLineDash([4, 8]);
@@ -1112,8 +1116,6 @@ document.addEventListener("DOMContentLoaded",function(){
     Brand Area
     ==============================-->
 <style>
-/* ── PARTNERS CAROUSEL (real logos) ── */
-.<style>
 /* ── PARTNERS CAROUSEL (real logos) ── */
 .partners-section{background:#000;padding:60px 0 50px;position:relative;overflow:hidden;}
 .partners-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(200,169,81,.05) 0%,transparent 60%);}

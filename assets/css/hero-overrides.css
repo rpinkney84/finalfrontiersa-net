@@ -1,0 +1,312 @@
+
+/* Final Frontier homepage hero override
+   Static HTML/CSS only. No React, no build step, no navigation changes. */
+.ff-hero {
+  position: relative;
+  min-height: 720px;
+  height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #05070b;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.14);
+}
+
+.ff-hero__background {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(3, 5, 12, 0.95) 0%, rgba(3, 5, 12, 0.74) 34%, rgba(3, 5, 12, 0.38) 62%, rgba(3, 5, 12, 0.82) 100%),
+    radial-gradient(circle at 25% 35%, rgba(122, 0, 255, 0.26), transparent 36%),
+    radial-gradient(circle at 70% 55%, rgba(0, 255, 255, 0.16), transparent 32%),
+    url('../img/hero/final-frontier-multiverse-hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1.02);
+  z-index: -4;
+}
+
+.ff-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.40) 0%, transparent 24%, rgba(0,0,0,0.72) 100%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 86px),
+    repeating-linear-gradient(0deg, rgba(0,255,255,0.024) 0 1px, transparent 1px 74px);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -3;
+}
+
+.ff-hero::before,
+.ff-hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.ff-hero::before {
+  width: 520px;
+  height: 520px;
+  right: -150px;
+  top: 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 255, 0.16);
+  box-shadow: 0 0 90px rgba(0, 255, 255, 0.12), inset 0 0 70px rgba(122, 0, 255, 0.14);
+}
+
+.ff-hero::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 180px;
+  background: linear-gradient(0deg, #05070b 0%, rgba(5, 7, 11, 0) 100%);
+}
+
+.ff-hero__hud {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(0, 255, 255, 0.16);
+  opacity: 0.48;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ff-hero__hud--left {
+  left: 4%;
+  bottom: 11%;
+  clip-path: polygon(0 0, 72% 0, 100% 28%, 100% 100%, 0 100%);
+  box-shadow: inset 0 0 28px rgba(0, 255, 255, 0.08);
+}
+
+.ff-hero__hud--right {
+  right: 6%;
+  top: 20%;
+  border-color: rgba(212, 175, 55, 0.18);
+  transform: rotate(12deg);
+  box-shadow: inset 0 0 28px rgba(212, 175, 55, 0.08);
+}
+
+.ff-hero__container {
+  position: relative;
+  z-index: 2;
+}
+
+.ff-hero__content {
+  max-width: 760px;
+  padding: 42px 0;
+}
+
+.ff-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 999px;
+  background: rgba(8, 10, 18, 0.62);
+  color: #d4af37;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+.ff-hero__badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ffff;
+  box-shadow: 0 0 12px #00ffff;
+}
+
+.ff-hero__title {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 6vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.72), 0 0 26px rgba(0,255,255,0.16);
+}
+
+.ff-hero__subtitle {
+  margin: 22px 0 0;
+  color: #00ffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(0, 255, 255, 0.25);
+}
+
+.ff-hero__copy {
+  max-width: 640px;
+  margin: 18px 0 0;
+  color: rgba(255,255,255,0.86);
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.16rem);
+  line-height: 1.72;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.72);
+}
+
+.ff-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.ff-hero__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 14px;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.ff-hero__btn:hover {
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.ff-hero__btn--primary {
+  border: 1px solid rgba(0,255,255,0.48);
+  background: linear-gradient(135deg, rgba(0,255,255,0.34), rgba(122,0,255,0.48));
+  box-shadow: 0 0 28px rgba(0,255,255,0.18), inset 0 0 18px rgba(255,255,255,0.08);
+}
+
+.ff-hero__btn--primary:hover {
+  box-shadow: 0 0 38px rgba(0,255,255,0.28), 0 14px 40px rgba(122,0,255,0.25);
+}
+
+.ff-hero__btn--secondary {
+  border: 1px solid rgba(212,175,55,0.42);
+  background: rgba(8, 10, 18, 0.46);
+  box-shadow: inset 0 0 18px rgba(212,175,55,0.08);
+  backdrop-filter: blur(10px);
+}
+
+.ff-hero__btn--secondary:hover {
+  border-color: rgba(212,175,55,0.70);
+  box-shadow: 0 0 28px rgba(212,175,55,0.16), inset 0 0 18px rgba(212,175,55,0.10);
+}
+
+.ff-hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 560px;
+  margin-top: 34px;
+}
+
+.ff-hero__stats div {
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 14px;
+  background: rgba(5, 7, 11, 0.48);
+  backdrop-filter: blur(10px);
+}
+
+.ff-hero__stats strong,
+.ff-hero__stats span {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.ff-hero__stats strong {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.ff-hero__stats span {
+  margin-top: 2px;
+  color: rgba(255,255,255,0.58);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .ff-hero {
+    min-height: 680px;
+    height: auto;
+    padding: 86px 0 70px;
+    text-align: center;
+  }
+
+  .ff-hero__background {
+    background-position: 58% center;
+  }
+
+  .ff-hero__content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ff-hero__copy {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ff-hero__actions {
+    justify-content: center;
+  }
+
+  .ff-hero__stats {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .ff-hero {
+    min-height: 650px;
+    padding: 70px 0 52px;
+  }
+
+  .ff-hero__badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+  }
+
+  .ff-hero__subtitle {
+    letter-spacing: 0.06em;
+  }
+
+  .ff-hero__actions {
+    flex-direction: column;
+  }
+
+  .ff-hero__btn {
+    width: 100%;
+  }
+
+  .ff-hero__stats {
+    grid-template-columns: 1fr;
+  }
+}
