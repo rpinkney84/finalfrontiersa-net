@@ -571,4 +571,106 @@ body {
     min-height: 900px !important;
     padding-bottom: 160px !important;
   }
+}/* ==========================================
+   FINAL HERO POLISH
+   ========================================== */
+
+/* Remove random HUD circles */
+.ff-hero__hud,
+.ff-hero__hud-left,
+.ff-hero__hud-right {
+    display: none !important;
+}
+
+/* Reduce headline size */
+.ff-hero__title,
+.home-hero-title {
+    font-size: clamp(56px, 5.8vw, 110px) !important;
+    line-height: 0.92 !important;
+    max-width: 650px !important;
+}
+
+/* Better subtitle spacing */
+.ff-hero__subtitle {
+    max-width: 720px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 2px !important;
+}
+
+/* Hero copy */
+.ff-hero__copy {
+    max-width: 700px !important;
+    font-size: 1.15rem !important;
+    line-height: 1.7 !important;
+}
+
+/* Button row */
+.ff-hero__actions {
+    margin-top: 32px !important;
+    margin-bottom: 40px !important;
+    display: flex !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+}
+
+/* Make hero slightly taller so buttons never touch next section */
+.ff-hero {
+    min-height: 1080px !important;
+    padding-bottom: 160px !important;
+}
+
+/* Stats row */
+.ff-hero__stats {
+    margin-top: 40px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+}
+
+.ff-hero__stats div {
+    background: rgba(0,0,0,.35) !important;
+    border: 1px solid rgba(0,255,255,.15) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+.ff-hero__stats strong {
+    display: block;
+    color: #00ffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.ff-hero__stats span {
+    color: #ffffff;
+    font-size: .85rem;
+    opacity: .85;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .ff-hero {
+        min-height: auto !important;
+        padding-bottom: 120px !important;
+    }
+
+    .ff-hero__title {
+        font-size: clamp(42px, 11vw, 68px) !important;
+        line-height: .95 !important;
+    }
+
+    .ff-hero__actions {
+        flex-direction: column !important;
+    }
+
+    .ff-hero__btn {
+        width: 100% !important;
+        max-width: 340px !important;
+    }
+
+    .ff-hero__stats {
+        gap: 12px !important;
+    }
 }
