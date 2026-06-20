@@ -538,4 +538,28 @@
   .ff-hero__title {
     font-size: clamp(30px, 11vw, 40px) !important;
   }
+}/* Fix hero button clipping before Live Solana Market */
+.ff-hero {
+  min-height: 820px !important;
+  padding-bottom: 140px !important;
+  overflow: visible !important;
+}
+
+.ff-hero__actions {
+  margin-bottom: 80px !important;
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.featured-blog-wrapper {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 575px) {
+  .ff-hero {
+    min-height: 900px !important;
+    padding-bottom: 160px !important;
+  }
 }
