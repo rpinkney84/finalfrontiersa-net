@@ -673,4 +673,35 @@ body {
     .ff-hero__stats {
         gap: 12px !important;
     }
+}/* FINAL LOCK: hero title + remove purple circle */
+.ff-hero__hud,
+.ff-hero__hud-left,
+.ff-hero__hud-right,
+.ff-hero__vignette {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.ff-hero__title {
+  font-size: clamp(44px, 4.4vw, 78px) !important;
+  line-height: 0.96 !important;
+  max-width: 720px !important;
+  letter-spacing: 0.01em !important;
+}
+
+.ff-hero__content {
+  max-width: 760px !important;
+}
+
+@media (max-width: 991px) {
+  .ff-hero__title {
+    font-size: clamp(36px, 8vw, 58px) !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .ff-hero__title {
+    font-size: clamp(30px, 10vw, 42px) !important;
+  }
 }
