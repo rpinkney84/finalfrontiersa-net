@@ -1,0 +1,161 @@
+
+/* =====================================================
+   FINAL FRONTIER FOOTER ? COMMAND MAP UPGRADE
+   ===================================================== */
+
+.footer-wrapper,
+.footer-widget-wrapper,
+.footer-layout1,
+footer {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Reduce wasted footer height */
+.footer-widget-wrapper {
+  padding-top: 75px !important;
+  padding-bottom: 55px !important;
+  min-height: auto !important;
+}
+
+/* Cinematic world-grid background */
+.footer-widget-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(0, 255, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 18% 55%, rgba(122, 0, 255, 0.13), transparent 28%),
+    radial-gradient(circle at 82% 55%, rgba(212, 175, 55, 0.09), transparent 30%),
+    linear-gradient(rgba(0,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,.045) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    auto,
+    80px 80px,
+    80px 80px;
+  opacity: .85;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle global arc lines */
+.footer-widget-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 980px;
+  height: 420px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(0,255,255,.10);
+  box-shadow:
+    0 0 90px rgba(0,255,255,.09),
+    inset 0 0 90px rgba(122,0,255,.06);
+  opacity: .8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep actual footer content above the glow */
+.footer-widget-wrapper .container,
+.footer-widget-wrapper .row,
+.footer-widget-wrapper .widget,
+.footer-widget-wrapper .footer-widget {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Make footer columns feel like command cards */
+.footer-widget-wrapper .widget,
+.footer-widget-wrapper .footer-widget {
+  background: rgba(3, 7, 18, 0.38) !important;
+  border: 1px solid rgba(0,255,255,.08) !important;
+  border-radius: 18px !important;
+  padding: 24px 22px !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 55px rgba(0,0,0,.25);
+}
+
+/* Footer headings */
+.footer-widget-wrapper h3,
+.footer-widget-wrapper h4,
+.footer-widget-wrapper .widget_title {
+  font-family: "Cinzel", serif !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+}
+
+/* Footer links */
+.footer-widget-wrapper a {
+  transition: all .2s ease !important;
+}
+
+.footer-widget-wrapper a:hover {
+  color: #00ffff !important;
+  text-shadow: 0 0 12px rgba(0,255,255,.55);
+}
+
+/* Add command-status strip above copyright */
+.footer-copyright {
+  position: relative !important;
+  border-top: 1px solid rgba(0,255,255,.14) !important;
+  background:
+    linear-gradient(90deg, rgba(0,255,255,.06), transparent 25%, transparent 75%, rgba(122,0,255,.06)),
+    #000 !important;
+}
+
+.footer-copyright::before {
+  content: "FINAL FRONTIER COMMAND NETWORK  ?  WORLD OF WARCRAFT  ?  STAR ATLAS  ?  VALORANT  ?  CALL OF DUTY";
+  display: block;
+  text-align: center;
+  padding: 13px 16px 4px;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: rgba(0,255,255,.62);
+  text-transform: uppercase;
+}
+
+/* Clean copyright line */
+.footer-copyright p {
+  color: rgba(255,255,255,.82) !important;
+  font-weight: 700 !important;
+  letter-spacing: .03em !important;
+}
+
+/* Social buttons polish */
+.footer-widget-wrapper .social-links a,
+.footer-widget-wrapper .footer-social a {
+  border-radius: 10px !important;
+  box-shadow: 0 0 18px rgba(0,255,255,.08);
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+  .footer-widget-wrapper {
+    padding-top: 55px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .footer-widget-wrapper::after {
+    width: 720px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-widget-wrapper .widget,
+  .footer-widget-wrapper .footer-widget {
+    padding: 20px 18px !important;
+  }
+
+  .footer-copyright::before {
+    font-size: 9px;
+    letter-spacing: .1em;
+    line-height: 1.6;
+  }
+}
