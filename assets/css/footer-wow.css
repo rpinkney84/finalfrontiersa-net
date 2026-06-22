@@ -116,3 +116,31 @@ footer {
   font-weight: 700 !important;
   letter-spacing: .03em !important;
 }
+
+
+/* =====================================
+   FOOTER HEIGHT FIX
+   ===================================== */
+
+.footer-widget-wrapper{
+    padding-top:50px !important;
+    padding-bottom:25px !important;
+    min-height:auto !important;
+}
+
+.footer-widget-wrapper .row{
+    margin-bottom:0 !important;
+}
+
+.footer-layout1,
+.footer-area,
+.footer-widget-area{
+    min-height:auto !important;
+}
+
+.footer-copyright{
+    margin-top:0 !important;
+    padding-top:18px !important;
+    padding-bottom:18px !important;
+}
+
