@@ -1,6 +1,6 @@
 
 /* =====================================================
-   FINAL FRONTIER FOOTER ? PROFESSIONAL COMMAND MAP
+   FINAL FRONTIER FOOTER ? CLEAN PROFESSIONAL VERSION
    ===================================================== */
 
 .footer-wrapper,
@@ -11,51 +11,30 @@ footer {
   overflow: hidden !important;
 }
 
-/* Tighten footer height */
 .footer-widget-wrapper {
   position: relative !important;
   padding-top: 68px !important;
   padding-bottom: 42px !important;
   min-height: auto !important;
   background:
-    radial-gradient(ellipse at center, rgba(0,255,255,.08) 0%, rgba(0,255,255,.03) 32%, transparent 62%),
-    radial-gradient(circle at 18% 50%, rgba(122,0,255,.10), transparent 36%),
-    radial-gradient(circle at 82% 50%, rgba(212,175,55,.07), transparent 34%),
-    linear-gradient(rgba(0,255,255,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,255,.04) 1px, transparent 1px),
-    #14171f !important;
-  background-size: auto, auto, auto, 90px 90px, 90px 90px, auto !important;
+    linear-gradient(rgba(0,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,.035) 1px, transparent 1px),
+    radial-gradient(circle at 20% 45%, rgba(122,0,255,.10), transparent 34%),
+    radial-gradient(circle at 75% 40%, rgba(0,255,255,.08), transparent 34%),
+    #151820 !important;
+  background-size:
+    90px 90px,
+    90px 90px,
+    auto,
+    auto,
+    auto !important;
 }
 
-/* Soft global arc */
-.footer-widget-wrapper::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 980px;
-  height: 360px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid rgba(0,255,255,.08);
-  box-shadow:
-    0 0 90px rgba(0,255,255,.06),
-    inset 0 0 75px rgba(122,0,255,.05);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Thin scanline glow */
+/* Remove fake map oval entirely */
+.footer-widget-wrapper::before,
 .footer-widget-wrapper::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 49%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,255,255,.22), transparent);
-  pointer-events: none;
-  z-index: 0;
+  display: none !important;
+  content: none !important;
 }
 
 .footer-widget-wrapper .container,
@@ -66,7 +45,6 @@ footer {
   z-index: 2 !important;
 }
 
-/* Remove ugly card boxes from previous version */
 .footer-widget-wrapper .widget,
 .footer-widget-wrapper .footer-widget {
   background: transparent !important;
@@ -77,7 +55,6 @@ footer {
   backdrop-filter: none !important;
 }
 
-/* Footer headings */
 .footer-widget-wrapper h3,
 .footer-widget-wrapper h4,
 .footer-widget-wrapper .widget_title {
@@ -88,23 +65,24 @@ footer {
   margin-bottom: 28px !important;
 }
 
-/* Footer paragraph readability */
 .footer-widget-wrapper p {
   color: rgba(255,255,255,.78) !important;
   line-height: 1.85 !important;
 }
 
-/* Kill broken white-box glyphs before footer links */
+/* Remove all broken icon glyphs */
 .footer-widget-wrapper li::before,
+.footer-widget-wrapper li::after,
 .footer-widget-wrapper li a::before,
+.footer-widget-wrapper li a::after,
 .footer-widget-wrapper .menu-item::before,
 .footer-widget-wrapper .footer-menu li::before,
-.footer-widget-wrapper .widget_nav_menu li::before {
+.footer-widget-wrapper .widget_nav_menu li::before,
+.footer-copyright::before {
   content: none !important;
   display: none !important;
 }
 
-/* Clean footer link layout */
 .footer-widget-wrapper ul {
   list-style: none !important;
   padding-left: 0 !important;
@@ -118,91 +96,23 @@ footer {
 }
 
 .footer-widget-wrapper li a {
-  position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 10px !important;
   color: rgba(255,255,255,.9) !important;
   font-weight: 700 !important;
   text-decoration: none !important;
 }
 
-/* Clean cyan chevron */
-.footer-widget-wrapper li a::after {
-  content: "?";
-  order: -1;
-  color: #00ffff;
-  font-size: 22px;
-  line-height: 1;
-  text-shadow: 0 0 10px rgba(0,255,255,.55);
-}
-
-.footer-widget-wrapper a:hover {
+.footer-widget-wrapper li a:hover {
   color: #00ffff !important;
   text-shadow: 0 0 12px rgba(0,255,255,.42);
 }
 
-/* Contact icons */
-.footer-widget-wrapper i {
-  color: #ffffff !important;
-}
-
-/* Social buttons polish */
-.footer-widget-wrapper .social-links a,
-.footer-widget-wrapper .footer-social a {
-  border-radius: 8px !important;
-  box-shadow: 0 0 18px rgba(0,255,255,.07);
-}
-
-/* Command strip above copyright */
 .footer-copyright {
-  position: relative !important;
   border-top: 1px solid rgba(0,255,255,.14) !important;
-  background:
-    linear-gradient(90deg, rgba(0,255,255,.06), transparent 28%, transparent 72%, rgba(122,0,255,.06)),
-    #000 !important;
-}
-
-.footer-copyright::before {
-  content: "FINAL FRONTIER COMMAND NETWORK  ?  WORLD OF WARCRAFT  ?  STAR ATLAS  ?  VALORANT  ?  CALL OF DUTY";
-  display: block;
-  text-align: center;
-  padding: 12px 16px 4px;
-  font-family: "Courier New", monospace;
-  font-size: 10px;
-  letter-spacing: .16em;
-  color: rgba(0,255,255,.62);
-  text-transform: uppercase;
+  background: #000 !important;
 }
 
 .footer-copyright p {
   color: rgba(255,255,255,.82) !important;
   font-weight: 700 !important;
   letter-spacing: .03em !important;
-}
-
-/* Mobile */
-@media (max-width: 991px) {
-  .footer-widget-wrapper {
-    padding-top: 52px !important;
-    padding-bottom: 34px !important;
-  }
-
-  .footer-widget-wrapper::before {
-    width: 720px;
-    height: 300px;
-  }
-}
-
-@media (max-width: 575px) {
-  .footer-widget-wrapper {
-    padding-top: 42px !important;
-    padding-bottom: 26px !important;
-  }
-
-  .footer-copyright::before {
-    font-size: 9px;
-    letter-spacing: .1em;
-    line-height: 1.6;
-  }
 }
