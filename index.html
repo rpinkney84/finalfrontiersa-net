@@ -1441,5 +1441,31 @@ document.addEventListener("DOMContentLoaded",function(){
 .widget_nav_menu .menu li::before,
 .widget_nav_menu .menu li::after { content: none !important; }
 </style>
+
+<!-- Final Frontier Music HUD -->
+<div id="ffSpotifyDrawer" class="ff-spotify-drawer">
+  <iframe
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/track/720wnQkeYLjOoVpUALmoMv?utm_source=generator&theme=0&si=8538ac068bbe4acf"
+    width="100%"
+    height="152"
+    frameborder="0"
+    allowfullscreen
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+</div>
+
+<div class="ff-music-hud" aria-label="Music controls">
+  <div class="ff-music-hud__top">Now Playing</div>
+  <div class="ff-music-hud__track">Ooyy - Strending Kids</div>
+  <div class="ff-music-hud__actions">
+    <button id="ffMusicToggle" class="ff-music-hud__btn" type="button">Play</button>
+    <button id="ffOpenSpotify" class="ff-music-hud__btn" type="button">Spotify</button>
+  </div>
+</div>
+
+<script src="assets/js/music-hud.js"></script>
+
 </body>
 </meta></meta></meta></meta></meta></html>&lt;!--
