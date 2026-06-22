@@ -1,31 +1,47 @@
+/* ==========================================
+   FINAL FRONTIER NAVIGATION
+   Premium Cinzel Typography
+   ========================================== */
 
-/* Sitewide menu typography unifier */
 .header-wrapper .main-menu a,
 .sticky-header .main-menu a,
 .vs-mobile-menu a,
 .mega-menu a,
 .mega-menu span {
-  font-family: "DM Sans", "Roboto", "Montserrat", Arial, sans-serif !important;
+    font-family: "Cinzel", serif !important;
 }
 
+/* Main Navigation */
 .header-wrapper .main-menu > ul > li > a,
 .sticky-header .main-menu > ul > li > a {
-  color: #ffffff !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
 }
 
-.mega-menu a,
+/* Mega Menu Links */
+.mega-menu a {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+}
+
+/* Mega Menu Category Headers */
 .mega-menu span {
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.03em !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #c8a951 !important;
 }
 
+/* Mobile Menu */
 .vs-mobile-menu a {
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
 }
