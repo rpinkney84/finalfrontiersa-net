@@ -972,51 +972,62 @@ document.addEventListener("DOMContentLoaded",function(){
 <section class="vs-popular-news bg-black pt-60 pb-40">
 <div class="align-items-center">
 <h2 class="h4 text-white text-center font-theme3 mt-md-n2 mb-4 z-index-common"><img alt="Zocker" src="assets/img/logo-5.png"/>  FrontierView  <img alt="Zocker" src="assets/img/logo-5.png"/></h2>
+
 <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-<div id="tradingview_e4a4e"></div>
-<div class="tradingview-widget-copyright"><rel="noopener" target="_blank"><span class="white-text">Brought to You by Tradingview</span></rel="noopener"></div>
-<script src="https://s3.tradingview.com/tv.js" type="text/javascript"></script>
-<script type="text/javascript">
-    new TradingView.widget(
+<div class="ff-frontierview-chart">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/symbols/SOLUSD/?exchange=KRAKEN" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Solana price</span>
+      </a>
+      <span class="trademark"> by TradingView</span>
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
     {
-    "width": 1280,
-    "height": 720,
-    "symbol": "KUCOIN:SOLUSDT",
-    "interval": "60",
-    "timezone": "America/Chicago",
-    "theme": "dark",
-    "style": "8",
-    "locale": "en",
-    "toolbar_bg": "#f1f3f6",
-    "enable_publishing": false,
-    "withdateranges": true,
-    "hide_side_toolbar": false,
-    "allow_symbol_change": true,
-    "watchlist": [
-      "COINBASE:BTCUSD",
-      "COINBASE:ETHUSD",
-      "BINANCE:BNBUSD",
-      "BINANCE:XRPUSDT",
-      "KUCOIN:SOLUSDT",
-      "BINANCE:JUPUSDT",
-      "POLONIEX:ATLASUSDT",
-      "POLONIEX:POLISUSDT",
-      "KUCOIN:AURYUSDT",
-      "KUCOIN:EGLDUSDT",
-      "COINBASE:APTUSDT",
-      "KUCOIN:ILVUSDT"
-    ],
-    "details": true,
-    "studies": [
-      "RSI@tv-basicstudies"
-    ],
-    "container_id": "tradingview_e4a4e"
-  }
-    );
+      "allow_symbol_change": true,
+      "calendar": false,
+      "details": false,
+      "hide_side_toolbar": true,
+      "hide_top_toolbar": false,
+      "hide_legend": false,
+      "hide_volume": false,
+      "hotlist": false,
+      "interval": "D",
+      "locale": "en",
+      "save_image": true,
+      "style": "8",
+      "symbol": "KRAKEN:SOLUSD",
+      "theme": "dark",
+      "timezone": "Etc/UTC",
+      "backgroundColor": "#0F0F0F",
+      "gridColor": "rgba(242, 242, 242, 0.02)",
+      "watchlist": [
+        "KRAKEN:BTCUSD",
+        "KRAKEN:ETHUSD",
+        "KRAKEN:ATLASUSD",
+        "KRAKEN:POLISUSD",
+        "KRAKEN:JUPUSD",
+        "KRAKEN:TRXUSD",
+        "KRAKEN:XRPUSD",
+        "KRAKEN:AXSUSD",
+        "KRAKEN:EGLDUSD",
+        "KRAKEN:USDTUSD",
+        "KRAKEN:USDCUSD",
+        "KRAKEN:EURCEUR"
+      ],
+      "withdateranges": false,
+      "compareSymbols": [],
+      "studies": [
+        "STD;RSI"
+      ],
+      "autosize": true
+    }
     </script>
+  </div>
 </div>
 <!-- TradingView Widget END -->
+
 </div>
 
 <br/>
