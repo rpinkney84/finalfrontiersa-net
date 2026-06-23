@@ -405,6 +405,156 @@
 }
 </style>
 
+
+<style id="ff-frontierview-command-cinematic">
+/* Cinematic polish layer for FrontierView */
+.ff-fv-frame{
+  border:1px solid rgba(212,175,55,.28)!important;
+  background:
+    radial-gradient(circle at 50% 30%,rgba(0,255,255,.18),transparent 24%),
+    radial-gradient(circle at 50% 48%,rgba(122,0,255,.20),transparent 34%),
+    linear-gradient(135deg,#02040a,#000)!important;
+  box-shadow:
+    0 0 80px rgba(0,255,255,.12),
+    inset 0 0 90px rgba(0,255,255,.035)!important;
+}
+
+.ff-fv-frame:after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(0,255,255,.16);
+  pointer-events:none;
+  clip-path:polygon(0 6%,6% 0,94% 0,100% 6%,100% 94%,94% 100%,6% 100%,0 94%);
+}
+
+.ff-fv-titlebar{
+  border-bottom:1px solid rgba(0,255,255,.22)!important;
+}
+
+.ff-fv-core{
+  grid-template-columns:.92fr 1.7fr .92fr!important;
+}
+
+.ff-fv-left-panel,
+.ff-fv-feed-panel{
+  background:linear-gradient(160deg,rgba(5,10,24,.86),rgba(0,0,0,.72))!important;
+  border-color:rgba(0,255,255,.24)!important;
+  box-shadow:0 0 30px rgba(0,255,255,.06), inset 0 0 40px rgba(255,255,255,.03)!important;
+}
+
+.ff-fv-orbital{
+  height:500px!important;
+  background:
+    radial-gradient(ellipse at center,rgba(0,255,255,.09),transparent 56%),
+    radial-gradient(ellipse at center,rgba(122,0,255,.12),transparent 44%);
+  border-radius:18px;
+}
+
+.ff-fv-center-orb{
+  width:210px!important;
+  height:210px!important;
+  background:
+    radial-gradient(circle at 45% 35%,rgba(0,255,255,.55),rgba(122,0,255,.34) 45%,rgba(0,0,0,.88) 72%)!important;
+  box-shadow:
+    0 0 95px rgba(0,255,255,.35),
+    0 0 120px rgba(122,0,255,.24),
+    inset 0 0 55px rgba(255,255,255,.13)!important;
+}
+
+.ff-fv-center-orb:before{
+  content:"";
+  position:absolute;
+  inset:-38px;
+  border-radius:50%;
+  border:1px dashed rgba(0,255,255,.28);
+  animation:ffSpin 18s linear infinite;
+}
+
+.ff-fv-center-orb:after{
+  content:"";
+  position:absolute;
+  inset:32px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+}
+
+@keyframes ffSpin{to{transform:rotate(360deg)}}
+
+.ff-fv-ring{
+  box-shadow:0 0 22px rgba(0,255,255,.12);
+}
+
+.ring-a{width:650px!important;height:230px!important;}
+.ring-b{width:535px!important;height:175px!important;}
+.ring-c{width:420px!important;height:130px!important;}
+
+.ff-fv-node{
+  width:96px!important;
+  height:96px!important;
+  box-shadow:
+    0 0 42px rgba(0,255,255,.20),
+    inset 0 0 20px rgba(255,255,255,.11)!important;
+}
+
+.node-btc{top:2%!important;left:45%!important;}
+.node-sol{top:20%!important;right:2%!important;}
+.node-eth{top:20%!important;left:2%!important;}
+.node-atlas{bottom:23%!important;left:7%!important;}
+.node-polis{bottom:1%!important;left:45%!important;}
+.node-jup{bottom:23%!important;right:7%!important;}
+
+.ff-fv-feed-item{
+  border-color:rgba(0,255,255,.12)!important;
+  background:linear-gradient(90deg,rgba(0,255,255,.045),rgba(255,255,255,.03))!important;
+}
+
+.ff-fv-assets-row a{
+  position:relative;
+  overflow:hidden;
+  min-height:145px;
+  background:
+    linear-gradient(160deg,rgba(6,13,30,.92),rgba(0,0,0,.88))!important;
+}
+
+.ff-fv-assets-row a:before{
+  content:"";
+  position:absolute;
+  left:18px;
+  right:18px;
+  bottom:18px;
+  height:42px;
+  background:
+    linear-gradient(135deg,transparent 0 15%,rgba(0,255,255,.55) 16% 18%,transparent 19% 32%,rgba(0,255,255,.45) 33% 35%,transparent 36% 52%,rgba(0,255,255,.60) 53% 55%,transparent 56%);
+  opacity:.55;
+}
+
+.ff-fv-assets-row a:hover{
+  border-color:rgba(0,255,255,.55)!important;
+}
+
+.ff-fv-mission{
+  background:linear-gradient(90deg,rgba(0,255,255,.07),rgba(122,0,255,.08),rgba(212,175,55,.05))!important;
+}
+
+@media(max-width:991px){
+  .ff-fv-core{grid-template-columns:1fr!important;}
+  .ff-fv-orbital{height:430px!important;}
+  .ring-a{width:500px!important;height:180px!important;}
+  .ring-b{width:410px!important;height:140px!important;}
+  .ring-c{width:320px!important;height:100px!important;}
+}
+
+@media(max-width:575px){
+  .ff-fv-orbital{height:360px!important;}
+  .ff-fv-center-orb{width:145px!important;height:145px!important;}
+  .ff-fv-node{width:60px!important;height:60px!important;font-size:.65rem!important;}
+  .ring-a{width:290px!important;height:110px!important;}
+  .ring-b{width:230px!important;height:82px!important;}
+  .ring-c{width:175px!important;height:60px!important;}
+}
+</style>
+
 <body>
 <!--[if lte IE 9]>
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
