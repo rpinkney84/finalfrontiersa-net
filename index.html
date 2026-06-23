@@ -79,250 +79,233 @@
 
 
 
-<style id="ff-nexus-style">
-.ff-nexus-section{
+
+<style id="ff-frontiers-wall-style">
+.ff-frontiers-wall{
   position:relative;
   background:#000;
-  padding:60px 14px 80px;
+  padding:70px 16px 90px;
   overflow:hidden;
 }
 
-.ff-nexus-section::before{
+.ff-frontiers-wall::before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 50% 45%,rgba(0,255,255,.12),transparent 34%),
-    radial-gradient(circle at 20% 20%,rgba(122,0,255,.12),transparent 30%),
+    radial-gradient(circle at 50% 0%,rgba(0,255,255,.12),transparent 34%),
+    radial-gradient(circle at 20% 35%,rgba(122,0,255,.14),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(212,175,55,.10),transparent 28%),
     linear-gradient(rgba(0,255,255,.035) 1px,transparent 1px),
     linear-gradient(90deg,rgba(0,255,255,.035) 1px,transparent 1px);
-  background-size:auto,auto,70px 70px,70px 70px;
+  background-size:auto,auto,auto,72px 72px,72px 72px;
   pointer-events:none;
 }
 
-.ff-nexus-frame{
+.ff-frontiers-inner{
   position:relative;
   z-index:2;
-  max-width:1450px;
+  max-width:1480px;
   margin:0 auto;
-  padding:34px;
-  border:1px solid rgba(212,175,55,.32);
-  background:linear-gradient(135deg,rgba(4,8,20,.9),rgba(0,0,0,.82));
-  box-shadow:0 0 70px rgba(0,255,255,.1), inset 0 0 60px rgba(255,255,255,.025);
 }
 
-.ff-nexus-header{
+.ff-frontiers-heading{
   text-align:center;
-  margin-bottom:36px;
+  margin-bottom:42px;
 }
 
-.ff-nexus-header span{
-  font-family:"Courier New",monospace;
+.ff-frontiers-heading span{
+  display:block;
   color:#00ffff;
-  letter-spacing:.22em;
-  text-transform:uppercase;
+  font-family:"Courier New",monospace;
   font-size:.72rem;
-}
-
-.ff-nexus-header h2{
-  font-family:"Cinzel",serif;
-  color:#fff;
-  font-size:clamp(2rem,4vw,4rem);
-  margin:8px 0;
+  letter-spacing:.24em;
   text-transform:uppercase;
-  letter-spacing:.08em;
+  margin-bottom:10px;
 }
 
-.ff-nexus-header p{
+.ff-frontiers-heading h2{
+  color:#fff;
+  font-family:"Cinzel",serif;
+  font-size:clamp(2.5rem,5vw,5rem);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin:0;
+  text-shadow:0 0 28px rgba(0,255,255,.24);
+}
+
+.ff-frontiers-heading p{
   max-width:760px;
-  margin:0 auto;
+  margin:12px auto 0;
   color:rgba(255,255,255,.68);
+  font-size:1rem;
   line-height:1.7;
 }
 
-.ff-nexus-map{
-  position:relative;
-  min-height:620px;
-}
-
-.ff-nexus-core{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:210px;
-  height:210px;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  border:1px solid rgba(0,255,255,.55);
-  background:radial-gradient(circle,rgba(0,255,255,.34),rgba(122,0,255,.26),rgba(0,0,0,.95));
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 80px rgba(0,255,255,.28);
-  z-index:5;
-}
-
-.ff-nexus-core strong{
-  font-family:"Cinzel",serif;
-  color:#fff;
-  font-size:4rem;
-  line-height:1;
-  text-shadow:0 0 28px rgba(0,255,255,.8);
-}
-
-.ff-nexus-core span{
-  color:#d4af37;
-  font-family:"Courier New",monospace;
-  text-transform:uppercase;
-  letter-spacing:.16em;
-  font-size:.62rem;
-  margin-top:8px;
-}
-
-.ff-nexus-node{
-  position:absolute;
-  width:285px;
-  min-height:128px;
-  padding:22px;
-  border:1px solid rgba(0,255,255,.2);
-  border-radius:14px;
-  background:linear-gradient(160deg,rgba(5,10,24,.92),rgba(0,0,0,.78));
-  text-decoration:none!important;
-  box-shadow:0 0 26px rgba(0,255,255,.06);
-  transition:.25s ease;
-  z-index:6;
-}
-
-.ff-nexus-node:hover{
-  transform:translateY(-6px);
-  border-color:rgba(0,255,255,.58);
-  box-shadow:0 0 38px rgba(0,255,255,.18);
-}
-
-.ff-nexus-node b{
-  display:block;
-  font-family:"Cinzel",serif;
-  color:#fff;
-  font-size:1.08rem;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  margin-bottom:9px;
-}
-
-.ff-nexus-node small{
-  color:rgba(255,255,255,.66);
-  line-height:1.6;
-}
-
-.node-gaming{left:5%;top:8%;}
-.node-esports{right:5%;top:8%;}
-.node-web3{left:5%;top:42%;}
-.node-community{right:5%;top:42%;}
-.node-tech{left:23%;bottom:2%;}
-.node-education{right:23%;bottom:2%;}
-
-.ff-nexus-line{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:280px;
-  height:1px;
-  background:linear-gradient(90deg,rgba(0,255,255,.45),transparent);
-  transform-origin:left center;
-  opacity:.42;
-  z-index:2;
-}
-
-.line-1{transform:rotate(214deg);}
-.line-2{transform:rotate(-34deg);}
-.line-3{transform:rotate(180deg);}
-.line-4{transform:rotate(0deg);}
-.line-5{transform:rotate(128deg);}
-.line-6{transform:rotate(52deg);}
-
-.ff-nexus-footer{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.ff-frontiers-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
   gap:22px;
-  padding:24px 28px;
-  border:1px solid rgba(212,175,55,.22);
-  background:linear-gradient(90deg,rgba(0,255,255,.06),rgba(122,0,255,.07),rgba(212,175,55,.05));
 }
 
-.ff-nexus-footer strong{
-  display:block;
+.ff-frontier-card{
+  position:relative;
+  min-height:390px;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid rgba(0,255,255,.18);
+  background:#050814;
+  text-decoration:none!important;
+  box-shadow:0 0 34px rgba(0,255,255,.07);
+  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.ff-frontier-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.02);
+  transition:transform .45s ease, filter .45s ease;
+  filter:saturate(1.05) brightness(.72);
+}
+
+.ff-frontier-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.88)),
+    linear-gradient(90deg,rgba(0,0,0,.75),transparent 72%);
+}
+
+.ff-frontier-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(0,255,255,.55);
+  box-shadow:0 18px 55px rgba(0,255,255,.16);
+}
+
+.ff-frontier-card:hover::before{
+  transform:scale(1.09);
+  filter:saturate(1.2) brightness(.88);
+}
+
+.ff-frontier-overlay{
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(255,255,255,.12);
+  z-index:2;
+  pointer-events:none;
+}
+
+.ff-frontier-content{
+  position:absolute;
+  z-index:3;
+  left:28px;
+  right:28px;
+  bottom:28px;
+}
+
+.ff-frontier-content span{
+  display:inline-block;
+  color:#00ffff;
+  font-family:"Courier New",monospace;
+  font-size:.68rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.ff-frontier-content h3{
   color:#fff;
   font-family:"Cinzel",serif;
+  font-size:clamp(1.35rem,2vw,2rem);
   text-transform:uppercase;
   letter-spacing:.08em;
+  margin:0 0 12px;
 }
 
-.ff-nexus-footer span{
-  color:rgba(255,255,255,.65);
+.ff-frontier-content p{
+  color:rgba(255,255,255,.76);
+  line-height:1.7;
+  margin:0 0 18px;
 }
 
-.ff-nexus-footer a{
+.ff-frontier-content b{
   display:inline-flex;
-  white-space:nowrap;
-  color:#050814!important;
+  color:#050814;
   background:linear-gradient(135deg,#00ffff,#7a00ff);
-  padding:14px 26px;
-  border-radius:8px;
+  padding:10px 16px;
+  border-radius:999px;
   font-family:"Cinzel",serif;
-  font-weight:900;
+  font-size:.72rem;
+  letter-spacing:.1em;
   text-transform:uppercase;
-  text-decoration:none!important;
+}
+
+/* Cinematic local/fallback backgrounds */
+.ff-frontier-card.wow::before{
+  background-image:
+    linear-gradient(135deg,rgba(12,20,45,.25),rgba(0,0,0,.4)),
+    url("team_files/games/wow.jpg");
+}
+
+.ff-frontier-card.atlas::before{
+  background-image:
+    linear-gradient(135deg,rgba(0,30,60,.2),rgba(0,0,0,.45)),
+    url("team_files/games/star_atlas.jpg");
+}
+
+.ff-frontier-card.valorant::before{
+  background:
+    radial-gradient(circle at 75% 25%,rgba(239,68,68,.55),transparent 28%),
+    linear-gradient(135deg,#1a0508,#050814 58%,#000);
+}
+
+.ff-frontier-card.cod::before{
+  background:
+    radial-gradient(circle at 70% 30%,rgba(212,175,55,.38),transparent 28%),
+    linear-gradient(135deg,#121006,#050814 58%,#000);
+}
+
+.ff-frontier-card.solana::before{
+  background:
+    radial-gradient(circle at 72% 25%,rgba(0,255,255,.40),transparent 28%),
+    radial-gradient(circle at 35% 70%,rgba(122,0,255,.36),transparent 32%),
+    linear-gradient(135deg,#020610,#060214 58%,#000);
+}
+
+.ff-frontier-card.community::before{
+  background:
+    radial-gradient(circle at 75% 22%,rgba(169,112,255,.42),transparent 28%),
+    radial-gradient(circle at 25% 70%,rgba(0,255,255,.28),transparent 32%),
+    linear-gradient(135deg,#070015,#050814 58%,#000);
 }
 
 @media(max-width:991px){
-  .ff-nexus-map{
-    min-height:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-
-  .ff-nexus-core,
-  .ff-nexus-node,
-  .ff-nexus-line{
-    position:relative;
-    left:auto;
-    right:auto;
-    top:auto;
-    bottom:auto;
-    transform:none;
-  }
-
-  .ff-nexus-core{
-    width:auto;
-    height:170px;
-    grid-column:1/-1;
-    border-radius:18px;
-  }
-
-  .ff-nexus-node{
-    width:auto;
-  }
-
-  .ff-nexus-line{
-    display:none;
+  .ff-frontiers-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
 @media(max-width:575px){
-  .ff-nexus-frame{
-    padding:20px;
+  .ff-frontiers-wall{
+    padding:50px 10px 65px;
   }
 
-  .ff-nexus-map{
+  .ff-frontiers-grid{
     grid-template-columns:1fr;
   }
 
-  .ff-nexus-footer{
-    flex-direction:column;
-    text-align:center;
+  .ff-frontier-card{
+    min-height:340px;
+  }
+
+  .ff-frontier-content{
+    left:22px;
+    right:22px;
+    bottom:22px;
   }
 }
 </style>
@@ -1243,69 +1226,81 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
-<!-- Final Frontier Nexus BEGIN -->
-<section class="ff-nexus-section">
-  <div class="ff-nexus-frame">
-    <div class="ff-nexus-header">
-      <span>Final Frontier Command Nexus</span>
-      <h2>One Guild. Six Operational Frontiers.</h2>
-      <p>A living command map for gaming operations, esports, Web3, community development, technology, and education.</p>
+
+<!-- The Frontiers Operations Wall BEGIN -->
+<section class="ff-frontiers-wall">
+  <div class="ff-frontiers-inner">
+    <div class="ff-frontiers-heading">
+      <span>Final Frontier Operations</span>
+      <h2>The Frontiers</h2>
+      <p>Explore the worlds, competitive theaters, and digital ecosystems operated by Final Frontier.</p>
     </div>
 
-    <div class="ff-nexus-map">
-      <div class="ff-nexus-core">
-        <strong>FF</strong>
-        <span>Command Core</span>
-      </div>
-
-      <a class="ff-nexus-node node-gaming" href="midnight.html">
-        <b>Gaming Operations</b>
-        <small>WoW Midnight ? Star Atlas ? Guild Events</small>
+    <div class="ff-frontiers-grid">
+      <a class="ff-frontier-card wow" href="midnight.html">
+        <div class="ff-frontier-overlay"></div>
+        <div class="ff-frontier-content">
+          <span>World of Warcraft</span>
+          <h3>Midnight Operations</h3>
+          <p>Guild readiness, recruitment, raid progression, and expansion preparation.</p>
+          <b>Enter Division</b>
+        </div>
       </a>
 
-      <a class="ff-nexus-node node-esports" href="contests.html">
-        <b>Esports Division</b>
-        <small>Valorant ? Call of Duty ? Competitive Ops</small>
+      <a class="ff-frontier-card atlas" href="https://play.staratlas.com" target="_blank" rel="noopener noreferrer">
+        <div class="ff-frontier-overlay"></div>
+        <div class="ff-frontier-content">
+          <span>Star Atlas</span>
+          <h3>Fleet Command</h3>
+          <p>SAGE Labs, ship operations, digital economy, and DAO strategy.</p>
+          <b>Launch Theater</b>
+        </div>
       </a>
 
-      <a class="ff-nexus-node node-web3" href="economics-whitepaper.html">
-        <b>Web3 Economy</b>
-        <small>Solana ? Star Atlas ? DAO Strategy</small>
+      <a class="ff-frontier-card valorant" href="contests.html">
+        <div class="ff-frontier-overlay"></div>
+        <div class="ff-frontier-content">
+          <span>Valorant</span>
+          <h3>Tactical Operations</h3>
+          <p>Competitive play, team building, scrims, and ranked advancement.</p>
+          <b>View Operations</b>
+        </div>
       </a>
 
-      <a class="ff-nexus-node node-community" href="application.html">
-        <b>Community Forge</b>
-        <small>Recruitment ? Leadership ? Global Network</small>
+      <a class="ff-frontier-card cod" href="contests.html">
+        <div class="ff-frontier-overlay"></div>
+        <div class="ff-frontier-content">
+          <span>Call of Duty</span>
+          <h3>Competitive Unit</h3>
+          <p>Fast-response squads, competitive events, and battlefield coordination.</p>
+          <b>Deploy</b>
+        </div>
       </a>
 
-      <a class="ff-nexus-node node-tech" href="metapower.html">
-        <b>Science & Tech</b>
-        <small>AI ? Automation ? Digital Infrastructure</small>
+      <a class="ff-frontier-card solana" href="economics-whitepaper.html">
+        <div class="ff-frontier-overlay"></div>
+        <div class="ff-frontier-content">
+          <span>Solana Ecosystem</span>
+          <h3>Web3 Operations</h3>
+          <p>Blockchain gaming, ecosystem intelligence, and digital asset education.</p>
+          <b>Explore Web3</b>
+        </div>
       </a>
 
-      <a class="ff-nexus-node node-education" href="org_structure-whitepaper.html">
-        <b>Knowledge Base</b>
-        <small>Whitepapers ? Guides ? Member Training</small>
+      <a class="ff-frontier-card community" href="application.html">
+        <div class="ff-frontier-overlay"></div>
+        <div class="ff-frontier-content">
+          <span>Community Hub</span>
+          <h3>Join the Mission</h3>
+          <p>Global members, guild culture, leadership, and multi-world coordination.</p>
+          <b>Apply Now</b>
+        </div>
       </a>
-
-      <div class="ff-nexus-line line-1"></div>
-      <div class="ff-nexus-line line-2"></div>
-      <div class="ff-nexus-line line-3"></div>
-      <div class="ff-nexus-line line-4"></div>
-      <div class="ff-nexus-line line-5"></div>
-      <div class="ff-nexus-line line-6"></div>
-    </div>
-
-    <div class="ff-nexus-footer">
-      <div>
-        <strong>Explore the Network</strong>
-        <span>Final Frontier is not a single game ? it is a coordinated command structure across multiple worlds.</span>
-      </div>
-      <a href="application.html">Join Final Frontier</a>
     </div>
   </div>
 </section>
-<!-- Final Frontier Nexus END -->
+<!-- The Frontiers Operations Wall END -->
+
 
 
 
