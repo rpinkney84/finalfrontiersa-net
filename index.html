@@ -127,6 +127,77 @@
 }
 </style>
 
+
+<style id="ff-frontierview-panel-style">
+.ff-frontierview-panel{
+  max-width:1280px;
+  margin:0 auto 55px;
+  padding:30px 22px;
+  border:1px solid rgba(0,255,255,.14);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0,255,255,.12), transparent 34%),
+    linear-gradient(135deg, rgba(5,8,20,.96), rgba(0,0,0,.98));
+  box-shadow:0 0 45px rgba(0,255,255,.08);
+}
+.ff-frontierview-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.ff-market-card{
+  display:block;
+  padding:24px 22px;
+  border:1px solid rgba(212,175,55,.18);
+  background:rgba(255,255,255,.035);
+  text-decoration:none;
+  transition:.25s ease;
+}
+.ff-market-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(0,255,255,.45);
+  box-shadow:0 0 28px rgba(0,255,255,.12);
+}
+.ff-market-card span{
+  color:#00ffff;
+  font-family:"Courier New",monospace;
+  font-size:.72rem;
+  letter-spacing:.18em;
+}
+.ff-market-card strong{
+  display:block;
+  color:#fff;
+  font-family:"Cinzel",serif;
+  font-size:1.25rem;
+  margin:8px 0;
+}
+.ff-market-card em{
+  color:rgba(255,255,255,.58);
+  font-style:normal;
+  font-size:.85rem;
+}
+.ff-frontierview-terminal{
+  margin-top:20px;
+  padding:18px 20px;
+  border-top:1px solid rgba(0,255,255,.12);
+  font-family:"Courier New",monospace;
+  font-size:.78rem;
+  color:rgba(255,255,255,.7);
+}
+.ff-terminal-line{margin:6px 0;}
+.ff-terminal-line span{
+  color:#d4af37;
+  margin-right:12px;
+  letter-spacing:.14em;
+}
+@media(max-width:991px){
+  .ff-frontierview-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:575px){
+  .ff-frontierview-grid{grid-template-columns:1fr;}
+  .ff-frontierview-panel{padding:22px 14px;}
+}
+</style>
+
 <body>
 <!--[if lte IE 9]>
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -1038,60 +1109,38 @@ document.addEventListener("DOMContentLoaded",function(){
 <div class="align-items-center">
 <h2 class="h4 text-white text-center font-theme3 mt-md-n2 mb-4 z-index-common"><img alt="Zocker" src="assets/img/logo-5.png"/>  FrontierView  <img alt="Zocker" src="assets/img/logo-5.png"/></h2>
 
-<!-- TradingView Widget BEGIN -->
-<div class="ff-frontierview-chart">
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <div class="tradingview-widget-copyright">
-      <a href="https://www.tradingview.com/symbols/SOLUSD/?exchange=KRAKEN" rel="noopener nofollow" target="_blank">
-        <span class="blue-text">Solana price</span>
-      </a>
-      <span class="trademark"> by TradingView</span>
-    </div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-    {
-      "width": "100%",
-      "height": "720",
-      "allow_symbol_change": true,
-      "calendar": false,
-      "details": false,
-      "hide_side_toolbar": true,
-      "hide_top_toolbar": false,
-      "hide_legend": false,
-      "hide_volume": false,
-      "hotlist": false,
-      "interval": "D",
-      "locale": "en",
-      "save_image": true,
-      "style": "8",
-      "symbol": "KRAKEN:SOLUSD",
-      "theme": "dark",
-      "timezone": "Etc/UTC",
-      "backgroundColor": "#0F0F0F",
-      "gridColor": "rgba(242, 242, 242, 0.02)",
-      "watchlist": [
-        "KRAKEN:BTCUSD",
-        "KRAKEN:ETHUSD",
-        "KRAKEN:ATLASUSD",
-        "KRAKEN:POLISUSD",
-        "KRAKEN:JUPUSD",
-        "KRAKEN:TRXUSD",
-        "KRAKEN:XRPUSD",
-        "KRAKEN:AXSUSD",
-        "KRAKEN:EGLDUSD",
-        "KRAKEN:USDTUSD",
-        "KRAKEN:USDCUSD",
-        "KRAKEN:EURCEUR"
-      ],
-      "withdateranges": false,
-      "compareSymbols": [],
-      "studies": ["STD;RSI"],
-      "autosize": false
-    }
-    </script>
+
+<!-- FrontierView Intelligence Panel BEGIN -->
+<div class="ff-frontierview-panel">
+  <div class="ff-frontierview-grid">
+    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer">
+      <span>SOL</span><strong>Solana</strong><em>Network Core</em>
+    </a>
+    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener noreferrer">
+      <span>BTC</span><strong>Bitcoin</strong><em>Reserve Asset</em>
+    </a>
+    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer">
+      <span>ETH</span><strong>Ethereum</strong><em>Settlement Layer</em>
+    </a>
+    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/star-atlas" target="_blank" rel="noopener noreferrer">
+      <span>ATLAS</span><strong>Star Atlas</strong><em>Gaming Economy</em>
+    </a>
+    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/polis" target="_blank" rel="noopener noreferrer">
+      <span>POLIS</span><strong>Polis</strong><em>DAO Asset</em>
+    </a>
+    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/jupiter-exchange-solana" target="_blank" rel="noopener noreferrer">
+      <span>JUP</span><strong>Jupiter</strong><em>Liquidity Router</em>
+    </a>
+  </div>
+
+  <div class="ff-frontierview-terminal">
+    <div class="ff-terminal-line"><span>FRONTIERVIEW</span> Market intelligence feed active</div>
+    <div class="ff-terminal-line"><span>TRACKING</span> Solana ? Bitcoin ? Ethereum ? ATLAS ? POLIS ? JUP</div>
+    <div class="ff-terminal-line"><span>STATUS</span> External chart iframe removed for security hardening</div>
   </div>
 </div>
-<!-- TradingView Widget END -->
+<!-- FrontierView Intelligence Panel END -->
+
 
 </div>
 
