@@ -128,73 +128,280 @@
 </style>
 
 
-<style id="ff-frontierview-panel-style">
-.ff-frontierview-panel{
-  max-width:1280px;
-  margin:0 auto 55px;
-  padding:30px 22px;
-  border:1px solid rgba(0,255,255,.14);
-  background:
-    radial-gradient(circle at 50% 0%, rgba(0,255,255,.12), transparent 34%),
-    linear-gradient(135deg, rgba(5,8,20,.96), rgba(0,0,0,.98));
-  box-shadow:0 0 45px rgba(0,255,255,.08);
+
+
+
+<style id="ff-frontierview-command-v2">
+.ff-frontierview-command{
+  background:#000;
+  padding:16px 20px 72px;
 }
-.ff-frontierview-grid{
+.ff-fv-frame{
+  position:relative;
+  max-width:1540px;
+  margin:0 auto;
+  padding:26px;
+  overflow:hidden;
+  border:1px solid rgba(0,255,255,.2);
+  background:
+    radial-gradient(circle at 50% 24%,rgba(0,255,255,.16),transparent 26%),
+    radial-gradient(circle at 50% 38%,rgba(122,0,255,.18),transparent 33%),
+    linear-gradient(135deg,#030711,#000);
+  box-shadow:0 0 65px rgba(0,255,255,.1), inset 0 0 70px rgba(255,255,255,.025);
+}
+.ff-fv-frame:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,255,.035) 1px,transparent 1px);
+  background-size:58px 58px;
+  pointer-events:none;
+}
+.ff-fv-titlebar{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  margin-bottom:22px;
+  padding-bottom:16px;
+  border-bottom:1px solid rgba(212,175,55,.22);
+}
+.ff-fv-title{
+  font-family:"Cinzel",serif;
+  font-size:clamp(2rem,4vw,3.4rem);
+  font-weight:900;
+  color:#fff;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-shadow:0 0 24px rgba(0,255,255,.35);
+}
+.ff-fv-subtitle{
+  color:rgba(255,255,255,.82);
+  font-family:"Cinzel",serif;
+  font-size:.75rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-top:6px;
+}
+.ff-fv-core{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr 1.35fr 1fr;
+  gap:24px;
+  align-items:center;
+}
+.ff-fv-left-panel,.ff-fv-feed-panel{
+  min-height:360px;
+  border:1px solid rgba(0,255,255,.18);
+  background:rgba(5,10,24,.74);
+  border-radius:12px;
+  padding:30px;
+  box-shadow:inset 0 0 35px rgba(0,255,255,.035);
+}
+.ff-fv-left-panel h3{
+  font-family:"Cinzel",serif;
+  color:#fff;
+  font-size:clamp(1.7rem,3vw,2.7rem);
+  line-height:1.15;
+  margin-bottom:18px;
+}
+.ff-fv-left-panel h3 span{
+  color:#a970ff;
+  text-shadow:0 0 22px rgba(169,112,255,.35);
+}
+.ff-fv-left-panel p{
+  color:rgba(255,255,255,.76);
+  line-height:1.85;
+}
+.ff-fv-mini-stats{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:16px;
+  gap:10px;
+  margin-top:34px;
+  border-top:1px solid rgba(0,255,255,.12);
+  padding-top:22px;
 }
-.ff-market-card{
+.ff-fv-mini-stats div{text-align:center;}
+.ff-fv-mini-stats strong{
   display:block;
-  padding:24px 22px;
-  border:1px solid rgba(212,175,55,.18);
-  background:rgba(255,255,255,.035);
+  color:#00ffff;
+  font-size:1.7rem;
+}
+.ff-fv-mini-stats span{
+  display:block;
+  font-size:.62rem;
+  color:rgba(255,255,255,.62);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.ff-fv-orbital{
+  height:430px;
+  position:relative;
+}
+.ff-fv-center-orb{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:172px;
+  height:172px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(0,255,255,.55);
+  background:
+    radial-gradient(circle at 50% 40%,rgba(0,255,255,.35),rgba(122,0,255,.22),rgba(0,0,0,.92));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 80px rgba(0,255,255,.26), inset 0 0 42px rgba(255,255,255,.08);
+}
+.ff-fv-center-orb span{
+  font-family:"Cinzel",serif;
+  font-size:3.6rem;
+  color:#fff;
+  font-weight:900;
+  text-shadow:0 0 26px #00ffff;
+}
+.ff-fv-orbit-ring{
+  position:absolute;
+  left:50%;
+  top:50%;
+  border-radius:50%;
+  border:1px solid rgba(0,255,255,.2);
+  transform:translate(-50%,-50%) rotateX(66deg);
+}
+.ring-a{width:520px;height:190px;}
+.ring-b{width:430px;height:145px;border-color:rgba(169,112,255,.28);}
+.ring-c{width:320px;height:105px;border-color:rgba(212,175,55,.28);}
+.ff-fv-node{
+  position:absolute;
+  width:82px;
+  height:82px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Cinzel",serif;
+  font-weight:900;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 0 34px rgba(0,255,255,.18);
+}
+.node-btc{top:4%;left:43%;background:radial-gradient(circle,#d4af37,#241300);}
+.node-sol{top:22%;right:4%;background:radial-gradient(circle,#7a00ff,#070012);}
+.node-eth{top:22%;left:4%;background:radial-gradient(circle,#627eea,#070012);}
+.node-atlas{bottom:25%;left:8%;background:radial-gradient(circle,#00aaff,#00111c);}
+.node-polis{bottom:4%;left:43%;background:radial-gradient(circle,#a970ff,#13001f);}
+.node-jup{bottom:25%;right:8%;background:radial-gradient(circle,#00ffaa,#001b14);}
+.ff-fv-feed-panel h4{
+  color:#00ffff;
+  font-family:"Cinzel",serif;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:18px;
+}
+.ff-fv-feed-item{
+  position:relative;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:9px;
+  padding:14px 72px 14px 16px;
+  margin-bottom:12px;
+}
+.ff-fv-feed-item b{display:block;color:#fff;}
+.ff-fv-feed-item span{display:block;color:rgba(255,255,255,.65);font-size:.82rem;margin-top:3px;}
+.ff-fv-feed-item em{
+  position:absolute;
+  right:12px;
+  top:14px;
+  color:#d4af37;
+  font-size:.66rem;
+  font-style:normal;
+  text-transform:uppercase;
+}
+.ff-fv-assets-row{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:14px;
+  margin-top:26px;
+}
+.ff-fv-assets-row a{
+  display:block;
+  padding:20px 16px;
   text-decoration:none;
+  border:1px solid rgba(0,255,255,.18);
+  border-radius:10px;
+  background:rgba(5,10,24,.82);
   transition:.25s ease;
 }
-.ff-market-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(0,255,255,.45);
-  box-shadow:0 0 28px rgba(0,255,255,.12);
+.ff-fv-assets-row a:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 28px rgba(0,255,255,.16);
 }
-.ff-market-card span{
+.ff-fv-assets-row b{
   color:#00ffff;
   font-family:"Courier New",monospace;
-  font-size:.72rem;
-  letter-spacing:.18em;
+  letter-spacing:.16em;
 }
-.ff-market-card strong{
+.ff-fv-assets-row span{
   display:block;
   color:#fff;
   font-family:"Cinzel",serif;
-  font-size:1.25rem;
   margin:8px 0;
 }
-.ff-market-card em{
-  color:rgba(255,255,255,.58);
+.ff-fv-assets-row em{
+  color:rgba(255,255,255,.55);
   font-style:normal;
-  font-size:.85rem;
+  font-size:.74rem;
 }
-.ff-frontierview-terminal{
-  margin-top:20px;
-  padding:18px 20px;
-  border-top:1px solid rgba(0,255,255,.12);
-  font-family:"Courier New",monospace;
-  font-size:.78rem;
-  color:rgba(255,255,255,.7);
+.ff-fv-mission{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-top:28px;
+  padding:22px;
+  border:1px solid rgba(212,175,55,.2);
+  background:rgba(255,255,255,.025);
 }
-.ff-terminal-line{margin:6px 0;}
-.ff-terminal-line span{
-  color:#d4af37;
-  margin-right:12px;
-  letter-spacing:.14em;
+.ff-fv-mission strong{
+  display:block;
+  color:#fff;
+  font-family:"Cinzel",serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.ff-fv-mission span{color:rgba(255,255,255,.65);}
+.ff-fv-mission a{
+  color:#050814;
+  background:linear-gradient(135deg,#00ffff,#7a00ff);
+  padding:14px 26px;
+  border-radius:7px;
+  text-decoration:none;
+  font-family:"Cinzel",serif;
+  font-weight:900;
+  text-transform:uppercase;
 }
 @media(max-width:991px){
-  .ff-frontierview-grid{grid-template-columns:repeat(2,1fr);}
+  .ff-fv-core{grid-template-columns:1fr;}
+  .ff-fv-assets-row{grid-template-columns:repeat(2,1fr);}
+  .ff-fv-orbital{height:360px;}
 }
 @media(max-width:575px){
-  .ff-frontierview-grid{grid-template-columns:1fr;}
-  .ff-frontierview-panel{padding:22px 14px;}
+  .ff-frontierview-command{padding:0 10px 45px;}
+  .ff-fv-frame{padding:18px;}
+  .ff-fv-assets-row{grid-template-columns:1fr;}
+  .ff-fv-mission{flex-direction:column;text-align:center;}
+  .ff-fv-left-panel,.ff-fv-feed-panel{padding:22px;min-height:auto;}
+  .ff-fv-node{width:64px;height:64px;font-size:.72rem;}
+  .ring-a{width:300px;height:115px;}
+  .ring-b{width:240px;height:90px;}
+  .ring-c{width:180px;height:65px;}
 }
 </style>
 
@@ -1110,36 +1317,68 @@ document.addEventListener("DOMContentLoaded",function(){
 <h2 class="h4 text-white text-center font-theme3 mt-md-n2 mb-4 z-index-common"><img alt="Zocker" src="assets/img/logo-5.png"/>  FrontierView  <img alt="Zocker" src="assets/img/logo-5.png"/></h2>
 
 
-<!-- FrontierView Intelligence Panel BEGIN -->
-<div class="ff-frontierview-panel">
-  <div class="ff-frontierview-grid">
-    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer">
-      <span>SOL</span><strong>Solana</strong><em>Network Core</em>
-    </a>
-    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener noreferrer">
-      <span>BTC</span><strong>Bitcoin</strong><em>Reserve Asset</em>
-    </a>
-    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer">
-      <span>ETH</span><strong>Ethereum</strong><em>Settlement Layer</em>
-    </a>
-    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/star-atlas" target="_blank" rel="noopener noreferrer">
-      <span>ATLAS</span><strong>Star Atlas</strong><em>Gaming Economy</em>
-    </a>
-    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/polis" target="_blank" rel="noopener noreferrer">
-      <span>POLIS</span><strong>Polis</strong><em>DAO Asset</em>
-    </a>
-    <a class="ff-market-card" href="https://www.coingecko.com/en/coins/jupiter-exchange-solana" target="_blank" rel="noopener noreferrer">
-      <span>JUP</span><strong>Jupiter</strong><em>Liquidity Router</em>
-    </a>
-  </div>
 
-  <div class="ff-frontierview-terminal">
-    <div class="ff-terminal-line"><span>FRONTIERVIEW</span> Market intelligence feed active</div>
-    <div class="ff-terminal-line"><span>TRACKING</span> Solana ? Bitcoin ? Ethereum ? ATLAS ? POLIS ? JUP</div>
-    <div class="ff-terminal-line"><span>STATUS</span> External chart iframe removed for security hardening</div>
+<!-- FrontierView Command Center BEGIN -->
+<div class="ff-frontierview-command">
+  <div class="ff-fv-frame">
+    <div class="ff-fv-titlebar">
+      <div class="ff-fv-title">FrontierView</div>
+      <div class="ff-fv-subtitle">Real-Time Intelligence ? Gaming Economy ? Guild Advantage</div>
+    </div>
+
+    <div class="ff-fv-core">
+      <div class="ff-fv-left-panel">
+        <h3>Galaxy Insight.<br><span>Guild Advantage.</span></h3>
+        <p>FrontierView transforms market awareness, gaming intelligence, and guild strategy into one command-level interface for the Final Frontier ecosystem.</p>
+        <div class="ff-fv-mini-stats">
+          <div><strong>6</strong><span>Tracked Assets</span></div>
+          <div><strong>24/7</strong><span>Intel Watch</span></div>
+          <div><strong>?</strong><span>Possibilities</span></div>
+        </div>
+      </div>
+
+      <div class="ff-fv-orbital">
+        <div class="ff-fv-center-orb"><span>FF</span></div>
+        <div class="ff-fv-orbit-ring ring-a"></div>
+        <div class="ff-fv-orbit-ring ring-b"></div>
+        <div class="ff-fv-orbit-ring ring-c"></div>
+        <div class="ff-fv-node node-btc">BTC</div>
+        <div class="ff-fv-node node-sol">SOL</div>
+        <div class="ff-fv-node node-eth">ETH</div>
+        <div class="ff-fv-node node-atlas">ATLAS</div>
+        <div class="ff-fv-node node-polis">POLIS</div>
+        <div class="ff-fv-node node-jup">JUP</div>
+      </div>
+
+      <div class="ff-fv-feed-panel">
+        <h4>Frontier Feed</h4>
+        <div class="ff-fv-feed-item"><b>Star Atlas</b><span>SAGE Labs fleet intelligence and economy tracking.</span><em>Gaming</em></div>
+        <div class="ff-fv-feed-item"><b>World of Warcraft</b><span>Midnight expansion readiness and guild operations.</span><em>Ops</em></div>
+        <div class="ff-fv-feed-item"><b>Solana</b><span>Network performance and ecosystem surveillance.</span><em>Core</em></div>
+        <div class="ff-fv-feed-item"><b>POLIS</b><span>DAO governance and strategic voting awareness.</span><em>DAO</em></div>
+      </div>
+    </div>
+
+    <div class="ff-fv-assets-row">
+      <a href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer"><b>SOL</b><span>Solana</span><em>Network Core</em></a>
+      <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener noreferrer"><b>BTC</b><span>Bitcoin</span><em>Reserve Asset</em></a>
+      <a href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer"><b>ETH</b><span>Ethereum</span><em>Settlement Layer</em></a>
+      <a href="https://www.coingecko.com/en/coins/star-atlas" target="_blank" rel="noopener noreferrer"><b>ATLAS</b><span>Star Atlas</span><em>Gaming Economy</em></a>
+      <a href="https://www.coingecko.com/en/coins/polis" target="_blank" rel="noopener noreferrer"><b>POLIS</b><span>Polis</span><em>DAO Asset</em></a>
+      <a href="https://www.coingecko.com/en/coins/jupiter-exchange-solana" target="_blank" rel="noopener noreferrer"><b>JUP</b><span>Jupiter</span><em>Liquidity Router</em></a>
+    </div>
+
+    <div class="ff-fv-mission">
+      <div>
+        <strong>The Final Frontier Awaits</strong>
+        <span>We do not follow the meta. We build what is next.</span>
+      </div>
+      <a href="application.html">Join the Mission</a>
+    </div>
   </div>
 </div>
-<!-- FrontierView Intelligence Panel END -->
+<!-- FrontierView Command Center END -->
+
 
 
 </div>
