@@ -78,398 +78,252 @@
 
 
 
-<style id="ff-fv-hybrid-style">
-.ff-fv-hybrid{
+
+<style id="ff-nexus-style">
+.ff-nexus-section{
   position:relative;
   background:#000;
-  padding:26px 12px 76px;
+  padding:60px 14px 80px;
   overflow:hidden;
 }
 
-.ff-fv-hybrid-bg{
-  position:absolute;
-  inset:0;
-  background:url("assets/img/frontierview-dashboard.png") center center / cover no-repeat;
-  opacity:.16;
-  filter:blur(10px) saturate(1.25);
-  transform:scale(1.06);
-  pointer-events:none;
-}
-
-.ff-fv-hybrid::after{
+.ff-nexus-section::before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 50% 32%, rgba(0,255,255,.16), transparent 32%),
-    linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.9));
+    radial-gradient(circle at 50% 45%,rgba(0,255,255,.12),transparent 34%),
+    radial-gradient(circle at 20% 20%,rgba(122,0,255,.12),transparent 30%),
+    linear-gradient(rgba(0,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,255,.035) 1px,transparent 1px);
+  background-size:auto,auto,70px 70px,70px 70px;
   pointer-events:none;
 }
 
-.ff-fv-hybrid-frame{
+.ff-nexus-frame{
   position:relative;
   z-index:2;
-  max-width:1540px;
+  max-width:1450px;
   margin:0 auto;
-  padding:28px;
-  border:1px solid rgba(212,175,55,.34);
-  background:
-    linear-gradient(rgba(0,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,255,.035) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(3,7,17,.82), rgba(0,0,0,.72));
-  background-size:58px 58px,58px 58px,auto;
-  box-shadow:0 0 80px rgba(0,255,255,.14), inset 0 0 70px rgba(255,255,255,.025);
-  overflow:hidden;
-}
-
-.ff-fv-hybrid-frame::before{
-  content:"";
-  position:absolute;
-  inset:18px;
-  border:1px solid rgba(0,255,255,.16);
-  clip-path:polygon(0 7%,7% 0,93% 0,100% 7%,100% 93%,93% 100%,7% 100%,0 93%);
-  pointer-events:none;
-}
-
-.ff-fv-hybrid-title{
-  text-align:center;
-  position:relative;
-  z-index:2;
-  padding-bottom:18px;
-  margin-bottom:24px;
-  border-bottom:1px solid rgba(0,255,255,.22);
-}
-
-.ff-fv-hybrid-title h2{
-  font-family:"Cinzel",serif;
-  color:#fff;
-  font-size:clamp(2.3rem,5vw,4.3rem);
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  margin:0;
-  text-shadow:0 0 30px rgba(0,255,255,.35);
-}
-
-.ff-fv-hybrid-title p{
-  color:rgba(255,255,255,.85);
-  font-family:"Cinzel",serif;
-  font-size:.8rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  margin:4px 0 0;
-}
-
-.ff-fv-hybrid-grid{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:.9fr 1.65fr .95fr;
-  gap:24px;
-  align-items:center;
-}
-
-.ff-fv-hybrid-panel{
-  min-height:380px;
-  border:1px solid rgba(0,255,255,.22);
-  border-radius:16px;
-  background:linear-gradient(160deg, rgba(5,10,24,.86), rgba(0,0,0,.68));
-  box-shadow:0 0 34px rgba(0,255,255,.08), inset 0 0 45px rgba(255,255,255,.025);
   padding:34px;
+  border:1px solid rgba(212,175,55,.32);
+  background:linear-gradient(135deg,rgba(4,8,20,.9),rgba(0,0,0,.82));
+  box-shadow:0 0 70px rgba(0,255,255,.1), inset 0 0 60px rgba(255,255,255,.025);
 }
 
-.ff-fv-left h3{
+.ff-nexus-header{
+  text-align:center;
+  margin-bottom:36px;
+}
+
+.ff-nexus-header span{
+  font-family:"Courier New",monospace;
+  color:#00ffff;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-size:.72rem;
+}
+
+.ff-nexus-header h2{
   font-family:"Cinzel",serif;
   color:#fff;
-  font-size:clamp(2rem,3.5vw,3.4rem);
-  line-height:1.12;
-  margin:0 0 24px;
-}
-
-.ff-fv-left h3 span{
-  color:#a970ff;
-  text-shadow:0 0 28px rgba(169,112,255,.45);
-}
-
-.ff-fv-left p{
-  color:rgba(255,255,255,.78);
-  line-height:1.9;
-  font-size:1rem;
-}
-
-.ff-fv-hybrid-stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border-top:1px solid rgba(0,255,255,.16);
-  margin-top:36px;
-  padding-top:22px;
-  gap:12px;
-}
-
-.ff-fv-hybrid-stats div{
-  text-align:center;
-}
-
-.ff-fv-hybrid-stats b{
-  display:block;
-  color:#00ffff;
-  font-size:2rem;
-  line-height:1;
-}
-
-.ff-fv-hybrid-stats small{
-  display:block;
-  color:rgba(255,255,255,.66);
+  font-size:clamp(2rem,4vw,4rem);
+  margin:8px 0;
   text-transform:uppercase;
-  letter-spacing:.1em;
+  letter-spacing:.08em;
+}
+
+.ff-nexus-header p{
+  max-width:760px;
+  margin:0 auto;
+  color:rgba(255,255,255,.68);
+  line-height:1.7;
+}
+
+.ff-nexus-map{
+  position:relative;
+  min-height:620px;
+}
+
+.ff-nexus-core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:210px;
+  height:210px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(0,255,255,.55);
+  background:radial-gradient(circle,rgba(0,255,255,.34),rgba(122,0,255,.26),rgba(0,0,0,.95));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 80px rgba(0,255,255,.28);
+  z-index:5;
+}
+
+.ff-nexus-core strong{
+  font-family:"Cinzel",serif;
+  color:#fff;
+  font-size:4rem;
+  line-height:1;
+  text-shadow:0 0 28px rgba(0,255,255,.8);
+}
+
+.ff-nexus-core span{
+  color:#d4af37;
+  font-family:"Courier New",monospace;
+  text-transform:uppercase;
+  letter-spacing:.16em;
   font-size:.62rem;
   margin-top:8px;
 }
 
-.ff-fv-hybrid-orbit{
-  position:relative;
-  height:500px;
-  border-radius:18px;
-  background:
-    radial-gradient(circle at 50% 47%, rgba(0,255,255,.14), transparent 30%),
-    radial-gradient(circle at 50% 64%, rgba(122,0,255,.18), transparent 32%);
-}
-
-.ff-fv-core-orb{
+.ff-nexus-node{
   position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  width:210px;
-  height:210px;
-  border-radius:50%;
-  border:1px solid rgba(0,255,255,.58);
-  background:radial-gradient(circle at 45% 34%, rgba(0,255,255,.6), rgba(122,0,255,.36) 45%, rgba(0,0,0,.9) 74%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 95px rgba(0,255,255,.35), 0 0 120px rgba(122,0,255,.24), inset 0 0 55px rgba(255,255,255,.13);
-}
-
-.ff-fv-core-orb::before{
-  content:"";
-  position:absolute;
-  inset:-42px;
-  border-radius:50%;
-  border:1px dashed rgba(0,255,255,.28);
-  animation:ffFvSpin 18s linear infinite;
-}
-
-.ff-fv-core-orb span{
-  color:#fff;
-  font-family:"Cinzel",serif;
-  font-size:3.8rem;
-  font-weight:900;
-  text-shadow:0 0 30px rgba(0,255,255,.9);
-}
-
-@keyframes ffFvSpin{to{transform:rotate(360deg)}}
-
-.ff-fv-ring{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%) rotateX(66deg);
-  border-radius:50%;
-  border:1px solid rgba(0,255,255,.22);
-  box-shadow:0 0 22px rgba(0,255,255,.12);
-}
-
-.ring-one{width:650px;height:230px;}
-.ring-two{width:535px;height:175px;border-color:rgba(169,112,255,.3);}
-.ring-three{width:420px;height:130px;border-color:rgba(212,175,55,.3);}
-
-.ff-fv-planet{
-  position:absolute;
-  width:96px;
-  height:96px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff!important;
-  text-decoration:none!important;
-  font-family:"Cinzel",serif;
-  font-weight:900;
-  border:1px solid rgba(255,255,255,.22);
-  box-shadow:0 0 42px rgba(0,255,255,.2), inset 0 0 20px rgba(255,255,255,.12);
-  transition:.25s ease;
-}
-
-.ff-fv-planet:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 55px rgba(0,255,255,.38), inset 0 0 24px rgba(255,255,255,.14);
-}
-
-.btc{top:1%;left:45%;background:radial-gradient(circle,#d4af37,#241300);}
-.sol{top:20%;right:2%;background:radial-gradient(circle,#7a00ff,#070012);}
-.eth{top:20%;left:2%;background:radial-gradient(circle,#627eea,#070012);}
-.atlas{bottom:23%;left:7%;background:radial-gradient(circle,#00aaff,#00111c);}
-.polis{bottom:1%;left:45%;background:radial-gradient(circle,#a970ff,#13001f);}
-.jup{bottom:23%;right:7%;background:radial-gradient(circle,#00ffaa,#001b14);}
-
-.ff-fv-feed h4{
-  color:#00ffff;
-  font-family:"Cinzel",serif;
-  font-size:1.7rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  margin-bottom:22px;
-}
-
-.ff-fv-feed div{
-  position:relative;
-  padding:16px 76px 16px 18px;
-  margin-bottom:14px;
-  border:1px solid rgba(0,255,255,.14);
-  border-radius:10px;
-  background:linear-gradient(90deg, rgba(0,255,255,.06), rgba(255,255,255,.035));
-}
-
-.ff-fv-feed strong{
-  display:block;
-  color:#fff;
-  font-size:1rem;
-}
-
-.ff-fv-feed span{
-  display:block;
-  color:rgba(255,255,255,.68);
-  line-height:1.6;
-  font-size:.85rem;
-  margin-top:4px;
-}
-
-.ff-fv-feed em{
-  position:absolute;
-  right:14px;
-  top:17px;
-  color:#d4af37;
-  font-style:normal;
-  font-size:.65rem;
-  text-transform:uppercase;
-}
-
-.ff-fv-asset-strip{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:14px;
-  margin-top:28px;
-}
-
-.ff-fv-asset-strip a{
-  position:relative;
-  overflow:hidden;
-  min-height:150px;
-  padding:20px 16px;
+  width:285px;
+  min-height:128px;
+  padding:22px;
   border:1px solid rgba(0,255,255,.2);
-  border-radius:11px;
-  background:linear-gradient(160deg, rgba(6,13,30,.92), rgba(0,0,0,.86));
+  border-radius:14px;
+  background:linear-gradient(160deg,rgba(5,10,24,.92),rgba(0,0,0,.78));
   text-decoration:none!important;
+  box-shadow:0 0 26px rgba(0,255,255,.06);
   transition:.25s ease;
+  z-index:6;
 }
 
-.ff-fv-asset-strip a:hover{
-  transform:translateY(-5px);
-  border-color:rgba(0,255,255,.55);
-  box-shadow:0 0 30px rgba(0,255,255,.16);
+.ff-nexus-node:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,255,255,.58);
+  box-shadow:0 0 38px rgba(0,255,255,.18);
 }
 
-.ff-fv-asset-strip b{
-  color:#00ffff;
-  font-family:"Courier New",monospace;
-  letter-spacing:.18em;
-}
-
-.ff-fv-asset-strip span{
+.ff-nexus-node b{
   display:block;
-  color:#fff;
   font-family:"Cinzel",serif;
-  font-size:1.05rem;
-  margin:8px 0;
+  color:#fff;
+  font-size:1.08rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:9px;
 }
 
-.ff-fv-asset-strip small{
-  color:rgba(255,255,255,.6);
+.ff-nexus-node small{
+  color:rgba(255,255,255,.66);
+  line-height:1.6;
 }
 
-.ff-fv-asset-strip i{
+.node-gaming{left:5%;top:8%;}
+.node-esports{right:5%;top:8%;}
+.node-web3{left:5%;top:42%;}
+.node-community{right:5%;top:42%;}
+.node-tech{left:23%;bottom:2%;}
+.node-education{right:23%;bottom:2%;}
+
+.ff-nexus-line{
   position:absolute;
-  left:18px;
-  right:18px;
-  bottom:22px;
-  height:42px;
-  background:linear-gradient(135deg, transparent 0 15%, rgba(0,255,255,.58) 16% 18%, transparent 19% 32%, rgba(0,255,255,.46) 33% 35%, transparent 36% 52%, rgba(0,255,255,.62) 53% 55%, transparent 56%);
-  opacity:.56;
+  left:50%;
+  top:50%;
+  width:280px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(0,255,255,.45),transparent);
+  transform-origin:left center;
+  opacity:.42;
+  z-index:2;
 }
 
-.ff-fv-mission-dock{
-  position:relative;
-  z-index:2;
-  margin-top:28px;
-  padding:24px 28px;
+.line-1{transform:rotate(214deg);}
+.line-2{transform:rotate(-34deg);}
+.line-3{transform:rotate(180deg);}
+.line-4{transform:rotate(0deg);}
+.line-5{transform:rotate(128deg);}
+.line-6{transform:rotate(52deg);}
+
+.ff-nexus-footer{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  border:1px solid rgba(212,175,55,.24);
-  background:linear-gradient(90deg, rgba(0,255,255,.08), rgba(122,0,255,.08), rgba(212,175,55,.05));
+  gap:22px;
+  padding:24px 28px;
+  border:1px solid rgba(212,175,55,.22);
+  background:linear-gradient(90deg,rgba(0,255,255,.06),rgba(122,0,255,.07),rgba(212,175,55,.05));
 }
 
-.ff-fv-mission-dock strong{
+.ff-nexus-footer strong{
   display:block;
   color:#fff;
   font-family:"Cinzel",serif;
-  letter-spacing:.08em;
   text-transform:uppercase;
-  font-size:1.2rem;
+  letter-spacing:.08em;
 }
 
-.ff-fv-mission-dock span{
-  color:rgba(255,255,255,.68);
+.ff-nexus-footer span{
+  color:rgba(255,255,255,.65);
 }
 
-.ff-fv-mission-dock a{
+.ff-nexus-footer a{
+  display:inline-flex;
+  white-space:nowrap;
   color:#050814!important;
   background:linear-gradient(135deg,#00ffff,#7a00ff);
-  padding:15px 28px;
+  padding:14px 26px;
   border-radius:8px;
-  text-decoration:none!important;
   font-family:"Cinzel",serif;
   font-weight:900;
   text-transform:uppercase;
+  text-decoration:none!important;
 }
 
 @media(max-width:991px){
-  .ff-fv-hybrid-grid{grid-template-columns:1fr;}
-  .ff-fv-hybrid-orbit{height:430px;}
-  .ff-fv-asset-strip{grid-template-columns:repeat(2,1fr);}
-  .ring-one{width:500px;height:180px;}
-  .ring-two{width:410px;height:140px;}
-  .ring-three{width:320px;height:100px;}
+  .ff-nexus-map{
+    min-height:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+
+  .ff-nexus-core,
+  .ff-nexus-node,
+  .ff-nexus-line{
+    position:relative;
+    left:auto;
+    right:auto;
+    top:auto;
+    bottom:auto;
+    transform:none;
+  }
+
+  .ff-nexus-core{
+    width:auto;
+    height:170px;
+    grid-column:1/-1;
+    border-radius:18px;
+  }
+
+  .ff-nexus-node{
+    width:auto;
+  }
+
+  .ff-nexus-line{
+    display:none;
+  }
 }
 
 @media(max-width:575px){
-  .ff-fv-hybrid{padding:14px 6px 46px;}
-  .ff-fv-hybrid-frame{padding:18px;}
-  .ff-fv-hybrid-title h2{font-size:2rem;}
-  .ff-fv-hybrid-title p{font-size:.62rem;line-height:1.7;}
-  .ff-fv-hybrid-panel{padding:22px;min-height:auto;}
-  .ff-fv-hybrid-orbit{height:360px;}
-  .ff-fv-core-orb{width:145px;height:145px;}
-  .ff-fv-core-orb span{font-size:2.7rem;}
-  .ff-fv-planet{width:62px;height:62px;font-size:.64rem;}
-  .ring-one{width:290px;height:110px;}
-  .ring-two{width:230px;height:82px;}
-  .ring-three{width:175px;height:60px;}
-  .ff-fv-asset-strip{grid-template-columns:1fr;}
-  .ff-fv-mission-dock{flex-direction:column;text-align:center;}
+  .ff-nexus-frame{
+    padding:20px;
+  }
+
+  .ff-nexus-map{
+    grid-template-columns:1fr;
+  }
+
+  .ff-nexus-footer{
+    flex-direction:column;
+    text-align:center;
+  }
 }
 </style>
 
@@ -1388,74 +1242,71 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
-<!-- FrontierView Hybrid Cinematic BEGIN -->
-<section class="ff-fv-hybrid">
-  <div class="ff-fv-hybrid-bg"></div>
-  <div class="ff-fv-hybrid-frame">
 
-    <div class="ff-fv-hybrid-title">
-      <h2>FrontierView</h2>
-      <p>Real-Time Intelligence ? Gaming Economy ? Guild Advantage</p>
+<!-- Final Frontier Nexus BEGIN -->
+<section class="ff-nexus-section">
+  <div class="ff-nexus-frame">
+    <div class="ff-nexus-header">
+      <span>Final Frontier Command Nexus</span>
+      <h2>One Guild. Six Operational Frontiers.</h2>
+      <p>A living command map for gaming operations, esports, Web3, community development, technology, and education.</p>
     </div>
 
-    <div class="ff-fv-hybrid-grid">
-      <div class="ff-fv-hybrid-panel ff-fv-left">
-        <h3>Galaxy Insight.<br><span>Guild Advantage.</span></h3>
-        <p>FrontierView turns gaming intelligence, market awareness, guild operations, and ecosystem signals into one cinematic command layer.</p>
-
-        <div class="ff-fv-hybrid-stats">
-          <div><b>6</b><small>Tracked Assets</small></div>
-          <div><b>24/7</b><small>Intel Watch</small></div>
-          <div><b>?</b><small>Possibilities</small></div>
-        </div>
+    <div class="ff-nexus-map">
+      <div class="ff-nexus-core">
+        <strong>FF</strong>
+        <span>Command Core</span>
       </div>
 
-      <div class="ff-fv-hybrid-orbit">
-        <div class="ff-fv-ring ring-one"></div>
-        <div class="ff-fv-ring ring-two"></div>
-        <div class="ff-fv-ring ring-three"></div>
+      <a class="ff-nexus-node node-gaming" href="midnight.html">
+        <b>Gaming Operations</b>
+        <small>WoW Midnight ? Star Atlas ? Guild Events</small>
+      </a>
 
-        <div class="ff-fv-core-orb">
-          <span>FF</span>
-        </div>
+      <a class="ff-nexus-node node-esports" href="contests.html">
+        <b>Esports Division</b>
+        <small>Valorant ? Call of Duty ? Competitive Ops</small>
+      </a>
 
-        <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener noreferrer" class="ff-fv-planet btc">BTC</a>
-        <a href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer" class="ff-fv-planet sol">SOL</a>
-        <a href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer" class="ff-fv-planet eth">ETH</a>
-        <a href="https://www.coingecko.com/en/coins/star-atlas" target="_blank" rel="noopener noreferrer" class="ff-fv-planet atlas">ATLAS</a>
-        <a href="https://www.coingecko.com/en/coins/polis" target="_blank" rel="noopener noreferrer" class="ff-fv-planet polis">POLIS</a>
-        <a href="https://www.coingecko.com/en/coins/jupiter-exchange-solana" target="_blank" rel="noopener noreferrer" class="ff-fv-planet jup">JUP</a>
-      </div>
+      <a class="ff-nexus-node node-web3" href="economics-whitepaper.html">
+        <b>Web3 Economy</b>
+        <small>Solana ? Star Atlas ? DAO Strategy</small>
+      </a>
 
-      <div class="ff-fv-hybrid-panel ff-fv-feed">
-        <h4>Frontier Feed</h4>
-        <div><strong>Star Atlas</strong><span>SAGE Labs fleet intelligence and economy watch.</span><em>Gaming</em></div>
-        <div><strong>WoW: Midnight</strong><span>Guild readiness, class prep, and raid operations.</span><em>Ops</em></div>
-        <div><strong>Solana</strong><span>Network performance and ecosystem surveillance.</span><em>Core</em></div>
-        <div><strong>POLIS</strong><span>DAO governance and strategy monitoring.</span><em>DAO</em></div>
-      </div>
+      <a class="ff-nexus-node node-community" href="application.html">
+        <b>Community Forge</b>
+        <small>Recruitment ? Leadership ? Global Network</small>
+      </a>
+
+      <a class="ff-nexus-node node-tech" href="metapower.html">
+        <b>Science & Tech</b>
+        <small>AI ? Automation ? Digital Infrastructure</small>
+      </a>
+
+      <a class="ff-nexus-node node-education" href="org_structure-whitepaper.html">
+        <b>Knowledge Base</b>
+        <small>Whitepapers ? Guides ? Member Training</small>
+      </a>
+
+      <div class="ff-nexus-line line-1"></div>
+      <div class="ff-nexus-line line-2"></div>
+      <div class="ff-nexus-line line-3"></div>
+      <div class="ff-nexus-line line-4"></div>
+      <div class="ff-nexus-line line-5"></div>
+      <div class="ff-nexus-line line-6"></div>
     </div>
 
-    <div class="ff-fv-asset-strip">
-      <a href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer"><b>SOL</b><span>Solana</span><i></i><small>Network Core</small></a>
-      <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener noreferrer"><b>BTC</b><span>Bitcoin</span><i></i><small>Reserve Asset</small></a>
-      <a href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer"><b>ETH</b><span>Ethereum</span><i></i><small>Settlement Layer</small></a>
-      <a href="https://www.coingecko.com/en/coins/star-atlas" target="_blank" rel="noopener noreferrer"><b>ATLAS</b><span>Star Atlas</span><i></i><small>Gaming Economy</small></a>
-      <a href="https://www.coingecko.com/en/coins/polis" target="_blank" rel="noopener noreferrer"><b>POLIS</b><span>Polis</span><i></i><small>DAO Asset</small></a>
-      <a href="https://www.coingecko.com/en/coins/jupiter-exchange-solana" target="_blank" rel="noopener noreferrer"><b>JUP</b><span>Jupiter</span><i></i><small>Liquidity Router</small></a>
-    </div>
-
-    <div class="ff-fv-mission-dock">
+    <div class="ff-nexus-footer">
       <div>
-        <strong>The Final Frontier Awaits</strong>
-        <span>We do not follow the meta. We build what is next.</span>
+        <strong>Explore the Network</strong>
+        <span>Final Frontier is not a single game ? it is a coordinated command structure across multiple worlds.</span>
       </div>
-      <a href="application.html">Join the Mission</a>
+      <a href="application.html">Join Final Frontier</a>
     </div>
-
   </div>
 </section>
-<!-- FrontierView Hybrid Cinematic END -->
+<!-- Final Frontier Nexus END -->
+
 
 
 
