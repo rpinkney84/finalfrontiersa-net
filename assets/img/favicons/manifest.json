@@ -1,1 +1,25 @@
-{"name":"Final Frontier","short_name":"Final Frontier","icons":[],"start_url":"/","display":"standalone"}
+{
+  "name": "Final Frontier",
+  "short_name": "Final Frontier",
+  "icons": [
+    {
+      "src": "/assets/img/favicons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicons/apple-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}
